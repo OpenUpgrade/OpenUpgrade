@@ -1,0 +1,7 @@
+---Models in module 'l10n_in_gstin_status'---
+---Fields in module 'l10n_in_gstin_status'---
+l10n_in_gstin_status / res.partner              / l10n_in_gstin_verified_date (date): NEW
+l10n_in_gstin_status / res.partner              / l10n_in_gstin_verified_status (boolean): NEW
+---XML records in module 'l10n_in_gstin_status'---
+NEW ir.ui.view: l10n_in_gstin_status.l10n_in_view_partner_base_vat_form
+NEW ir.ui.view: l10n_in_gstin_status.move_form_inherit_l10n_in_gst_verification

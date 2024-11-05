@@ -1,0 +1,9 @@
+---Models in module 'calendar'---
+---Fields in module 'calendar'---
+calendar     / res.users.settings       / calendar_default_privacy (selection): NEW required, selection_keys: ['confidential', 'private', 'public'], hasdefault: default
+---XML records in module 'calendar'---
+DEL ir.actions.act_window: calendar.action_view_start_calendar_sync
+NEW ir.ui.view: calendar.res_users_form_view
+NEW ir.ui.view: calendar.res_users_form_view_calendar_default_privacy
+DEL onboarding.onboarding: calendar.onboarding_onboarding_calendar (noupdate)
+DEL onboarding.onboarding.step: calendar.onboarding_onboarding_step_setup_calendar_integration (noupdate)

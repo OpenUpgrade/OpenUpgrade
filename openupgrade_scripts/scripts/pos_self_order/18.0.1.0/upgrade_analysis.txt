@@ -1,0 +1,14 @@
+---Models in module 'pos_self_order'---
+---Fields in module 'pos_self_order'---
+pos_self_order / pos.category             / hour_after (float)            : NEW hasdefault: default
+pos_self_order / pos.category             / hour_until (float)            : NEW hasdefault: default
+pos_self_order / pos.config               / access_token (char)           : module is now 'point_of_sale' ('pos_self_order')
+pos_self_order / pos.config               / has_paper (boolean)           : NEW hasdefault: default
+pos_self_order / pos.config               / self_ordering_alternative_fp_id (many2one): DEL relation: account.fiscal.position
+pos_self_order / pos.order                / take_away (boolean)           : DEL
+pos_self_order / pos.order.line           / combo_id (many2one)           : relation is now 'product.combo' ('pos.combo') [nothing to do]
+pos_self_order / product.template         / description_self_order (html) : DEL
+---XML records in module 'pos_self_order'---
+NEW ir.ui.view: pos_self_order.pos_self_order_product_pos_category_form_view
+DEL ir.ui.view: pos_self_order.pos_self_order_kiosk_read_only_form_dialog
+DEL pos_self_order.custom_link: pos_self_order.default_custom_link (noupdate)

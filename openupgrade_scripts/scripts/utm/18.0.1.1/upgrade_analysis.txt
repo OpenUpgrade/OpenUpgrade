@@ -1,0 +1,6 @@
+---Models in module 'utm'---
+---Fields in module 'utm'---
+---XML records in module 'utm'---
+DEL ir.model.access: utm.access_utm_campaign
+DEL ir.model.access: utm.access_utm_medium
+DEL ir.model.access: utm.access_utm_source

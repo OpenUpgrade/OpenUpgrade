@@ -1,0 +1,120 @@
+---Models in module 'point_of_sale'---
+obsolete model pos.combo
+obsolete model pos.combo.line
+new model pos.bus.mixin [abstract]
+new model pos.load.mixin [abstract]
+new model pos.note
+---Fields in module 'point_of_sale'---
+point_of_sale / account.move             / pos_session_ids (one2many)    : NEW relation: pos.session
+point_of_sale / account.move             / reversed_pos_order_id (many2one): NEW relation: pos.order
+point_of_sale / pos.bill                 / for_all_config (boolean)      : NEW hasdefault: default
+point_of_sale / pos.category             / child_id (one2many)           : DEL relation: pos.category
+point_of_sale / pos.category             / child_ids (one2many)          : NEW relation: pos.category
+point_of_sale / pos.category             / color (integer)               : NEW hasdefault: default
+point_of_sale / pos.combo                / combo_line_ids (one2many)     : DEL relation: pos.combo.line
+point_of_sale / pos.combo                / name (char)                   : DEL required
+point_of_sale / pos.combo                / sequence (integer)            : DEL
+point_of_sale / pos.combo.line           / combo_id (many2one)           : DEL relation: pos.combo
+point_of_sale / pos.combo.line           / combo_price (float)           : DEL
+point_of_sale / pos.combo.line           / product_id (many2one)         : DEL relation: product.product, required
+point_of_sale / pos.config               / access_token (char)           : previously in module pos_self_order
+point_of_sale / pos.config               / basic_receipt (boolean)       : NEW
+point_of_sale / pos.config               / customer_display_bg_img (binary): NEW attachment: True
+point_of_sale / pos.config               / customer_display_bg_img_name (char): NEW
+point_of_sale / pos.config               / customer_display_type (selection): NEW selection_keys: function, hasdefault: default
+point_of_sale / pos.config               / iface_customer_facing_display_background_image_1920 (binary): DEL attachment: True
+point_of_sale / pos.config               / iface_customer_facing_display_local (boolean): DEL
+point_of_sale / pos.config               / iface_customer_facing_display_via_proxy (boolean): DEL
+point_of_sale / pos.config               / iface_start_categ_id (many2one): DEL relation: pos.category
+point_of_sale / pos.config               / is_closing_entry_by_product (boolean): NEW
+point_of_sale / pos.config               / module_pos_avatax (boolean)   : NEW
+point_of_sale / pos.config               / module_pos_mercury (boolean)  : DEL
+point_of_sale / pos.config               / module_pos_sms (boolean)      : NEW
+point_of_sale / pos.config               / note_ids (many2many)          : NEW relation: pos.note
+point_of_sale / pos.config               / order_edit_tracking (boolean) : NEW hasdefault: default
+point_of_sale / pos.config               / orderlines_sequence_in_cart_by_category (boolean): NEW hasdefault: default
+point_of_sale / pos.config               / show_category_images (boolean): NEW hasdefault: default
+point_of_sale / pos.config               / show_product_images (boolean) : NEW hasdefault: default
+point_of_sale / pos.config               / start_category (boolean)      : DEL
+point_of_sale / pos.note                 / name (char)                   : NEW required
+point_of_sale / pos.note                 / sequence (integer)            : NEW hasdefault: default
+point_of_sale / pos.order                / amount_difference (float)     : NEW
+point_of_sale / pos.order                / email (char)                  : NEW hasdefault: compute
+point_of_sale / pos.order                / floating_order_name (char)    : NEW
+point_of_sale / pos.order                / general_note (text)           : NEW
+point_of_sale / pos.order                / has_deleted_line (boolean)    : NEW
+point_of_sale / pos.order                / message_follower_ids (one2many): NEW relation: mail.followers
+point_of_sale / pos.order                / message_ids (one2many)        : NEW relation: mail.message
+point_of_sale / pos.order                / mobile (char)                 : NEW hasdefault: compute
+point_of_sale / pos.order                / note (text)                   : DEL
+point_of_sale / pos.order                / rating_ids (one2many)         : NEW relation: rating.rating
+point_of_sale / pos.order                / uuid (char)                   : NEW
+point_of_sale / pos.order                / website_message_ids (one2many): NEW relation: mail.message
+point_of_sale / pos.order.line           / combo_item_id (many2one)      : NEW relation: product.combo.item
+point_of_sale / pos.order.line           / is_edited (boolean)           : NEW hasdefault: default
+point_of_sale / pos.order.line           / note (char)                   : previously in module pos_restaurant
+point_of_sale / pos.order.line           / price_type (selection)        : NEW selection_keys: ['automatic', 'manual', 'original'], hasdefault: default
+point_of_sale / pos.payment              / card_brand (char)             : NEW
+point_of_sale / pos.payment              / card_no (char)                : NEW
+point_of_sale / pos.payment              / payment_method_authcode (char): NEW
+point_of_sale / pos.payment              / payment_method_issuer_bank (char): NEW
+point_of_sale / pos.payment              / payment_method_payment_mode (char): NEW
+point_of_sale / pos.payment              / payment_ref_no (char)         : NEW
+point_of_sale / pos.payment              / uuid (char)                   : NEW
+point_of_sale / pos.payment.method       / payment_method_type (selection): NEW required, selection_keys: function, hasdefault: default
+point_of_sale / pos.payment.method       / qr_code_method (selection)    : NEW selection_keys: function
+point_of_sale / pos.printer              / company_id (many2one)         : NEW relation: res.company, required, hasdefault: default
+point_of_sale / product.product          / combo_ids (many2many)         : module is now 'product' ('point_of_sale')
+point_of_sale / product.product          / combo_ids (many2many)         : relation is now 'product.combo' ('pos.combo') [nothing to do]
+point_of_sale / product.template         / combo_ids (many2many)         : column2 is now 'product_combo_id' ('pos_combo_id') [pos_combo_product_template_rel]
+point_of_sale / product.template         / combo_ids (many2many)         : module is now 'product' ('point_of_sale')
+point_of_sale / product.template         / combo_ids (many2many)         : relation is now 'product.combo' ('pos.combo') [nothing to do]
+point_of_sale / product.template         / combo_ids (many2many)         : table is now 'product_combo_product_template_rel' ('pos_combo_product_template_rel')
+point_of_sale / product.template         / detailed_type (False)         : DEL selection_keys: ['combo', 'consu', 'product', 'service'], mode: modify
+point_of_sale / product.template         / public_description (html)     : NEW
+point_of_sale / product.template         / type (False)                  : DEL selection_keys: ['combo', 'consu', 'product', 'service'], mode: modify
+point_of_sale / res.company              / point_of_sale_ticket_portal_url_display_mode (selection): NEW required, selection_keys: ['qr_code', 'qr_code_and_url', 'url'], hasdefault: default
+---XML records in module 'point_of_sale'---
+NEW ir.actions.act_window: point_of_sale.action_pos_note_model
+NEW ir.actions.act_window: point_of_sale.product_product_action_add_pos
+NEW ir.actions.act_window: point_of_sale.product_product_action_edit_pos
+NEW ir.actions.act_window: point_of_sale.res_partner_action_edit_pos
+DEL ir.actions.act_window: point_of_sale.action_pos_combo
+NEW ir.actions.server: point_of_sale.action_send_mail
+NEW ir.actions.server: point_of_sale.pos_order_set_cancel
+NEW ir.model.access: point_of_sale.access_pos_note
+NEW ir.model.access: point_of_sale.access_pos_note_manager
+NEW ir.model.access: point_of_sale.access_product_combo_item_pos_manager
+NEW ir.model.access: point_of_sale.access_product_combo_item_pos_user
+NEW ir.model.access: point_of_sale.access_product_combo_pos_manager
+NEW ir.model.access: point_of_sale.access_product_combo_pos_user
+NEW ir.model.access: point_of_sale.access_update_product_attribute_value_pos_manager
+DEL ir.model.access: point_of_sale.access_pos_combo_line_manager
+DEL ir.model.access: point_of_sale.access_pos_combo_line_user
+DEL ir.model.access: point_of_sale.access_pos_combo_manager
+DEL ir.model.access: point_of_sale.access_pos_combo_user
+NEW ir.model.constraint: point_of_sale.constraint_pos_note_name_unique
+NEW ir.ui.menu: point_of_sale.menu_pos_note_model
+NEW ir.ui.menu: point_of_sale.menu_product_combo
+DEL ir.ui.menu: point_of_sale.menu_pos_combo
+NEW ir.ui.view: point_of_sale.customer_display_index
+NEW ir.ui.view: point_of_sale.pos_daily_sales_html_container
+NEW ir.ui.view: point_of_sale.pos_daily_sales_report_layout
+NEW ir.ui.view: point_of_sale.pos_session_sales_details
+NEW ir.ui.view: point_of_sale.product_combo_view_form
+NEW ir.ui.view: point_of_sale.product_product_view_form_normalized_pos
+NEW ir.ui.view: point_of_sale.view_pos_note_tree
+DEL ir.ui.view: point_of_sale.account_product_template_form_view
+DEL ir.ui.view: point_of_sale.qunit_suite
+DEL ir.ui.view: point_of_sale.view_pos_combo_form
+DEL ir.ui.view: point_of_sale.view_pos_combo_tree
+NEW mail.template: point_of_sale.pos_email_marketing_template (noupdate)
+DEL pos.bill: point_of_sale.0_01 (noupdate)
+DEL pos.bill: point_of_sale.0_02 (noupdate)
+DEL pos.config: point_of_sale.pos_config_main (noupdate)
+NEW pos.note: point_of_sale.pos_note_emergency
+NEW pos.note: point_of_sale.pos_note_no_dressing
+NEW pos.note: point_of_sale.pos_note_serve
+NEW pos.note: point_of_sale.pos_note_wait
+DEL product.product: point_of_sale.product_product_consumable [renamed to pos_discount module] (noupdate)
+NEW web_tour.tour: point_of_sale.point_of_sale_tour

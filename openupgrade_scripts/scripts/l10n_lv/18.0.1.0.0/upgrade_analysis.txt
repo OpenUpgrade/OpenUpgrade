@@ -1,0 +1,6 @@
+---Models in module 'l10n_lv'---
+---Fields in module 'l10n_lv'---
+---XML records in module 'l10n_lv'---
+NEW account.report.expression: l10n_lv.vat_report_line_ec_goods_tag
+NEW account.report.expression: l10n_lv.vat_report_line_ec_services_tag
+NEW account.report.expression: l10n_lv.vat_report_line_ec_triangular_tag

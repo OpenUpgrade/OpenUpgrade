@@ -1,0 +1,28 @@
+---Models in module 'l10n_id_efaktur'---
+new model l10n_id_efaktur.document
+---Fields in module 'l10n_id_efaktur'---
+l10n_id_efaktur / account.move             / l10n_id_attachment_id (many2one): DEL relation: ir.attachment
+l10n_id_efaktur / account.move             / l10n_id_efaktur_document (many2one): NEW relation: l10n_id_efaktur.document
+l10n_id_efaktur / account.move             / l10n_id_efaktur_range (many2one): NEW relation: l10n_id_efaktur.efaktur.range
+l10n_id_efaktur / l10n_id_efaktur.document / active (boolean)              : NEW hasdefault: default
+l10n_id_efaktur / l10n_id_efaktur.document / activity_ids (one2many)       : NEW relation: mail.activity
+l10n_id_efaktur / l10n_id_efaktur.document / attachment_id (many2one)      : NEW relation: ir.attachment
+l10n_id_efaktur / l10n_id_efaktur.document / company_id (many2one)         : NEW relation: res.company, required
+l10n_id_efaktur / l10n_id_efaktur.document / invoice_ids (one2many)        : NEW relation: account.move
+l10n_id_efaktur / l10n_id_efaktur.document / message_follower_ids (one2many): NEW relation: mail.followers
+l10n_id_efaktur / l10n_id_efaktur.document / message_ids (one2many)        : NEW relation: mail.message
+l10n_id_efaktur / l10n_id_efaktur.document / name (char)                   : NEW required, hasdefault: compute
+l10n_id_efaktur / l10n_id_efaktur.document / rating_ids (one2many)         : NEW relation: rating.rating
+l10n_id_efaktur / l10n_id_efaktur.document / website_message_ids (one2many): NEW relation: mail.message
+l10n_id_efaktur / l10n_id_efaktur.efaktur.range / available (integer)           : not a function anymore
+l10n_id_efaktur / l10n_id_efaktur.efaktur.range / max (char)                    : now required
+l10n_id_efaktur / l10n_id_efaktur.efaktur.range / min (char)                    : now required
+l10n_id_efaktur / res.partner              / l10n_id_tax_address (char)    : DEL
+l10n_id_efaktur / res.partner              / l10n_id_tax_name (char)       : DEL
+---XML records in module 'l10n_id_efaktur'---
+NEW ir.model.access: l10n_id_efaktur.access_efaktur_document_user
+NEW ir.rule: l10n_id_efaktur.efaktur_document_multi_company (noupdate)
+DEL ir.ui.menu: l10n_id_efaktur.menu_efaktur_action
+NEW ir.ui.view: l10n_id_efaktur.l10n_id_efaktur_document_filter_view
+NEW ir.ui.view: l10n_id_efaktur.l10n_id_efaktur_document_form_view
+NEW ir.ui.view: l10n_id_efaktur.l10n_id_efaktur_document_list_view

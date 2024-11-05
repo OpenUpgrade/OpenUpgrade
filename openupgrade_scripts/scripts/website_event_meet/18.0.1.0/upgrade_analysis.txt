@@ -1,0 +1,4 @@
+---Models in module 'website_event_meet'---
+---Fields in module 'website_event_meet'---
+---XML records in module 'website_event_meet'---
+---nothing has changed in this module--

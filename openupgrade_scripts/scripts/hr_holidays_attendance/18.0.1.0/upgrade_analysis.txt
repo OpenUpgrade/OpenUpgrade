@@ -1,0 +1,4 @@
+---Models in module 'hr_holidays_attendance'---
+---Fields in module 'hr_holidays_attendance'---
+---XML records in module 'hr_holidays_attendance'---
+---nothing has changed in this module--

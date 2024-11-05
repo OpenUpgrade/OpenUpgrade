@@ -1,0 +1,5 @@
+---Models in module 'purchase_repair'---
+---Fields in module 'purchase_repair'---
+---XML records in module 'purchase_repair'---
+NEW ir.ui.view: purchase_repair.purchase_order_form_inherit
+NEW ir.ui.view: purchase_repair.view_repair_order_form_inherit

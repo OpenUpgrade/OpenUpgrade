@@ -1,0 +1,4 @@
+---Models in module 'l10n_be'---
+---Fields in module 'l10n_be'---
+l10n_be      / account.tax              / tax_scope (False)             : NEW selection_keys: ['consu', 'invest', 'merch', 'service'], mode: modify
+---XML records in module 'l10n_be'---

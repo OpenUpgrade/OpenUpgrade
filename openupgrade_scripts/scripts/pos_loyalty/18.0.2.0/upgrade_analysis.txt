@@ -1,0 +1,6 @@
+---Models in module 'pos_loyalty'---
+---Fields in module 'pos_loyalty'---
+pos_loyalty  / pos.config               / gift_card_settings (selection): DEL selection_keys: ['create_set', 'scan_use']
+---XML records in module 'pos_loyalty'---
+NEW ir.model.access: pos_loyalty.access_loyalty_card_update_balance_pos_user
+NEW ir.model.access: pos_loyalty.access_loyalty_history_pos_user

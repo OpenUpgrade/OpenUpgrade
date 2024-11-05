@@ -1,0 +1,4 @@
+---Models in module 'l10n_lt'---
+---Fields in module 'l10n_lt'---
+---XML records in module 'l10n_lt'---
+NEW account.account.tag: l10n_lt.account_account_tag_d_6 (noupdate)

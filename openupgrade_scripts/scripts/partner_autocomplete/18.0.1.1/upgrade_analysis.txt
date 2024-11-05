@@ -1,0 +1,4 @@
+---Models in module 'partner_autocomplete'---
+---Fields in module 'partner_autocomplete'---
+---XML records in module 'partner_autocomplete'---
+NEW iap.service: partner_autocomplete.iap_service_partner_autocomplete

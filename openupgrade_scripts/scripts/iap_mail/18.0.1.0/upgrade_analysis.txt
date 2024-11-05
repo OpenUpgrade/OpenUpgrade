@@ -1,0 +1,6 @@
+---Models in module 'iap_mail'---
+---Fields in module 'iap_mail'---
+iap_mail     / iap.account              / message_follower_ids (one2many): NEW relation: mail.followers
+iap_mail     / iap.account              / message_ids (one2many)        : NEW relation: mail.message
+---XML records in module 'iap_mail'---
+NEW ir.ui.view: iap_mail.iap_account_view_form

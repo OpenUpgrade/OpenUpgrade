@@ -1,0 +1,6 @@
+---Models in module 'payment_xendit'---
+---Fields in module 'payment_xendit'---
+payment_xendit / payment.provider         / code (False)                  : selection_keys is now '['adyen', 'aps', 'asiapay', 'authorize', 'buckaroo', 'custom', 'demo', 'flutterwave', 'mercado_pago', 'mollie', 'none', 'paypal', 'razorpay', 'stripe', 'worldline', 'xendit']' ('['adyen', 'aps', 'asiapay', 'authorize', 'buckaroo', 'custom', 'demo', 'flutterwave', 'mercado_pago', 'mollie', 'none', 'paypal', 'razorpay', 'sips', 'stripe', 'xendit']')
+payment_xendit / payment.provider         / xendit_public_key (char)      : NEW
+---XML records in module 'payment_xendit'---
+NEW ir.ui.view: payment_xendit.inline_form

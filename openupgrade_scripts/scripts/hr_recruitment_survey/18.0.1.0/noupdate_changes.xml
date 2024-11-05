@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="survey_user_input_rule_recruitment_interviewer" model="ir.rule">
+    <field name="domain_force">[
+                '|',
+                    ('applicant_id.interviewer_ids', 'in', user.id),
+                    ('applicant_id.job_id.interviewer_ids', 'in', user.id),
+                ]</field>
+    <field name="name">Survey user input: recruitment interviewer: read survey answers for which they are set as interviewer</field>
+  </record>
+</odoo>

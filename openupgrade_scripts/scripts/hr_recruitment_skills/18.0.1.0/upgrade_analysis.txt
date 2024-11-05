@@ -1,0 +1,30 @@
+---Models in module 'hr_recruitment_skills'---
+obsolete model hr.applicant.skill
+new model hr.candidate.skill
+---Fields in module 'hr_recruitment_skills'---
+hr_recruitment_skills / hr.applicant             / applicant_skill_ids (one2many): DEL relation: hr.applicant.skill
+hr_recruitment_skills / hr.applicant             / skill_ids (many2many)         : not a function anymore
+hr_recruitment_skills / hr.applicant             / skill_ids (many2many)         : not stored anymore
+hr_recruitment_skills / hr.applicant             / skill_ids (many2many)         : now related
+hr_recruitment_skills / hr.applicant             / skill_ids (many2many)         : table is now 'False' ('hr_applicant_hr_skill_rel')
+hr_recruitment_skills / hr.applicant.skill       / applicant_id (many2one)       : DEL relation: hr.applicant, required
+hr_recruitment_skills / hr.applicant.skill       / skill_id (many2one)           : DEL relation: hr.skill, required
+hr_recruitment_skills / hr.applicant.skill       / skill_level_id (many2one)     : DEL relation: hr.skill.level, required
+hr_recruitment_skills / hr.applicant.skill       / skill_type_id (many2one)      : DEL relation: hr.skill.type, required
+hr_recruitment_skills / hr.candidate             / candidate_skill_ids (one2many): NEW relation: hr.candidate.skill
+hr_recruitment_skills / hr.candidate             / skill_ids (many2many)         : NEW relation: hr.skill, isfunction: function, stored
+hr_recruitment_skills / hr.candidate.skill       / candidate_id (many2one)       : NEW relation: hr.candidate, required
+hr_recruitment_skills / hr.candidate.skill       / skill_id (many2one)           : NEW relation: hr.skill, required, hasdefault: compute
+hr_recruitment_skills / hr.candidate.skill       / skill_level_id (many2one)     : NEW relation: hr.skill.level, required, hasdefault: compute
+hr_recruitment_skills / hr.candidate.skill       / skill_type_id (many2one)      : NEW relation: hr.skill.type, required
+hr_recruitment_skills / hr.job                   / skill_ids (many2many)         : NEW relation: hr.skill
+---XML records in module 'hr_recruitment_skills'---
+NEW ir.actions.server: hr_recruitment_skills.action_applicant_search_applicant
+NEW ir.model.access: hr_recruitment_skills.access_hr_candidate_skill_interviewer
+DEL ir.model.access: hr_recruitment_skills.access_hr_applicant_skill_interviewer
+NEW ir.model.constraint: hr_recruitment_skills.constraint_hr_candidate_skill__unique_skill
+DEL ir.model.constraint: hr_recruitment_skills.constraint_hr_applicant_skill__unique_skill
+NEW ir.ui.view: hr_recruitment_skills.hr_candidate_view_form
+NEW ir.ui.view: hr_recruitment_skills.hr_candidate_view_search
+NEW ir.ui.view: hr_recruitment_skills.hr_candidate_view_tree
+NEW ir.ui.view: hr_recruitment_skills.hr_job_form_inherit_hr_recruitment_skills

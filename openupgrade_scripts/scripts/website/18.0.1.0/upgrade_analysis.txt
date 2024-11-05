@@ -1,0 +1,191 @@
+---Models in module 'website'---
+new model website.custom_blocked_third_party_domains [transient]
+new model website.page.properties [transient]
+new model website.page.properties.base [transient]
+---Fields in module 'website'---
+website      / theme.website.page       / is_new_page_template (boolean): NEW
+website      / website                  / block_third_party_domains (boolean): NEW hasdefault: default
+website      / website                  / custom_blocked_third_party_domains (text): NEW
+website      / website.controller.page  / _order                        : _order is now 'website_id, id DESC' ('website_id')
+website      / website.controller.page  / name (char)                   : is now stored
+website      / website.controller.page  / name (char)                   : not related anymore
+website      / website.controller.page  / name (char)                   : now a function
+website      / website.controller.page  / page_name (char)              : DEL required
+website      / website.controller.page  / page_type (selection)         : DEL selection_keys: ['listing', 'single']
+website      / website.controller.page  / record_view_id (many2one)     : NEW relation: ir.ui.view
+website      / website.menu             / group_ids (many2many)         : NEW relation: res.groups
+website      / website.page             / is_new_page_template (boolean): NEW
+---XML records in module 'website'---
+NEW ir.actions.client: website.open_custom_menu
+NEW ir.asset: website.s_accordion_000_scss
+NEW ir.asset: website.s_blockquote_001_scss
+NEW ir.asset: website.s_carousel_000_scss
+NEW ir.asset: website.s_carousel_001_scss
+NEW ir.asset: website.s_carousel_intro_000_scss
+NEW ir.asset: website.s_embed_code_000_js
+NEW ir.asset: website.s_faq_horizontal_000_js
+NEW ir.asset: website.s_features_000_scss
+NEW ir.asset: website.s_features_grid_001_scss
+NEW ir.asset: website.s_image_gallery_001_xml
+NEW ir.asset: website.s_image_gallery_002_scss
+NEW ir.asset: website.s_mega_menu_big_icons_subtitles_000_scss
+NEW ir.asset: website.s_pricelist_cafe_000_scss
+NEW ir.asset: website.s_process_steps_002_scss
+NEW ir.asset: website.s_progress_bar_001_scss
+NEW ir.asset: website.s_quadrant_000_scss
+NEW ir.asset: website.s_quotes_carousel_002_scss
+NEW ir.asset: website.s_showcase_003_scss
+NEW ir.asset: website.s_tabs_002_scss
+NEW ir.asset: website.s_timeline_001_scss
+NEW ir.asset: website.s_timeline_002_scss
+NEW ir.asset: website.s_timeline_list_000_scss
+NEW ir.attachment: website.s_accordion_image_default_image
+NEW ir.attachment: website.s_adventure_default_image
+NEW ir.attachment: website.s_card_default_image_1
+NEW ir.attachment: website.s_card_offset_default_image
+NEW ir.attachment: website.s_carousel_intro_default_image_1
+NEW ir.attachment: website.s_carousel_intro_default_image_2
+NEW ir.attachment: website.s_carousel_intro_default_image_3
+NEW ir.attachment: website.s_closer_look_default_image
+NEW ir.attachment: website.s_company_team_image_5
+NEW ir.attachment: website.s_company_team_image_6
+NEW ir.attachment: website.s_cta_box_default_image
+NEW ir.attachment: website.s_cta_mockups_default_image
+NEW ir.attachment: website.s_cta_mockups_default_image_1
+NEW ir.attachment: website.s_empowerment_default_image
+NEW ir.attachment: website.s_faq_horizontal_default_image_1
+NEW ir.attachment: website.s_framed_intro_default_image
+NEW ir.attachment: website.s_image_frame_default_image
+NEW ir.attachment: website.s_image_hexagonal_default_image
+NEW ir.attachment: website.s_image_hexagonal_default_image_1
+NEW ir.attachment: website.s_image_punchy_default_image
+NEW ir.attachment: website.s_image_title_default_image
+NEW ir.attachment: website.s_images_constellation_default_image
+NEW ir.attachment: website.s_images_constellation_default_image_1
+NEW ir.attachment: website.s_images_constellation_default_image_2
+NEW ir.attachment: website.s_images_mosaic_default_image_1
+NEW ir.attachment: website.s_images_mosaic_default_image_2
+NEW ir.attachment: website.s_images_mosaic_default_image_3
+NEW ir.attachment: website.s_images_mosaic_default_image_4
+NEW ir.attachment: website.s_images_mosaic_default_image_5
+NEW ir.attachment: website.s_intro_pill_default_image
+NEW ir.attachment: website.s_intro_pill_default_image_2
+NEW ir.attachment: website.s_key_images_default_image_1
+NEW ir.attachment: website.s_key_images_default_image_2
+NEW ir.attachment: website.s_key_images_default_image_3
+NEW ir.attachment: website.s_key_images_default_image_4
+NEW ir.attachment: website.s_kickoff_default_image
+NEW ir.attachment: website.s_mockup_image_default_image
+NEW ir.attachment: website.s_pricelist_boxed_default_background
+NEW ir.attachment: website.s_pricelist_cafe_default_image
+NEW ir.attachment: website.s_quadrant_default_image_1
+NEW ir.attachment: website.s_quadrant_default_image_2
+NEW ir.attachment: website.s_quadrant_default_image_3
+NEW ir.attachment: website.s_quadrant_default_image_4
+NEW ir.attachment: website.s_shape_image_default_image
+NEW ir.attachment: website.s_showcase_default_image
+NEW ir.attachment: website.s_sidegrid_default_image_1
+NEW ir.attachment: website.s_sidegrid_default_image_2
+NEW ir.attachment: website.s_sidegrid_default_image_3
+NEW ir.attachment: website.s_sidegrid_default_image_4
+NEW ir.attachment: website.s_striped_top_default_image
+NEW ir.attachment: website.s_wavy_grid_default_image_1
+NEW ir.attachment: website.s_wavy_grid_default_image_2
+NEW ir.attachment: website.s_wavy_grid_default_image_3
+NEW ir.attachment: website.s_wavy_grid_default_image_4
+NEW ir.model.access: website.access_website_custom_blocked_third_party_domains
+NEW ir.model.access: website.access_website_page_properties_base_designer
+NEW ir.model.access: website.access_website_page_properties_base_employee
+NEW ir.model.access: website.access_website_page_properties_base_portal
+NEW ir.model.access: website.access_website_page_properties_base_public
+NEW ir.model.access: website.access_website_page_properties_designer
+NEW ir.model.access: website.access_website_page_properties_employee
+NEW ir.model.access: website.access_website_page_properties_portal
+NEW ir.model.access: website.access_website_page_properties_public
+NEW ir.model.constraint: website.constraint_website_controller_page_unique_name_slugified
+NEW ir.rule: website.website_menu (noupdate)
+NEW ir.ui.view: website.s_accordion
+NEW ir.ui.view: website.s_accordion_image
+NEW ir.ui.view: website.s_accordion_options
+NEW ir.ui.view: website.s_adventure
+NEW ir.ui.view: website.s_big_number
+NEW ir.ui.view: website.s_card_offset
+NEW ir.ui.view: website.s_card_options
+NEW ir.ui.view: website.s_card_options_apply
+NEW ir.ui.view: website.s_cards_grid
+NEW ir.ui.view: website.s_cards_soft
+NEW ir.ui.view: website.s_carousel_intro
+NEW ir.ui.view: website.s_carousel_intro_options
+NEW ir.ui.view: website.s_closer_look
+NEW ir.ui.view: website.s_company_team_basic
+NEW ir.ui.view: website.s_company_team_detail
+NEW ir.ui.view: website.s_company_team_shapes
+NEW ir.ui.view: website.s_contact_info
+NEW ir.ui.view: website.s_cta_badge
+NEW ir.ui.view: website.s_cta_badge_options
+NEW ir.ui.view: website.s_cta_box
+NEW ir.ui.view: website.s_cta_card
+NEW ir.ui.view: website.s_cta_mockups
+NEW ir.ui.view: website.s_discovery
+NEW ir.ui.view: website.s_empowerment
+NEW ir.ui.view: website.s_faq_horizontal
+NEW ir.ui.view: website.s_faq_horizontal_options
+NEW ir.ui.view: website.s_faq_list
+NEW ir.ui.view: website.s_features_wall
+NEW ir.ui.view: website.s_features_wave
+NEW ir.ui.view: website.s_framed_intro
+NEW ir.ui.view: website.s_freegrid
+NEW ir.ui.view: website.s_image_frame
+NEW ir.ui.view: website.s_image_hexagonal
+NEW ir.ui.view: website.s_image_options
+NEW ir.ui.view: website.s_image_punchy
+NEW ir.ui.view: website.s_image_text_box
+NEW ir.ui.view: website.s_image_text_overlap
+NEW ir.ui.view: website.s_image_title
+NEW ir.ui.view: website.s_images_constellation
+NEW ir.ui.view: website.s_images_mosaic
+NEW ir.ui.view: website.s_intro_pill
+NEW ir.ui.view: website.s_key_benefits
+NEW ir.ui.view: website.s_key_images
+NEW ir.ui.view: website.s_kickoff
+NEW ir.ui.view: website.s_mockup_image
+NEW ir.ui.view: website.s_motto
+NEW ir.ui.view: website.s_numbers_charts
+NEW ir.ui.view: website.s_numbers_grid
+NEW ir.ui.view: website.s_numbers_list
+NEW ir.ui.view: website.s_numbers_showcase
+NEW ir.ui.view: website.s_opening_hours
+NEW ir.ui.view: website.s_pricelist_boxed
+NEW ir.ui.view: website.s_pricelist_boxed_add_product_widget
+NEW ir.ui.view: website.s_pricelist_boxed_item
+NEW ir.ui.view: website.s_pricelist_boxed_options
+NEW ir.ui.view: website.s_pricelist_cafe
+NEW ir.ui.view: website.s_pricelist_cafe_add_product_widget
+NEW ir.ui.view: website.s_pricelist_cafe_item
+NEW ir.ui.view: website.s_pricelist_cafe_options
+NEW ir.ui.view: website.s_quadrant
+NEW ir.ui.view: website.s_quadrant_options
+NEW ir.ui.view: website.s_quotes_carousel_minimal
+NEW ir.ui.view: website.s_references_grid
+NEW ir.ui.view: website.s_references_social
+NEW ir.ui.view: website.s_shape_image
+NEW ir.ui.view: website.s_sidegrid
+NEW ir.ui.view: website.s_snippet_group
+NEW ir.ui.view: website.s_striped
+NEW ir.ui.view: website.s_striped_center_top
+NEW ir.ui.view: website.s_striped_top
+NEW ir.ui.view: website.s_timeline_list
+NEW ir.ui.view: website.s_timeline_list_options
+NEW ir.ui.view: website.s_title_form
+NEW ir.ui.view: website.s_unveil
+NEW ir.ui.view: website.s_wavy_grid
+NEW ir.ui.view: website.snippet_options_carousel
+NEW ir.ui.view: website.snippet_options_carousel_intro
+NEW ir.ui.view: website.template_header_additional_color_primary
+NEW ir.ui.view: website.template_header_additional_color_secondary
+NEW ir.ui.view: website.vertical_alignment_option
+NEW ir.ui.view: website.view_edit_third_party_domains
+NEW ir.ui.view: website.website_controller_pages_kanban_view
+NEW ir.ui.view: website.website_controller_pages_search_view
+NEW ir.ui.view: website.website_page_properties_base_view_form
+DEL ir.ui.view: website.s_faq_collapse_options

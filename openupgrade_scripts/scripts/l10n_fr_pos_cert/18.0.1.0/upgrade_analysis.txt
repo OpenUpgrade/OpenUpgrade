@@ -1,0 +1,5 @@
+---Models in module 'l10n_fr_pos_cert'---
+---Fields in module 'l10n_fr_pos_cert'---
+l10n_fr_pos_cert / pos.order                / pos_version (char)            : NEW
+l10n_fr_pos_cert / pos.order                / previous_order_id (many2one)  : NEW relation: pos.order, isfunction: function, stored
+---XML records in module 'l10n_fr_pos_cert'---

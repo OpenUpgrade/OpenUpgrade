@@ -1,0 +1,13 @@
+---Models in module 'pos_hr'---
+new model report.pos_hr.multi_employee_sales_report [abstract]
+new model report.pos_hr.single_employee_sales_report [abstract]
+---Fields in module 'pos_hr'---
+pos_hr       / account.bank.statement.line / employee_id (many2one)        : NEW relation: hr.employee
+pos_hr       / pos.payment              / employee_id (many2one)        : NEW relation: hr.employee, isrelated: related, stored
+pos_hr       / pos.session              / employee_id (many2one)        : NEW relation: hr.employee
+---XML records in module 'pos_hr'---
+NEW ir.actions.report: pos_hr.multi_employee_sales_report_action
+NEW ir.ui.view: pos_hr.multi_employee_sales_report
+NEW ir.ui.view: pos_hr.single_employee_sales_report
+NEW ir.ui.view: pos_hr.view_pos_daily_sales_reports_wizard
+NEW ir.ui.view: pos_hr.view_pos_payment_tree_inherit

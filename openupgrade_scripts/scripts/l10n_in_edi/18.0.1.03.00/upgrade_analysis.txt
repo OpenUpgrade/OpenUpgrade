@@ -1,0 +1,4 @@
+---Models in module 'l10n_in_edi'---
+---Fields in module 'l10n_in_edi'---
+l10n_in_edi  / res.company              / l10n_in_edi_production_env (boolean): module is now 'l10n_in' ('l10n_in_edi')
+---XML records in module 'l10n_in_edi'---

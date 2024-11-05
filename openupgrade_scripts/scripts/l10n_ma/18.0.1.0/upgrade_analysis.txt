@@ -1,0 +1,34 @@
+---Models in module 'l10n_ma'---
+---Fields in module 'l10n_ma'---
+---XML records in module 'l10n_ma'---
+NEW account.report.expression: l10n_ma.l10n_ma_vat_d_prorata_pro
+DEL account.report.expression: l10n_ma.tax_report_line_140_pro
+DEL account.report.expression: l10n_ma.tax_report_line_141_pro
+DEL account.report.expression: l10n_ma.tax_report_line_142_pro
+DEL account.report.expression: l10n_ma.tax_report_line_143_pro
+DEL account.report.expression: l10n_ma.tax_report_line_144_pro
+DEL account.report.expression: l10n_ma.tax_report_line_145_pro
+DEL account.report.expression: l10n_ma.tax_report_line_146_pro
+DEL account.report.expression: l10n_ma.tax_report_line_147_pro
+DEL account.report.expression: l10n_ma.tax_report_line_148_pro
+DEL account.report.expression: l10n_ma.tax_report_line_149_pro
+DEL account.report.expression: l10n_ma.tax_report_line_150_pro
+DEL account.report.expression: l10n_ma.tax_report_line_151_pro
+DEL account.report.expression: l10n_ma.tax_report_line_152_pro
+DEL account.report.expression: l10n_ma.tax_report_line_153_pro
+DEL account.report.expression: l10n_ma.tax_report_line_155_pro
+DEL account.report.expression: l10n_ma.tax_report_line_156_pro
+DEL account.report.expression: l10n_ma.tax_report_line_158_pro
+DEL account.report.expression: l10n_ma.tax_report_line_160_pro
+DEL account.report.expression: l10n_ma.tax_report_line_162_pro
+DEL account.report.expression: l10n_ma.tax_report_line_163_pro
+DEL account.report.expression: l10n_ma.tax_report_line_164_pro
+DEL account.report.expression: l10n_ma.tax_report_line_165_pro
+DEL account.report.expression: l10n_ma.tax_report_line_166_pro
+DEL account.report.expression: l10n_ma.tax_report_line_167_pro
+DEL account.report.expression: l10n_ma.tax_report_line_168_pro
+DEL account.report.expression: l10n_ma.tax_report_line_169_pro
+NEW account.report.line: l10n_ma.l10n_ma_vat_d_prorata
+NEW ir.ui.view: l10n_ma.report_invoice_document
+NEW ir.ui.view: l10n_ma.view_company_form
+NEW ir.ui.view: l10n_ma.view_partner_property_form

@@ -1,0 +1,5 @@
+---Models in module 'l10n_in_withholding_payment'---
+---Fields in module 'l10n_in_withholding_payment'---
+l10n_in_withholding_payment / account.move             / l10n_in_withholding_ref_payment_id (many2one): NEW relation: account.payment
+l10n_in_withholding_payment / account.payment          / l10n_in_withhold_move_ids (False): NEW mode: modify
+---XML records in module 'l10n_in_withholding_payment'---

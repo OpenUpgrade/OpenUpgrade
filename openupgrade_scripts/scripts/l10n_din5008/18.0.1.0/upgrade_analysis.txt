@@ -1,0 +1,5 @@
+---Models in module 'l10n_din5008'---
+---Fields in module 'l10n_din5008'---
+---XML records in module 'l10n_din5008'---
+NEW ir.ui.view: l10n_din5008.report_invoice_document
+NEW ir.ui.view: l10n_din5008.report_invoice_wizard_preview

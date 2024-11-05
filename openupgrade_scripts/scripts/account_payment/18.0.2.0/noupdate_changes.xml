@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="onboarding_onboarding_step_payment_provider" model="onboarding.onboarding.step">
+    <field name="onboarding_ids"/>
+  </record>
+</odoo>

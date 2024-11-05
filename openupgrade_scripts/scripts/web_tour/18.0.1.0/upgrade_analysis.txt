@@ -1,0 +1,34 @@
+---Models in module 'web_tour'---
+new model web_tour.tour.step
+---Fields in module 'web_tour'---
+web_tour     / res.users                / tour_enabled (boolean)        : NEW hasdefault: compute
+web_tour     / web_tour.tour            / _order                        : _order is now 'sequence, name, id' ('id')
+web_tour     / web_tour.tour            / custom (boolean)              : NEW
+web_tour     / web_tour.tour            / rainbow_man_message (html)    : NEW hasdefault: default
+web_tour     / web_tour.tour            / sequence (integer)            : NEW hasdefault: default
+web_tour     / web_tour.tour            / step_ids (one2many)           : NEW relation: web_tour.tour.step
+web_tour     / web_tour.tour            / url (char)                    : NEW hasdefault: default
+web_tour     / web_tour.tour            / user_consumed_ids (many2many) : NEW relation: res.users
+web_tour     / web_tour.tour            / user_id (many2one)            : DEL relation: res.users
+web_tour     / web_tour.tour.step       / content (char)                : NEW
+web_tour     / web_tour.tour.step       / run (char)                    : NEW
+web_tour     / web_tour.tour.step       / sequence (integer)            : NEW
+web_tour     / web_tour.tour.step       / tour_id (many2one)            : NEW relation: web_tour.tour, required
+web_tour     / web_tour.tour.step       / trigger (char)                : NEW required
+---XML records in module 'web_tour'---
+NEW ir.actions.act_window: web_tour.tour_action
+DEL ir.actions.act_window: web_tour.edit_tour_action
+NEW ir.actions.server: web_tour.tour_export_js_action
+NEW ir.model.access: web_tour.access_web_tour_tour_readonly
+NEW ir.model.access: web_tour.access_web_tour_tour_step_admin
+NEW ir.model.access: web_tour.access_web_tour_tour_step_readonly
+DEL ir.model.access: web_tour.access_web_tour_tour
+NEW ir.model.constraint: web_tour.constraint_web_tour_tour_uniq_name
+DEL ir.rule: web_tour.own_tours
+NEW ir.ui.view: web_tour.res_users_view_form
+NEW ir.ui.view: web_tour.tour_form
+NEW ir.ui.view: web_tour.tour_list
+NEW ir.ui.view: web_tour.tour_search
+DEL ir.ui.view: web_tour.edit_tour_form
+DEL ir.ui.view: web_tour.edit_tour_list
+DEL ir.ui.view: web_tour.edit_tour_search

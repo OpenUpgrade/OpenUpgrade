@@ -1,0 +1,12 @@
+---Models in module 'payment_paypal'---
+---Fields in module 'payment_paypal'---
+payment_paypal / payment.provider         / paypal_access_token (char)    : NEW
+payment_paypal / payment.provider         / paypal_access_token_expiry (datetime): NEW hasdefault: default
+payment_paypal / payment.provider         / paypal_client_id (char)       : NEW
+payment_paypal / payment.provider         / paypal_client_secret (char)   : NEW
+payment_paypal / payment.provider         / paypal_pdt_token (char)       : DEL
+payment_paypal / payment.provider         / paypal_webhook_id (char)      : NEW
+---XML records in module 'payment_paypal'---
+NEW ir.ui.view: payment_paypal.method_form
+NEW ir.ui.view: payment_paypal.payment_submit_button_inherit
+DEL ir.ui.view: payment_paypal.redirect_form

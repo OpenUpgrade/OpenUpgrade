@@ -1,0 +1,5 @@
+---Models in module 'cloud_storage'---
+---Fields in module 'cloud_storage'---
+cloud_storage / ir.attachment            / type (False)                  : NEW selection_keys: ['binary', 'cloud_storage', 'url'], mode: modify
+---XML records in module 'cloud_storage'---
+NEW ir.ui.view: cloud_storage.cloud_storage_config_settings_view_form

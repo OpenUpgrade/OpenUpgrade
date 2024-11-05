@@ -1,0 +1,113 @@
+---Models in module 'mail'---
+obsolete model mail.notification.web.push
+obsolete model mail.partner.device
+obsolete model mail.shortcode
+new model mail.canned.response
+new model mail.push
+new model mail.push.device
+new model mail.scheduled.message
+---Fields in module 'mail'---
+mail         / discuss.channel          / from_message_id (many2one)    : NEW relation: mail.message
+mail         / discuss.channel          / last_interest_dt (datetime)   : NEW
+mail         / discuss.channel          / parent_channel_id (many2one)  : NEW relation: discuss.channel
+mail         / discuss.channel          / sub_channel_ids (one2many)    : NEW relation: discuss.channel
+mail         / discuss.channel.member   / custom_notifications (selection): selection_keys is now '['all', 'mentions', 'no_notif']' ('['mentions', 'no_notif']')
+mail         / discuss.channel.member   / is_minimized (boolean)        : DEL
+mail         / discuss.channel.member   / is_pinned (boolean)           : not stored anymore
+mail         / discuss.channel.member   / is_pinned (boolean)           : now a function
+mail         / discuss.channel.member   / new_message_separator (integer): NEW required, hasdefault: default
+mail         / discuss.channel.member   / unpin_dt (datetime)           : NEW
+mail         / ir.actions.act_window.view / view_mode (False)             : selection_keys is now '['activity', 'calendar', 'form', 'graph', 'hierarchy', 'kanban', 'list', 'pivot']' ('['activity', 'calendar', 'form', 'gantt', 'graph', 'hierarchy', 'kanban', 'pivot', 'tree']')
+mail         / ir.ui.view               / type (False)                  : selection_keys is now '['activity', 'calendar', 'form', 'graph', 'hierarchy', 'kanban', 'list', 'pivot', 'qweb', 'search']' ('['activity', 'calendar', 'form', 'gantt', 'graph', 'hierarchy', 'kanban', 'pivot', 'qweb', 'search', 'tree']')
+mail         / mail.activity            / user_tz (selection)           : NEW selection_keys: function, isrelated: related, stored
+mail         / mail.activity.plan.template / delay_count (integer)         : NEW hasdefault: default
+mail         / mail.activity.plan.template / delay_from (selection)        : NEW required, selection_keys: ['after_plan_date', 'before_plan_date'], hasdefault: default
+mail         / mail.activity.plan.template / delay_unit (selection)        : NEW required, selection_keys: ['days', 'months', 'weeks'], hasdefault: default
+mail         / mail.canned.response     / description (char)            : NEW
+mail         / mail.canned.response     / group_ids (many2many)         : NEW relation: res.groups
+mail         / mail.canned.response     / is_shared (boolean)           : NEW isfunction: function, stored
+mail         / mail.canned.response     / last_used (datetime)          : NEW
+mail         / mail.canned.response     / source (char)                 : NEW required
+mail         / mail.canned.response     / substitution (text)           : NEW required
+mail         / mail.link.preview        / is_hidden (boolean)           : NEW
+mail         / mail.notification.web.push / payload (text)                : DEL
+mail         / mail.notification.web.push / user_device (many2one)        : DEL relation: mail.partner.device, required
+mail         / mail.partner.device      / endpoint (char)               : DEL required
+mail         / mail.partner.device      / expiration_time (datetime)    : DEL
+mail         / mail.partner.device      / keys (char)                   : DEL required
+mail         / mail.partner.device      / partner_id (many2one)         : DEL relation: res.partner, required
+mail         / mail.push                / mail_push_device_id (many2one): NEW relation: mail.push.device, required
+mail         / mail.push                / payload (text)                : NEW
+mail         / mail.push.device         / endpoint (char)               : NEW required
+mail         / mail.push.device         / expiration_time (datetime)    : NEW
+mail         / mail.push.device         / keys (char)                   : NEW required
+mail         / mail.push.device         / partner_id (many2one)         : NEW relation: res.partner, required, hasdefault: default
+mail         / mail.scheduled.message   / attachment_ids (many2many)    : NEW relation: ir.attachment
+mail         / mail.scheduled.message   / author_id (many2one)          : NEW relation: res.partner, required
+mail         / mail.scheduled.message   / body (html)                   : NEW
+mail         / mail.scheduled.message   / is_note (boolean)             : NEW hasdefault: default
+mail         / mail.scheduled.message   / model (char)                  : NEW required
+mail         / mail.scheduled.message   / notification_parameters (text): NEW
+mail         / mail.scheduled.message   / partner_ids (many2many)       : NEW relation: res.partner
+mail         / mail.scheduled.message   / res_id (many2one_reference)   : NEW relation: model, required
+mail         / mail.scheduled.message   / scheduled_date (datetime)     : NEW required
+mail         / mail.scheduled.message   / subject (char)                : NEW
+mail         / mail.shortcode           / description (char)            : DEL
+mail         / mail.shortcode           / last_used (datetime)          : DEL
+mail         / mail.shortcode           / source (char)                 : DEL required
+mail         / mail.shortcode           / substitution (text)           : DEL required
+mail         / res.users.settings       / channel_notifications (selection): NEW selection_keys: ['all', 'no_notif']
+mail         / res.users.settings       / mute_until_dt (datetime)      : NEW
+---XML records in module 'mail'---
+NEW discuss.channel: mail.channel_admin (noupdate)
+NEW ir.actions.act_window: mail.mail_activity_action_my
+NEW ir.actions.act_window: mail.mail_canned_response_action
+DEL ir.actions.act_window: mail.mail_shortcode_action
+NEW ir.actions.act_window.view: mail.mail_activity_action_my_view_kanban
+NEW ir.actions.act_window.view: mail.mail_activity_action_my_view_tree
+NEW ir.actions.client: mail.discuss_call_settings_action
+NEW ir.actions.client: mail.discuss_notification_settings_action
+NEW ir.config_parameter: mail.restrict_template_rendering (noupdate)
+NEW ir.cron: mail.ir_cron_discuss_users_settings_unmute (noupdate)
+NEW ir.cron: mail.ir_cron_post_scheduled_message (noupdate)
+NEW ir.model.access: mail.access_mail_canned_reponse
+NEW ir.model.access: mail.access_mail_push_device_system
+NEW ir.model.access: mail.access_mail_push_system
+NEW ir.model.access: mail.access_mail_scheduled_message
+DEL ir.model.access: mail.access_mail_compose_message_portal
+DEL ir.model.access: mail.access_mail_notification_web_push
+DEL ir.model.access: mail.access_mail_partner_device
+DEL ir.model.access: mail.access_mail_shortcode
+DEL ir.model.access: mail.access_mail_shortcode_portal
+NEW ir.model.constraint: mail.constraint_discuss_channel_from_message_id_unique
+NEW ir.model.constraint: mail.constraint_discuss_channel_sub_channel_no_group_public_id
+NEW ir.model.constraint: mail.constraint_mail_push_device_endpoint_unique
+DEL ir.model.constraint: mail.constraint_mail_partner_device_endpoint_unique
+NEW ir.module.category: mail.module_category_canned_response (noupdate)
+NEW ir.rule: mail.ir_rule_mail_canned_response_admin (noupdate)
+NEW ir.rule: mail.ir_rule_mail_canned_response_user_read (noupdate)
+NEW ir.rule: mail.ir_rule_mail_canned_response_user_update (noupdate)
+NEW ir.rule: mail.ir_rule_mail_scheduled_message_user (noupdate)
+NEW ir.ui.menu: mail.menu_call_settings
+NEW ir.ui.menu: mail.menu_canned_responses
+NEW ir.ui.menu: mail.menu_configuration
+NEW ir.ui.menu: mail.menu_mail_activities_section
+NEW ir.ui.menu: mail.menu_notification_settings
+NEW ir.ui.view: mail.mail_activity_plan_view_kanban
+NEW ir.ui.view: mail.mail_activity_plan_view_tree_detailed
+NEW ir.ui.view: mail.mail_activity_type_view_kanban
+NEW ir.ui.view: mail.mail_activity_view_kanban_open_target
+NEW ir.ui.view: mail.mail_activity_view_tree_open_target
+NEW ir.ui.view: mail.mail_attachment_links
+NEW ir.ui.view: mail.mail_canned_response_view_form
+NEW ir.ui.view: mail.mail_canned_response_view_search
+NEW ir.ui.view: mail.mail_canned_response_view_tree
+NEW ir.ui.view: mail.mail_message_subtype_view_search
+NEW ir.ui.view: mail.mail_notification_invite
+NEW ir.ui.view: mail.mail_scheduled_message_view_form
+DEL ir.ui.view: mail.mail_shortcode_view_form
+DEL ir.ui.view: mail.mail_shortcode_view_search
+DEL ir.ui.view: mail.mail_shortcode_view_tree
+NEW mail.canned.response: mail.mail_canned_response_data_hello (noupdate)
+NEW res.groups: mail.group_mail_canned_response_admin (noupdate)
+NEW web_tour.tour: mail.discuss_channel_tour

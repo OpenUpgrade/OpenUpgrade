@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="contract_type_part_time" model="hr.contract.type">
+    <field name="name">Intern</field>
+    <field name="sequence">6</field>
+  </record>
+  <record id="hr_employee_comp_rule" model="ir.rule">
+    <field name="domain_force">['|', '|', '|',
+            ('company_id', 'in', company_ids + [False]),
+            ('parent_id.user_id', '=', user.id),
+            ('id', '=', user.employee_id.parent_id.id),
+            ('user_id', '=', user.id)
+        ]</field>
+  </record>
+  <record id="hr_employee_public_comp_rule" model="ir.rule">
+    <field name="domain_force">['|', '|', '|',
+            ('company_id', 'in', company_ids + [False]),
+            ('parent_id.user_id', '=', user.id),
+            ('id', '=', user.employee_id.parent_id.id),
+            ('user_id', '=', user.id)
+        ]</field>
+  </record>
+  <record id="offboarding_plan" model="mail.activity.plan">
+    <field name="company_id" eval="False"/>
+  </record>
+  <record id="onboarding_plan" model="mail.activity.plan">
+    <field name="company_id" eval="False"/>
+  </record>
+</odoo>

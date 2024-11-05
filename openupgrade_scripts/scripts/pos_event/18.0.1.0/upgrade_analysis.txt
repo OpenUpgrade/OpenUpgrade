@@ -1,0 +1,13 @@
+---Models in module 'pos_event'---
+---Fields in module 'pos_event'---
+pos_event    / event.event              / image_1024 (binary)           : NEW attachment: True
+pos_event    / event.registration       / pos_order_line_id (many2one)  : NEW relation: pos.order.line
+pos_event    / pos.order.line           / event_registration_ids (one2many): NEW relation: event.registration
+pos_event    / pos.order.line           / event_ticket_id (many2one)    : NEW relation: event.event.ticket
+---XML records in module 'pos_event'---
+NEW ir.model.access: pos_event.access_event_event
+NEW ir.model.access: pos_event.access_event_event_ticket
+NEW ir.model.access: pos_event.access_event_registration
+NEW ir.ui.view: pos_event.event_event_view_form_inherit_pos_event
+NEW ir.ui.view: pos_event.pos_order_form_view_inherit
+NEW pos.category: pos_event.pos_category_event (noupdate)

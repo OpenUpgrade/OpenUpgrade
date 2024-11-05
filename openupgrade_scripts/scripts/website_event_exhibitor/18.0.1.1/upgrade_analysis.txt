@@ -1,0 +1,6 @@
+---Models in module 'website_event_exhibitor'---
+---Fields in module 'website_event_exhibitor'---
+---XML records in module 'website_event_exhibitor'---
+DEL ir.ui.view: website_event_exhibitor.event_report_template_full_page_ticket_inherit_exhibitor
+DEL ir.ui.view: website_event_exhibitor.exhibitor_search_box
+DEL ir.ui.view: website_event_exhibitor.exhibitors_search_tag

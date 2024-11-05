@@ -1,0 +1,11 @@
+---Models in module 'l10n_ph'---
+---Fields in module 'l10n_ph'---
+---XML records in module 'l10n_ph'---
+NEW account.account.tag: l10n_ph.tax_tag_purchase_withholding_base_negative
+NEW account.account.tag: l10n_ph.tax_tag_purchase_withholding_base_positive
+NEW account.account.tag: l10n_ph.tax_tag_purchase_withholding_tax_negative
+NEW account.account.tag: l10n_ph.tax_tag_purchase_withholding_tax_positive
+NEW account.account.tag: l10n_ph.tax_tag_sale_withholding_base_negative
+NEW account.account.tag: l10n_ph.tax_tag_sale_withholding_base_positive
+NEW account.account.tag: l10n_ph.tax_tag_sale_withholding_tax_negative
+NEW account.account.tag: l10n_ph.tax_tag_sale_withholding_tax_positive

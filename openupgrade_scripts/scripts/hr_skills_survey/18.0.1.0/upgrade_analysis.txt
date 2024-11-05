@@ -1,0 +1,5 @@
+---Models in module 'hr_skills_survey'---
+---Fields in module 'hr_skills_survey'---
+hr_skills_survey / survey.survey            / certification_validity_months (integer): NEW
+---XML records in module 'hr_skills_survey'---
+NEW ir.ui.view: hr_skills_survey.survey_survey_view_form

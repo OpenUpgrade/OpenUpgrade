@@ -1,0 +1,6 @@
+---Models in module 'l10n_ch'---
+---Fields in module 'l10n_ch'---
+---XML records in module 'l10n_ch'---
+DEL ir.actions.report: l10n_ch.l10n_ch_qr_header
+DEL ir.ui.view: l10n_ch.l10n_ch_header_template
+DEL ir.ui.view: l10n_ch.qr_report_header

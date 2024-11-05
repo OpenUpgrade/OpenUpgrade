@@ -1,0 +1,5 @@
+---Models in module 'pos_sale'---
+---Fields in module 'pos_sale'---
+pos_sale     / pos.order.line           / qty_delivered (float)         : NEW hasdefault: compute
+---XML records in module 'pos_sale'---
+NEW ir.ui.view: pos_sale.product_template_form_view
