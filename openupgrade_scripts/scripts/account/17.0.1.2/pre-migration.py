@@ -13,10 +13,6 @@ _fields_renames = [
     ),
 ]
 
-_columns_copies = {
-    "account_tax": [("description", "invoice_label", "JSONB")],
-}
-
 COA_MAPPING = {
     "l10n_ae.uae_chart_template_standard": "ae",
     "l10n_ar.l10nar_base_chart_template": "ar_base",
@@ -122,10 +118,7 @@ _l10n_generic_coa_tax_xmlid = [
 
 def _map_account_report_filter_account_type(env):
     openupgrade.rename_columns(
-        env.cr,
-        {
-            "account_report": [("filter_account_type", None)],
-        },
+        env.cr, {"account_report": [("filter_account_type", None)]}
     )
     openupgrade.logged_query(
         env.cr,
@@ -139,7 +132,7 @@ def _map_account_report_filter_account_type(env):
         f"""
         UPDATE account_report
         SET filter_account_type = CASE
-            WHEN {openupgrade.get_legacy_name('filter_account_type')} = TRUE THEN 'both'
+            WHEN {openupgrade.get_legacy_name('filter_account_type')} THEN 'both'
             ELSE 'disabled'
             END
         """,
@@ -199,6 +192,17 @@ def _generic_coa_rename_xml_id(env):
     openupgrade.rename_xmlids(env.cr, xmlids_renames)
 
 
+def _convert_account_tax_description(env):
+    openupgrade.rename_columns(env.cr, {"account_tax": [("description", None)]})
+    openupgrade.logged_query(env.cr, "ALTER TABLE account_tax ADD description JSONB")
+    openupgrade.logged_query(
+        env.cr,
+        f"""UPDATE account_tax
+        SET description = {'en_US': {openupgrade.get_legacy_name('description')}}
+        """,
+    )
+
+
 def _am_create_delivery_date_column(env):
     """
     Create column then in module need them like l10n_de and sale_stock will fill value,
@@ -227,26 +231,6 @@ def _am_create_incoterm_location_column(env):
     )
 
 
-def _aml_update_invoice_date_like_amount_move(env):
-    openupgrade.logged_query(
-        env.cr,
-        """
-        ALTER TABLE account_move_line
-        ADD COLUMN IF NOT EXISTS invoice_date DATE
-        """,
-    )
-    openupgrade.logged_query(
-        env.cr,
-        """
-        UPDATE account_move_line aml
-        SET invoice_date = am.invoice_date
-        FROM account_move am
-        WHERE aml.move_id = am.id
-        AND am.invoice_date IS NOT NULL
-        """,
-    )
-
-
 def _am_uniquify_name(env):
     """
     Make move names unique per journal to satisfy the constraint v17 creates
@@ -265,21 +249,29 @@ def _am_uniquify_name(env):
 
 
 def _account_report_update_figure_type(env):
-    openupgrade.logged_query(
+    openupgrade.copy_columns(
         env.cr,
-        """
-        UPDATE account_report_column
-        SET figure_type = 'string'
-        WHERE figure_type = 'none'
-        """,
+        {
+            "account_report_column": [("figure_type", None, None)],
+            "account_report_expression": [("figure_type", None, None)],
+        },
     )
-    openupgrade.logged_query(
+    old_column = openupgrade.get_legacy_name("figure_type")
+    openupgrade.map_values(
         env.cr,
-        """
-        UPDATE account_report_expression
-        SET figure_type = 'string'
-        WHERE figure_type = 'none'
-        """,
+        old_column,
+        "figure_type",
+        {"none": "string"},
+        False,
+        "account_report_column",
+    )
+    openupgrade.map_values(
+        env.cr,
+        old_column,
+        "figure_type",
+        {"none": "string"},
+        False,
+        "account_report_expression",
     )
 
 
@@ -319,6 +311,24 @@ def _res_partner_bank_create_column(env):
     )
 
 
+def _pre_create_early_pay_discount_computation(env):
+    """Avoid triggering the computed method and fill the corresponding value from
+    companies.
+    """
+    openupgrade.logged_query(
+        env.cr, "ALTER TABLE res_company ADD early_pay_discount_computation VARCHAR"
+    )
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE account_payment_term apt
+        SET early_pay_discount_computation = com.early_pay_discount_computation
+        FROM res_company rc
+        WHERE apt.company_id = rc.id
+        """,
+    )
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     _map_account_report_filter_account_type(env)
@@ -335,11 +345,11 @@ def migrate(env, version):
     )
     openupgrade.rename_fields(env, _fields_renames)
     convert_column_translatable(env.cr, "account_tax", "description", "jsonb")
-    openupgrade.copy_columns(env.cr, _columns_copies)
+    _convert_account_tax_description(env)
     _am_create_delivery_date_column(env)
     _am_create_incoterm_location_column(env)
-    _aml_update_invoice_date_like_amount_move(env)
     _am_uniquify_name(env)
     _account_report_update_figure_type(env)
     _account_tax_repartition_line_merge_repartition_lines_m2o(env)
     _res_partner_bank_create_column(env)
+    _pre_create_early_pay_discount_computation(env)

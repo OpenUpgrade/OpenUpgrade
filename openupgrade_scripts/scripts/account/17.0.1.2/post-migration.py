@@ -107,53 +107,82 @@ def _onboarding_state_migration(env):
 
 def _account_payment_term_migration(env):
     """
-    In post we will update the value_amount field
-    to respect v17 to ensure total percentage will not
-    exceed 100% of not <100%
-    In v16, the payment term might have some cases like
-    -Case 1
-        line 1: value - balance, value_amount - 0.0
-        line 2: value - percent, value_amount - 50
-        line 3: value - percent, value_amount - 45
-    -Case 2
-        line 1: value - balance, value_amount - 0.0
-        line 2: value - percent, value_amount - 100
-    NOTE: in pre we already convert value_amount of balance to 100.0 %
-    AFTER migration: line 1 of case 1 will have 'value_amount' is 5%
-    line 2 of case 2 will have 'value_amount' is 100% while line 2 is 0.0%
+    Switch balance lines to percent and compute the remaining percentage, and convert
+    old multiple column system to the new delay_type + nb_days.
+
+    https://github.com/odoo/odoo/pull/110274
     """
-    payment_terms = (
-        env["account.payment.term"].with_context(active_test=False).search([])
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE account_payment_term_line
+        SET value = 'percent',
+            value_amount = 100.0 - COALESCE(percentages.percentage, 0)
+        FROM (
+            SELECT
+                payment_id,
+                SUM(
+                    CASE WHEN l.value='percent' THEN l.value_amount
+                    ELSE 0 END
+                ) percentage
+            FROM account_payment_term_line l
+            GROUP BY payment_id
+        ) percentages
+        WHERE
+        value = 'balance' AND
+        percentages.payment_id = account_payment_term_line.payment_id
+        """,
     )
-    for term in payment_terms:
-        term_lines = term.line_ids.filtered(lambda line: line.value == "percent")
-        value_amount_total = sum(term_lines.mapped("value_amount"))
-        if value_amount_total and value_amount_total > 100.0:
-            term_lines_with_100_percentage = term_lines.filtered(
-                lambda line: line.value_amount == 100
-            )
-            term_lines_below_100_percentage = term_lines.filtered(
-                lambda line: line.value_amount < 100
-            )
-            if len(term_lines_with_100_percentage) > 1:
-                (
-                    term_lines_with_100_percentage - term_lines_with_100_percentage[0]
-                ).write(
-                    {
-                        "value_amount": 0.0,
-                    }
-                )
-            if term_lines_below_100_percentage:
-                remaining_line = term_lines - term_lines_below_100_percentage
-                if remaining_line:
-                    remaining_line.write(
-                        {
-                            "value_amount": 100
-                            - sum(
-                                term_lines_below_100_percentage.mapped("value_amount")
-                            )
-                        }
-                    )
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE account_payment_term_line
+        SET delay_type = CASE
+            WHEN end_month AND COALESCE(months, 0) = 0
+                AND COALESCE(days, 0) = 0
+                THEN 'days_after_end_of_month'
+            WHEN end_month AND months = 1 AND COALESCE(days, 0) = 0
+                THEN 'days_after_end_of_next_month'
+            WHEN end_month AND COALESCE(months, 0) <= 1 AND days > 0
+                THEN 'days_end_of_month_on_the'
+            ELSE 'days_after'
+        END,
+        nb_days = CASE
+            WHEN end_month AND months <= 1
+                THEN COALESCE(days, 0) + COALESCE(days_after, 0)
+            ELSE
+                COALESCE(months, 0)*30 + COALESCE(days, 0) +
+                COALESCE(days_after, 0)
+        END
+        """,
+    )
+
+
+def _account_payment_term_early_payment_discount(env):
+    """Only payment terms with one line and the early payment discount activated are
+    valid now, so we are going to discard other previous configurations.
+    """
+    openupgrade.logged_query(
+        env.cr,
+        """
+        WITH sub AS (
+            SELECT * FROM (
+                SELECT *,
+                    row_number() over (partition BY payment_id ORDER BY id) AS rnum
+                FROM account_payment_term_line
+            ) t
+            WHERE t.rnum = 1
+            AND t.discount_days IS NOT NULL
+            AND t.discount_percentage > 0
+        )
+        UPDATE account_payment_term apt
+        SET early_discount = True,
+            discount_days = sub.discount_days,
+            discount_percentage = sub.discount_percentage
+        FROM sub
+        WHERE sub.payment_id = apt.id
+        """,
+    )
 
 
 def convert_from_company_dependent(
@@ -295,16 +324,8 @@ def _account_tax_group_migration(env):
             )
 
             if tax_group_name:
-                new_imd = imd.copy(
-                    {
-                        "res_id": new_tax_group.id,
-                    }
-                )
-                new_imd.write(
-                    {
-                        "name": f"{company_id}_{tax_group_name}",
-                    }
-                )
+                new_imd = imd.copy({"res_id": new_tax_group.id})
+                new_imd.write({"name": f"{company_id}_{tax_group_name}"})
 
             openupgrade.logged_query(
                 env.cr,
@@ -338,98 +359,6 @@ def _account_tax_group_migration(env):
     )
 
 
-def _account_payment_term_migration(env):
-    """
-    https://github.com/odoo/odoo/pull/110274
-    """
-    openupgrade.logged_query(
-        env.cr,
-        """
-        UPDATE account_payment_term_line
-        SET value = 'percent',
-            value_amount = 100.0 - COALESCE(percentages.percentage, 0)
-        FROM (
-            SELECT
-                payment_id,
-                SUM(
-                    CASE WHEN l.value='percent' THEN l.value_amount
-                    ELSE 0 END
-                ) percentage
-            FROM account_payment_term_line l
-            GROUP BY payment_id
-        ) percentages
-        WHERE
-        value = 'balance' AND
-        percentages.payment_id = account_payment_term_line.payment_id
-        """,
-    )
-    openupgrade.logged_query(
-        env.cr,
-        """
-        UPDATE account_payment_term_line
-        SET delay_type = CASE
-                WHEN end_month = true AND COALESCE(months, 0) = 0
-                  AND COALESCE(days, 0) = 0
-                    THEN 'days_after_end_of_month'
-                WHEN end_month = true AND months = 1 AND COALESCE(days, 0) = 0
-                    THEN 'days_after_end_of_next_month'
-                WHEN end_month = true AND COALESCE(months, 0) <= 1 AND days > 0
-                    THEN 'days_end_of_month_on_the'
-                ELSE 'days_after'
-            END,
-            nb_days = CASE
-                WHEN end_month = true AND months <= 1
-                    THEN COALESCE(days, 0) + COALESCE(days_after, 0)
-                ELSE
-                    COALESCE(months, 0)*30 + COALESCE(days, 0) +
-                    COALESCE(days_after, 0)
-            END
-        """,
-    )
-    openupgrade.logged_query(
-        env.cr,
-        """
-        UPDATE account_payment_term term
-        SET early_pay_discount_computation = com.early_pay_discount_computation
-        FROM res_company com
-        WHERE term.company_id = com.id
-        """,
-    )
-    openupgrade.logged_query(
-        env.cr,
-        """
-        UPDATE account_payment_term term
-            SET early_discount = true
-            WHERE EXISTS (
-                SELECT 1
-                    FROM account_payment_term_line t1
-                    WHERE t1.payment_id = term.id
-                    AND t1.discount_days IS NOT NULL
-                    AND t1.discount_percentage IS NOT NULL
-                    AND t1.discount_percentage > 0.0
-            );
-        """,
-    )
-    openupgrade.logged_query(
-        env.cr,
-        """
-        WITH tmp as(
-            SELECT payment_id, MAX(discount_days) discount_days,
-            sum(discount_percentage) discount_percentage
-            FROM account_payment_term_line
-            WHERE discount_days IS NOT NULL AND discount_percentage IS NOT NULL
-            AND discount_percentage > 0.0
-            GROUP BY payment_id
-        )
-        UPDATE account_payment_term term
-            SET discount_days = tmp.discount_days,
-                discount_percentage = tmp.discount_percentage
-        FROM tmp
-        WHERE tmp.payment_id = term.id
-        """,
-    )
-
-
 def _force_install_account_payment_term_module_module(env):
     """
     Force install account_payment_term if we need
@@ -445,7 +374,7 @@ def _force_install_account_payment_term_module_module(env):
         )
     )
     if needs_account_payment_term and account_payment_term_module:
-        account_payment_term_module.button_install()
+        account_payment_term_module.state = "to install"
         openupgrade.copy_columns(
             env.cr,
             {
@@ -469,6 +398,7 @@ def _force_install_account_payment_term_module_module(env):
 @openupgrade.migrate()
 def migrate(env, version):
     _account_payment_term_migration(env)
+    _account_payment_term_early_payment_discount(env)
     _force_install_account_payment_term_module_module(env)
     openupgrade.load_data(env, "account", "17.0.1.2/noupdate_changes.xml")
     openupgrade.delete_records_safely_by_xml_id(
