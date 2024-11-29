@@ -32,11 +32,13 @@ stock        / stock.move               / picking_type_id (many2one)    : not a 
 
 stock        / stock.move               / quantity (float)              : NEW isfunction: function, stored
 stock        / stock.move               / quantity_done (float)         : DEL
-# DONE: pre-migration
+# DONE: renamed in pre-migration
 
 stock        / stock.move               / scrap_id (many2one)           : NEW relation: stock.scrap
 stock        / stock.move               / scrap_ids (one2many)          : DEL relation: stock.scrap
-# NOTHING TO DO
+stock        / stock.scrap              / move_id (many2one)            : DEL relation: stock.move
+stock        / stock.scrap              / move_ids (one2many)           : NEW relation: stock.move
+# DONE post-migration: convert data many2one to one2many
 
 stock        / stock.move.line          / qty_done (float)              : DEL
 stock        / stock.move.line          / quantity (float)              : NEW hasdefault: compute
@@ -45,8 +47,12 @@ stock        / stock.move.line          / quantity (float)              : NEW ha
 stock        / stock.move.line          / picked (boolean)              : NEW hasdefault: compute
 stock        / stock.move.line          / quant_id (many2one)           : NEW relation: stock.quant
 stock        / stock.move.line          / quantity_product_uom (float)  : NEW isfunction: function, stored
+# NOTHING TO DO
+
 stock        / stock.move.line          / reserved_qty (float)          : DEL
 stock        / stock.move.line          / reserved_uom_qty (float)      : DEL required
+# DONE: added to quantity in pre-migration, recompute stock.move#quantity in post-migration
+
 
 stock        / stock.package.type       / height (integer)              : type is now 'float' ('integer')
 stock        / stock.package.type       / packaging_length (integer)    : type is now 'float' ('integer')
@@ -62,10 +68,13 @@ stock        / stock.picking            / move_ids_without_package (one2many): n
 stock        / stock.picking            / move_line_nosuggest_ids (one2many): DEL relation: stock.move.line
 stock        / stock.picking            / picking_properties (properties): NEW hasdefault: compute
 stock        / stock.picking            / rating_ids (one2many)         : NEW relation: rating.rating
-stock        / stock.picking            / return_id (many2one)          : NEW relation: stock.picking
-stock        / stock.picking            / return_ids (one2many)         : NEW relation: stock.picking
 stock        / stock.picking            / show_operations (boolean)     : not a function anymore
 stock        / stock.picking            / show_operations (boolean)     : now related
+# NOTHING TO DO
+
+stock        / stock.picking            / return_id (many2one)          : NEW relation: stock.picking
+stock        / stock.picking            / return_ids (one2many)         : NEW relation: stock.picking
+# DONE filled from returned moves in post-migration
 
 stock        / stock.picking.type       / auto_print_delivery_slip (boolean): NEW
 stock        / stock.picking.type       / auto_print_lot_labels (boolean): NEW
@@ -75,7 +84,6 @@ stock        / stock.picking.type       / auto_print_product_labels (boolean): N
 stock        / stock.picking.type       / auto_print_reception_report (boolean): NEW
 stock        / stock.picking.type       / auto_print_reception_report_labels (boolean): NEW
 stock        / stock.picking.type       / auto_print_return_slip (boolean): NEW
-stock        / stock.picking.type       / default_location_return_id (many2one): NEW relation: stock.location
 stock        / stock.picking.type       / lot_label_format (selection)  : NEW selection_keys: ['4x12_lots', '4x12_units', 'zpl_lots', 'zpl_units'], hasdefault: default
 stock        / stock.picking.type       / package_label_to_print (selection): NEW selection_keys: ['pdf', 'zpl'], hasdefault: default
 stock        / stock.picking.type       / picking_properties_definition (properties_definition): NEW
@@ -83,9 +91,8 @@ stock        / stock.picking.type       / product_label_format (selection): NEW 
 stock        / stock.picking.type       / show_reserved (boolean)       : now a function
 # NOTHING TO DO: fields in new model
 
-stock        / stock.scrap              / move_id (many2one)            : DEL relation: stock.move
-stock        / stock.scrap              / move_ids (one2many)           : NEW relation: stock.move
-# DONE post-migration: convert data many2one to one2many
+stock        / stock.picking.type       / default_location_return_id (many2one): NEW relation: stock.location
+# DONE set from warehouse's previous return picking type's destination location
 
 stock        / stock.scrap              / message_main_attachment_id (many2one): DEL relation: ir.attachment
 stock        / stock.scrap              / rating_ids (one2many)         : NEW relation: rating.rating
