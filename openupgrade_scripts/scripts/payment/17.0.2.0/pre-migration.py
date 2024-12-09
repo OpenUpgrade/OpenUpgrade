@@ -142,7 +142,14 @@ _model_renames = [
 
 _table_renames = [
     ("payment_icon", "payment_method"),
+    ("payment_icon_payment_provider_rel", "payment_method_payment_provider_rel"),
 ]
+
+_column_renames = {
+    "payment_method_payment_provider_rel": [
+        ("payment_icon_id", "payment_method_id"),
+    ],
+}
 
 _field_renames = [
     (
@@ -184,6 +191,7 @@ _noupdate_xmlids = [
 def migrate(env, version):
     openupgrade.rename_models(env.cr, _model_renames)
     openupgrade.rename_tables(env.cr, _table_renames)
+    openupgrade.rename_columns(env.cr, _column_renames)
     openupgrade.rename_fields(env, _field_renames)
     openupgrade.rename_xmlids(env.cr, _xmlids_renames)
     openupgrade.set_xml_ids_noupdate_value(env, "payment", _noupdate_xmlids, True)
