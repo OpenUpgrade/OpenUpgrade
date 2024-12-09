@@ -54,7 +54,7 @@ DEL ir.model.access: sale.access_account_invoice_send_salesman
 
 ir.model.constraint: sale.constraint_res_company_check_quotation_validity_days (changed definition: is now 'check(quotation_validity_days >= 0)' ('check(quotation_validity_days > 0)'))
 ir.model.constraint: sale.constraint_sale_order_date_order_conditional_required (changed definition: is now 'check((state = 'sale' and date_order is not null) or state != 'sale')' ('check((state in('sale','done') and date_order is not null) or state not in('sale','done'))'))
-# DONE pre-migration: safely delete constraint to recreate it
+# NOTHING TO DO
 
 NEW ir.rule: sale.mail_plan_rule_group_sale_manager (noupdate)
 NEW ir.rule: sale.mail_plan_template_rule_group_sale_manager (noupdate)
