@@ -1,6 +1,10 @@
 ---Models in module 'l10n_fr'---
 ---Fields in module 'l10n_fr'---
 ---XML records in module 'l10n_fr'---
+NEW account.group.template: l10n_fr.pcg_11
+NEW account.group.template: l10n_fr.pcg_12
+NEW account.group.template: l10n_fr.pcg_416_group
+NEW account.group.template: l10n_fr.pcg_74_group
 NEW account.report.column: l10n_fr.tax_report_balance
 NEW account.report.expression: l10n_fr.tax_report_08_base_tag
 NEW account.report.expression: l10n_fr.tax_report_08_taxe_tag

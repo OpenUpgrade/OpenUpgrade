@@ -8,6 +8,7 @@ renamed_modules = {
     "coupon": "loyalty",
     "payment_test": "payment_demo",
     "payment_transfer": "payment_custom",
+    "pos_sale_gift_card": "pos_sale_loyalty",
     "sale_coupon": "sale_loyalty",
     "sale_coupon_delivery": "sale_loyalty_delivery",
     "website_sale_coupon": "website_sale_loyalty",
