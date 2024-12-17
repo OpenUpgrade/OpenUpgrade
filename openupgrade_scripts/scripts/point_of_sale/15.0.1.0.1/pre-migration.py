@@ -47,6 +47,24 @@ def merge_pos_order_line_module(env):
         )
 
 
+def fill_pos_payment_method_company_id(env):
+    """required field"""
+    openupgrade.logged_query(
+        env.cr,
+        """UPDATE pos_payment_method ppm
+        SET company_id = aj.company_id
+        FROM account_journal aj
+        WHERE ppm.company_id IS NULL AND ppm.journal_id = aj.id""",
+    )
+    openupgrade.logged_query(
+        env.cr,
+        """UPDATE pos_payment_method ppm
+        SET company_id = aa.company_id
+        FROM account_account aa
+        WHERE ppm.company_id IS NULL AND ppm.receivable_account_id = aa.id""",
+    )
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     merge_pos_order_return_module(env)
@@ -74,3 +92,4 @@ def migrate(env, version):
         ALTER TABLE pos_config ADD COLUMN IF NOT EXISTS warehouse_id INTEGER
         """,
     )
+    fill_pos_payment_method_company_id(env)

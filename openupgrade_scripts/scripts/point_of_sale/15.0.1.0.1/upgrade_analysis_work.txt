@@ -86,6 +86,9 @@ point_of_sale / pos.payment              / company_id (many2one)         : is no
 point_of_sale / pos.payment.method       / is_cash_count (boolean)       : now a function
 # NOTHING TO DO
 
+point_of_sale / pos.payment.method       / company_id (many2one)         : now required
+# DONE: pre-migration: filled field if empty
+
 point_of_sale / pos.payment.method       / cash_journal_id (many2one)    : DEL relation: account.journal
 point_of_sale / pos.payment.method       / journal_id (many2one)         : NEW relation: account.journal
 # DONE: pre-migration: renamed fields
