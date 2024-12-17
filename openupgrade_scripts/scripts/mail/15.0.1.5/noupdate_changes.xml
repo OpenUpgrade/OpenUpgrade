@@ -6,9 +6,9 @@
   <record id="base.group_user" model="res.groups">
     <field name="implied_ids" eval="[(4, ref('mail.group_mail_template_editor'))]"/>
   </record>
-  <record id="base.partner_root" model="res.partner">
+  <!--<record id="base.partner_root" model="res.partner">
     <field name="email"/>
-  </record>
+  </record>-->
   <record id="channel_all_employees" model="mail.channel">
     <field name="group_ids" eval="[Command.link(ref('base.group_user'))]"/>
   </record>

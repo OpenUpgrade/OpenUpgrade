@@ -128,6 +128,9 @@ mail         / mail.message             / author_guest_id (many2one)    : NEW re
 mail         / mail.message             / channel_ids (many2many)       : DEL relation: mail.channel
 # NOTHING TO DO: feature removed
 
+mail         / mail.message             / message_type (selection)      : selection_keys is now '['auto_comment', 'comment', 'email', 'notification', 'user_notification']' ('['comment', 'email', 'notification', 'user_notification']')
+# NOTHING TO DO: new key 'auto_comment' added
+
 mail         / mail.message             / moderation_status (selection) : DEL selection_keys: ['accepted', 'pending_moderation', 'rejected']
 mail         / mail.message             / moderator_id (many2one)       : DEL relation: res.users
 # NOTHING TO DO: transfer data to model mail_group_message
