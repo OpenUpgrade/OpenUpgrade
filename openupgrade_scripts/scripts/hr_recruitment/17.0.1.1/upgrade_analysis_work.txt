@@ -1,0 +1,47 @@
+---Models in module 'hr_recruitment'---
+---Fields in module 'hr_recruitment'---
+hr_recruitment / hr.applicant             / activity_user_id (many2one)   : not related anymore
+hr_recruitment / hr.applicant             / activity_user_id (many2one)   : now a function
+# NOTHING TO DO: not stored field
+
+hr_recruitment / hr.applicant             / applicant_properties (properties): NEW hasdefault: compute
+# NOTHING TO DO: new properties field
+
+hr_recruitment / hr.applicant             / application_status (selection): selection_keys is now '['archived', 'hired', 'ongoing', 'refused']' ('['hired', 'ongoing', 'refused']')
+# NOTHING TO DO: extra key added in selection
+
+hr_recruitment / hr.applicant             / email_normalized (char)       : NEW isfunction: function, stored
+hr_recruitment / hr.applicant             / message_bounce (integer)      : NEW hasdefault: default
+hr_recruitment / hr.applicant             / partner_mobile_sanitized (char): NEW isfunction: function, stored
+hr_recruitment / hr.applicant             / partner_phone_sanitized (char): NEW isfunction: function, stored
+hr_recruitment / hr.applicant             / phone_mobile_search (char)    : NEW
+hr_recruitment / hr.applicant             / phone_sanitized (char)        : NEW isfunction: function, stored
+hr_recruitment / hr.applicant             / rating_ids (one2many)         : NEW relation: rating.rating
+# NOTHING TO DO: new fields
+
+hr_recruitment / hr.applicant.refuse.reason / _order                        : _order is now 'sequence' ('id')
+hr_recruitment / hr.applicant.refuse.reason / sequence (integer)            : NEW hasdefault: default
+# NOTHING TO DO: new field sequence used to order
+
+hr_recruitment / hr.job                   / applicant_properties_definition (properties_definition): NEW
+# NOTHING TO DO: new properties field
+
+hr_recruitment / hr.job                   / hr_responsible_id (many2one)  : DEL relation: res.users
+# NOTHING TO DO: responsible field removed without a replacement
+
+---XML records in module 'hr_recruitment'---
+NEW hr.recruitment.stage: hr_recruitment.stage_job0 (noupdate)
+NEW ir.actions.act_window: hr_recruitment.action_hr_applicant_mass_sms
+DEL ir.actions.act_window: hr_recruitment.hr_employee_action_from_department
+NEW ir.actions.server: hr_recruitment.ir_actions_server_refuse_applicant
+NEW ir.config_parameter: hr_recruitment.hr_recruitment_blacklisted_emails (noupdate)
+NEW ir.rule: hr_recruitment.hr_applicant_user_rule (noupdate)
+NEW ir.rule: hr_recruitment.hr_job_user_rule (noupdate)
+NEW ir.rule: hr_recruitment.mail_message_user_rule (noupdate)
+NEW ir.ui.view: hr_recruitment.mail_notification_light_without_background (noupdate)
+DEL ir.ui.view: hr_recruitment.hr_employee_view_search
+# NOTHING TO DO: created by ORM (action_hr_applicant_mass_sms needs SMS installed although not a dependency, see https://github.com/odoo/odoo/issues/191635
+
+DEL ir.rule: hr_recruitment.mail_message_interviewer_rule (noupdate)
+DEL mail.alias: hr_recruitment.mail_alias_jobs (noupdate)
+# DONE post-migration: safe delete these
