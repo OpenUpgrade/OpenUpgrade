@@ -1,0 +1,12 @@
+---Models in module 'l10n_cn'---
+---Fields in module 'l10n_cn'---
+---XML records in module 'l10n_cn'---
+account.tax.template: l10n_cn.l10n_cn_purchase_excluded_13 (noupdate switched)
+account.tax.template: l10n_cn.l10n_cn_purchase_excluded_6 (noupdate switched)
+account.tax.template: l10n_cn.l10n_cn_purchase_excluded_9 (noupdate switched)
+account.tax.template: l10n_cn.l10n_cn_sales_excluded_13 (noupdate switched)
+account.tax.template: l10n_cn.l10n_cn_sales_excluded_6 (noupdate switched)
+account.tax.template: l10n_cn.l10n_cn_sales_excluded_9 (noupdate switched)
+account.tax.template: l10n_cn.l10n_cn_sales_included_13 (noupdate switched)
+account.tax.template: l10n_cn.l10n_cn_sales_included_6 (noupdate switched)
+account.tax.template: l10n_cn.l10n_cn_sales_included_9 (noupdate switched)

@@ -6,7 +6,11 @@ NEW account.tax.report.line: l10n_in.tax_report_line_non_gst_supplies
 NEW account.tax.report.line: l10n_in.tax_report_line_state_cess
 NEW account.tax.template: l10n_in.non_gst_supplies_sale
 NEW ir.ui.view: l10n_in.product_uom_categ_form_view_inherit_l10n_in
+NEW ir.ui.view: l10n_in.report_invoice
+NEW ir.ui.view: l10n_in.report_invoice_with_payments
 DEL ir.ui.view: l10n_in.l10n_in_external_layout_background
 DEL ir.ui.view: l10n_in.l10n_in_external_layout_boxed
 DEL ir.ui.view: l10n_in.l10n_in_external_layout_clean
 DEL ir.ui.view: l10n_in.l10n_in_external_layout_standard
+NEW res.country.state: l10n_in.state_in_la
+NEW res.country.state: l10n_in.state_in_oc

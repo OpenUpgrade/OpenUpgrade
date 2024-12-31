@@ -81,3 +81,4 @@ NEW account.tax.group: l10n_my.tax_group_sst
 NEW account.tax.template: l10n_my.l10n_my_tax_sale_10
 NEW account.tax.template: l10n_my.l10n_my_tax_sale_5
 NEW account.tax.template: l10n_my.l10n_my_tax_sale_6
+NEW account.tax.template: l10n_my.l10n_my_tax_sale_8

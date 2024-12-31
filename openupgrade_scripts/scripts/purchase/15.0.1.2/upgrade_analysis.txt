@@ -2,6 +2,10 @@
 ---Fields in module 'purchase'---
 purchase     / product.packaging        / purchase (boolean)            : NEW hasdefault: default
 purchase     / purchase.order           / notes (text)                  : type is now 'html' ('text')
+purchase     / purchase.order           / receipt_reminder_email (boolean): not related anymore
+purchase     / purchase.order           / receipt_reminder_email (boolean): now a function
+purchase     / purchase.order           / reminder_date_before_receipt (integer): not related anymore
+purchase     / purchase.order           / reminder_date_before_receipt (integer): now a function
 purchase     / purchase.order.line      / product_packaging_id (many2one): NEW relation: product.packaging
 purchase     / purchase.order.line      / product_packaging_qty (float) : NEW
 ---XML records in module 'purchase'---

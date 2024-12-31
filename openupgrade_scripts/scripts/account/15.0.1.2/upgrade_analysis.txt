@@ -88,6 +88,7 @@ account      / res.company              / account_journal_payment_credit_account
 account      / res.company              / account_journal_payment_debit_account_id (many2one): NEW relation: account.account
 account      / res.company              / account_setup_taxes_state (selection): NEW selection_keys: ['done', 'just_done', 'not_done'], hasdefault: default
 account      / res.company              / account_tax_fiscal_country_id (many2one): DEL relation: res.country
+account      / res.company              / fiscal_position_ids (one2many): NEW relation: account.fiscal.position
 account      / res.company              / invoice_terms (text)          : type is now 'html' ('text')
 account      / res.company              / invoice_terms_html (html)     : NEW hasdefault: compute
 account      / res.company              / terms_type (selection)        : NEW selection_keys: ['html', 'plain'], hasdefault: default
@@ -100,6 +101,7 @@ NEW ir.actions.server: account.invoice_send
 NEW ir.model.access: account.access_account_accrued_orders_wizard
 NEW ir.model.access: account.access_account_payment_method_line
 NEW ir.model.access: account.access_account_payment_method_line_readonly
+NEW ir.model.access: account.access_account_tag_internal_user
 NEW ir.model.access: account.access_account_tax_carryover_line_ac_user
 NEW ir.model.access: account.access_account_tax_carryover_line_readonly
 ir.model.constraint: account.constraint_account_journal_code_company_uniq (changed definition: is now 'unique(code,company_id)' ('unique(code,name,company_id)'))
@@ -107,6 +109,7 @@ NEW ir.model.constraint: account.constraint_account_payment_method_name_code_uni
 NEW ir.rule: account.account_tax_carryover_line_comp_rule (noupdate)
 NEW ir.ui.menu: account.menu_action_tax_group
 NEW ir.ui.view: account.account_analytic_account_view_form_inherit
+NEW ir.ui.view: account.account_analytic_account_view_list_inherit
 NEW ir.ui.view: account.account_default_terms_and_conditions
 NEW ir.ui.view: account.account_invoice_report_view_tree
 NEW ir.ui.view: account.account_move_line_view_kanban_mobile

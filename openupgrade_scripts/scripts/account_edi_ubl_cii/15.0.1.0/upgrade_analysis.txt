@@ -1,4 +1,6 @@
 ---Models in module 'account_edi_ubl_cii'---
 new model account.edi.xml.ubl_nl [abstract]
+new model account.edi.xml.ubl_sg [abstract]
 ---Fields in module 'account_edi_ubl_cii'---
 ---XML records in module 'account_edi_ubl_cii'---
+NEW account.edi.format: account_edi_ubl_cii.ubl_sg

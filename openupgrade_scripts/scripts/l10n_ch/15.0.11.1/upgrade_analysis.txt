@@ -1,0 +1,9 @@
+---Models in module 'l10n_ch'---
+---Fields in module 'l10n_ch'---
+l10n_ch      / res.partner.bank         / l10n_ch_qr_iban (char)        : previously in module l10n_ch_qriban
+---XML records in module 'l10n_ch'---
+NEW account.account.template: l10n_ch.ch_coa_4991
+NEW account.account.template: l10n_ch.ch_coa_4992
+DEL ir.ui.view: l10n_ch.assets_common
+DEL ir.ui.view: l10n_ch.assets_common_qr
+DEL ir.ui.view: l10n_ch.isr_bank_journal_form

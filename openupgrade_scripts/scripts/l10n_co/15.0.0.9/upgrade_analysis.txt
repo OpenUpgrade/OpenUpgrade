@@ -1,0 +1,15 @@
+---Models in module 'l10n_co'---
+---Fields in module 'l10n_co'---
+---XML records in module 'l10n_co'---
+NEW account.account.template: l10n_co.co_puc_249515
+NEW account.account.template: l10n_co.co_puc_249525
+NEW account.tax.group: l10n_co.tax_group_iva_19
+NEW account.tax.group: l10n_co.tax_group_r_ica_0
+NEW account.tax.group: l10n_co.tax_group_r_ica_0414
+NEW account.tax.group: l10n_co.tax_group_r_ica_069
+NEW account.tax.group: l10n_co.tax_group_r_ica_0966
+NEW account.tax.group: l10n_co.tax_group_r_ica_1104
+NEW account.tax.group: l10n_co.tax_group_r_ica_138
+NEW account.tax.group: l10n_co.tax_group_r_iva_285
+NEW account.tax.group: l10n_co.tax_group_r_ren_7
+NEW l10n_latam.identification.type: l10n_co.48

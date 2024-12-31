@@ -1,0 +1,22 @@
+---Models in module 'l10n_at'---
+---Fields in module 'l10n_at'---
+---XML records in module 'l10n_at'---
+NEW account.account.tag: l10n_at.account_tag_l10n_at_ARR
+NEW account.account.tag: l10n_at.account_tag_l10n_at_PCVIII3
+NEW account.account.tag: l10n_at.account_tag_l10n_at_PCVIII4
+NEW account.account.tag: l10n_at.account_tag_l10n_at_RCR
+NEW account.account.tag: l10n_at.account_tag_l10n_at_RRR
+NEW account.fiscal.position.template: l10n_at.fiscal_position_template_national_w_uid
+NEW account.tax.group: l10n_at.tax_group_12 (noupdate)
+NEW account.tax.group: l10n_at.tax_group_19 (noupdate)
+NEW account.tax.report.line: l10n_at.tax_report_line_l10n_at_non_tva_sale_report_title
+NEW account.tax.report.line: l10n_at.tax_report_line_l10n_at_tva_line_3_zm_dl
+NEW account.tax.report.line: l10n_at.tax_report_line_l10n_at_tva_line_3_zm_igl
+NEW account.tax.report.line: l10n_at.tax_report_line_l10n_at_tva_line_3_zm_igl3
+NEW account.tax.template: l10n_at.account_tax_template_purchase_rev_charge_19_2_25_5
+NEW account.tax.template: l10n_at.account_tax_template_purchase_rev_charge_1e
+NEW account.tax.template: l10n_at.account_tax_template_sales_rev_charge_0_code021_1a
+NEW account.tax.template: l10n_at.account_tax_template_sales_rev_charge_0_code021_1b
+NEW account.tax.template: l10n_at.account_tax_template_sales_rev_charge_0_code021_1c
+NEW account.tax.template: l10n_at.account_tax_template_sales_rev_charge_0_code021_1d
+NEW account.tax.template: l10n_at.account_tax_template_sales_rev_charge_0_code021_1e

@@ -1,5 +1,7 @@
 ---Models in module 'hr_timesheet'---
 ---Fields in module 'hr_timesheet'---
+hr_timesheet / project.task             / allow_timesheets (boolean)    : not related anymore
+hr_timesheet / project.task             / allow_timesheets (boolean)    : now a function
 hr_timesheet / res.company              / internal_project_id (many2one): NEW relation: project.project
 ---XML records in module 'hr_timesheet'---
 NEW digest.tip: hr_timesheet.digest_tip_hr_timesheet_0

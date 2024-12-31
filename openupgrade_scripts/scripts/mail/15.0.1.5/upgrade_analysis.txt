@@ -75,6 +75,7 @@ mail         / mail.mail                / is_notification (boolean)     : NEW
 mail         / mail.mail                / notification (boolean)        : DEL
 mail         / mail.message             / author_guest_id (many2one)    : NEW relation: mail.guest
 mail         / mail.message             / channel_ids (many2many)       : DEL relation: mail.channel
+mail         / mail.message             / message_type (selection)      : selection_keys is now '['auto_comment', 'comment', 'email', 'notification', 'user_notification']' ('['comment', 'email', 'notification', 'user_notification']')
 mail         / mail.message             / moderation_status (selection) : DEL selection_keys: ['accepted', 'pending_moderation', 'rejected']
 mail         / mail.message             / moderator_id (many2one)       : DEL relation: res.users
 mail         / mail.message             / no_auto_thread (boolean)      : DEL

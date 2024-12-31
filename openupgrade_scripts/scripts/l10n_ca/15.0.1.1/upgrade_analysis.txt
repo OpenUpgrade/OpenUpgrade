@@ -1,0 +1,38 @@
+---Models in module 'l10n_ca'---
+---Fields in module 'l10n_ca'---
+---XML records in module 'l10n_ca'---
+account.tax.template: l10n_ca.gst_purc_en (noupdate switched)
+account.tax.template: l10n_ca.gst_sale_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_bc_purc_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_bc_sale_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_mb_purc_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_mb_sale_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_purc_bc_gst_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_purc_mb_gst_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_purc_sk_gst_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_sale_bc_gst_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_sale_mb_gst_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_sale_sk_gst_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_sk_purc_en (noupdate switched)
+account.tax.template: l10n_ca.gstpst_sk_sale_en (noupdate switched)
+account.tax.template: l10n_ca.gstqst_purc_en (noupdate switched)
+account.tax.template: l10n_ca.gstqst_purc_gst_en (noupdate switched)
+account.tax.template: l10n_ca.gstqst_sale_en (noupdate switched)
+account.tax.template: l10n_ca.gstqst_sale_gst_en (noupdate switched)
+account.tax.template: l10n_ca.hst13_purc_en (noupdate switched)
+account.tax.template: l10n_ca.hst13_sale_en (noupdate switched)
+account.tax.template: l10n_ca.hst15_purc_en (noupdate switched)
+account.tax.template: l10n_ca.hst15_sale_en (noupdate switched)
+account.tax.template: l10n_ca.pst_bc_purc_en (noupdate switched)
+account.tax.template: l10n_ca.pst_bc_sale_en (noupdate switched)
+account.tax.template: l10n_ca.pst_mb_purc_en (noupdate switched)
+account.tax.template: l10n_ca.pst_mb_sale_en (noupdate switched)
+account.tax.template: l10n_ca.pst_sk_purc_en (noupdate switched)
+account.tax.template: l10n_ca.pst_sk_sale_en (noupdate switched)
+account.tax.template: l10n_ca.qst_purc_en (noupdate switched)
+account.tax.template: l10n_ca.qst_sale_en (noupdate switched)
+NEW ir.ui.view: l10n_ca.l10n_ca_external_layout_bold
+NEW ir.ui.view: l10n_ca.l10n_ca_external_layout_boxed
+NEW ir.ui.view: l10n_ca.l10n_ca_external_layout_standard
+NEW ir.ui.view: l10n_ca.l10n_ca_external_layout_striped
+NEW ir.ui.view: l10n_ca.res_company_form_inherit_ca

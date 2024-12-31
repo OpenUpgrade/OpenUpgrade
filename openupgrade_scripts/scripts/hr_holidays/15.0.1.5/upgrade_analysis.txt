@@ -120,6 +120,7 @@ DEL ir.model.constraint: hr_holidays.constraint_hr_leave_allocation_interval_num
 DEL ir.model.constraint: hr_holidays.constraint_hr_leave_allocation_number_per_interval_check
 NEW ir.rule: hr_holidays.hr_leave_report_rule_group_holiday_user (noupdate)
 NEW ir.rule: hr_holidays.hr_leave_report_rule_group_user (noupdate)
+NEW ir.rule: hr_holidays.hr_leave_report_rule_multi_company (noupdate)
 NEW ir.ui.menu: hr_holidays.hr_holidays_accrual_menu_configuration
 NEW ir.ui.menu: hr_holidays.hr_holidays_public_time_off_menu_configuration
 NEW ir.ui.view: hr_holidays.hr_accrual_level_view_form

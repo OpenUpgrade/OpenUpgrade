@@ -1,6 +1,7 @@
 ---Models in module 'stock'---
 obsolete model stock.inventory (renamed to stock.quant)
 obsolete model stock.inventory.line (renamed to stock.move.line)
+new model report.stock.label_lot_template_view [abstract]
 new model report.stock.label_product_product_view [abstract]
 new model report.stock.report_reception [abstract]
 new model stock.inventory.adjustment.name [transient]
@@ -131,7 +132,6 @@ NEW ir.actions.server: stock.action_view_inventory_tree
 NEW ir.actions.server: stock.action_view_set_quants_tree
 DEL ir.actions.server: stock.model_stock_inventory_line_action_recompute_quantity
 DEL ir.actions.server: stock.model_stock_inventory_line_action_reset_product_qty
-DEL ir.actions.server: stock.stock_quant_stock_move_line_desynchronization
 NEW ir.model.access: stock.access_stock_inventory_adjustment_name
 NEW ir.model.access: stock.access_stock_inventory_conflict
 NEW ir.model.access: stock.access_stock_inventory_warning

@@ -23,6 +23,12 @@
       <a t-att-href="'/web#id=%s&amp;model=hr.expense&amp;view_type=form' % (expense.id)" style="background-color: #9E588B; margin-top: 10px; padding: 10px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;">View Expense</a>
     </p>
   </template>
+  <record id="ir_rule_hr_expense_employee" model="ir.rule">
+    <field name="domain_force">[('employee_id.user_id', '=', user.id), ('state', '=', 'draft')]</field>
+  </record>
+  <record id="ir_rule_hr_expense_sheet_employee" model="ir.rule">
+    <field name="domain_force">[('employee_id.user_id', '=', user.id), ('state', '=', 'draft')]</field>
+  </record>
   <record id="mail_act_expense_approval" model="mail.activity.type">
     <field name="res_model">hr.expense.sheet</field>
   </record>

@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
+  <record id="account_send_payment_receipt_by_email_action_multi" model="ir.actions.act_window">
+    <field name="context" eval="{                 'mailing_document_based': True,                 'mail_post_autofollow': True,                 'default_composition_mode': 'mass_mail',                 'default_use_template': True,                 'default_template_id': ref('account.mail_template_data_payment_receipt'),                 'custom_layout': 'mail.mail_notification_light',             }"/>
+  </record>
   <record id="action_account_resequence" model="ir.actions.act_window">
     <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
   </record>

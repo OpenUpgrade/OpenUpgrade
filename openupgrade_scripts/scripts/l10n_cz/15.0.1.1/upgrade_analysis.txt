@@ -1,0 +1,23 @@
+---Models in module 'l10n_cz'---
+---Fields in module 'l10n_cz'---
+---XML records in module 'l10n_cz'---
+NEW account.account.template: l10n_cz.chart_cz_053000
+NEW account.account.template: l10n_cz.chart_cz_254000
+NEW account.account.template: l10n_cz.chart_cz_258000
+NEW account.account.template: l10n_cz.chart_cz_311001
+NEW account.account.template: l10n_cz.chart_cz_312000
+NEW account.account.template: l10n_cz.chart_cz_343112
+NEW account.account.template: l10n_cz.chart_cz_343212
+NEW account.account.template: l10n_cz.chart_cz_427000
+NEW account.account.template: l10n_cz.chart_cz_643000
+NEW account.account.template: l10n_cz.chart_cz_645000
+NEW account.account.template: l10n_cz.chart_cz_649000
+NEW account.account.template: l10n_cz.chart_cz_669000
+NEW account.account.template: l10n_cz.chart_cz_999997
+NEW account.account.template: l10n_cz.chart_cz_999998
+DEL account.account.template: l10n_cz.chart_cz_055000
+NEW account.fiscal.position.tax.template: l10n_cz.fiscal_position_tax_template_21c (noupdate)
+NEW account.fiscal.position.tax.template: l10n_cz.fiscal_position_tax_template_2d (noupdate)
+NEW account.tax.group: l10n_cz.tax_group_vat_12 (noupdate)
+NEW account.tax.template: l10n_cz.vsc_tuz_12
+NEW account.tax.template: l10n_cz.vyc_tuz_12

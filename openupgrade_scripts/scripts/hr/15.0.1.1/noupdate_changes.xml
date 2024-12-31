@@ -4,6 +4,9 @@
     <field name="address_id" ref="base.main_partner"/>
     <field name="department_id" ref="dep_administration"/>
   </record>-->
+  <record id="offboarding_setup_compute_out_delais" model="hr.plan.activity.type">
+    <field name="summary">Organize knowledge transfer inside the team</field>
+  </record>
   <!--<record id="res_partner_admin_private_address" model="res.partner">
     <field name="image_1920" type="base64" file="base/static/img/avatar_grey.png"/>
   </record>-->

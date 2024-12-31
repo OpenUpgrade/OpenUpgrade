@@ -7,6 +7,7 @@ l10n_cl      / account.payment          / l10n_latam_document_type_id_code (char
 l10n_cl      / ir.sequence              / l10n_cl_journal_ids (many2many): DEL relation: account.journal
 ---XML records in module 'l10n_cl'---
 NEW account.account.template: l10n_cl.account_210715
+NEW account.account.template: l10n_cl.account_310122
 NEW account.tax.report.line: l10n_cl.tax_report_retencion_total_compras
 NEW account.tax.template: l10n_cl.I_RTI
 DEL ir.ui.view: l10n_cl.sequence_view

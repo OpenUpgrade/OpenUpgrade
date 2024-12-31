@@ -1,0 +1,70 @@
+---Models in module 'l10n_es'---
+---Fields in module 'l10n_es'---
+---XML records in module 'l10n_es'---
+NEW account.account.tag: l10n_es.mod_303_165
+NEW account.account.tag: l10n_es.mod_303_167
+NEW account.account.tag: l10n_es.mod_303_168
+NEW account.account.tag: l10n_es.mod_303_170
+NEW account.account.template: l10n_es.account_common_572998
+NEW account.fiscal.position.tax.template: l10n_es.fptt_extra_2b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_extra_2s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_extra_7-5b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_extra_7-5s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_extra_ventas_2b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_extra_ventas_2s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_extra_ventas_7-5b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_extra_ventas_7-5s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_intra_2b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_intra_2s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_intra_7-5b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_intra_7-5s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_intra_ventas_2b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_intra_ventas_2s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_intra_ventas_7-5b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_intra_ventas_7-5s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo7-5b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_2b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_2b_2
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_2s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_2s_2
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_7-5b_2
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_7-5s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_7-5s_2
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_buy_2b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_buy_2b_2
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_buy_2s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_buy_2s_2
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_buy_7-5b
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_buy_7-5b_2
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_buy_7-5s
+NEW account.fiscal.position.tax.template: l10n_es.fptt_recargo_buy_7-5s_2
+NEW account.tax.group: l10n_es.tax_group_iva_2 (noupdate)
+NEW account.tax.group: l10n_es.tax_group_iva_7-5 (noupdate)
+NEW account.tax.group: l10n_es.tax_group_recargo_0-26 (noupdate)
+NEW account.tax.group: l10n_es.tax_group_recargo_1 (noupdate)
+NEW account.tax.group: l10n_es.tax_group_retenciones_35 (noupdate)
+NEW account.tax.template: l10n_es.account_tax_template_p_irpf19ca
+NEW account.tax.template: l10n_es.account_tax_template_p_irpf19cs
+NEW account.tax.template: l10n_es.account_tax_template_p_irpf35cya
+NEW account.tax.template: l10n_es.account_tax_template_p_iva2_bc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva2_ibc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva2_ic_bc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva2_ic_sc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva2_isc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva2_nd
+NEW account.tax.template: l10n_es.account_tax_template_p_iva2_sc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva7-5_bc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva7-5_ibc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva7-5_ic_bc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva7-5_ic_sc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva7-5_isc
+NEW account.tax.template: l10n_es.account_tax_template_p_iva7-5_nd
+NEW account.tax.template: l10n_es.account_tax_template_p_iva7-5_sc
+NEW account.tax.template: l10n_es.account_tax_template_p_req026
+NEW account.tax.template: l10n_es.account_tax_template_p_req1
+NEW account.tax.template: l10n_es.account_tax_template_s_iva2b
+NEW account.tax.template: l10n_es.account_tax_template_s_iva2s
+NEW account.tax.template: l10n_es.account_tax_template_s_iva7-5b
+NEW account.tax.template: l10n_es.account_tax_template_s_iva7-5s
+NEW account.tax.template: l10n_es.account_tax_template_s_req026
+NEW account.tax.template: l10n_es.account_tax_template_s_req1

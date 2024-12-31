@@ -134,6 +134,7 @@
     <field name="full_name">Ethiopian birr</field>
   </record>
   <record id="EUR" model="res.currency">
+    <!--<field name="active" eval="False"/>-->
     <field name="full_name">Euro</field>
   </record>
   <record id="FJD" model="res.currency">
@@ -452,6 +453,7 @@
     <field name="full_name">Ugandan shilling</field>
   </record>
   <record id="USD" model="res.currency">
+    <!--<field name="active" eval="False"/>-->
     <field name="full_name">United States dollar</field>
   </record>
   <record id="UYU" model="res.currency">
@@ -509,6 +511,15 @@
     <field name="groups" eval="[                 Command.link(ref('base.group_portal')),                 Command.link(ref('base.group_user')),             ]"/>
   </record>
 -->
+  <record id="cd" model="res.country">
+    <field eval="243" name="phone_code"/>
+  </record>
+  <record id="cg" model="res.country">
+    <field eval="242" name="phone_code"/>
+  </record>
+  <record id="cl" model="res.country">
+    <field name="zip_required">0</field>
+  </record>
   <record id="cy" model="res.country">
     <field name="currency_id" ref="EUR"/>
   </record>
@@ -543,6 +554,12 @@
     <field name="groups" eval="[Command.link(ref('base.group_portal')), Command.link(ref('base.group_public'))]"/>
   </record>
 -->
+  <record id="lu" model="res.country">
+    <field eval="'%(street)s\n%(street2)s\n%(zip)s %(city)s \n%(country_name)s'" name="address_format"/>
+  </record>
+  <record id="me" model="res.country">
+    <field name="currency_id" ref="EUR"/>
+  </record>
   <record id="paperformat_batch_deposit" model="report.paperformat">
     <field name="header_spacing">15</field>
     <field name="margin_bottom">30</field>
@@ -550,6 +567,9 @@
 <!--
   <record id="partner_admin" model="res.partner">
     <field name="image_1920" type="base64" file="base/static/img/avatar_grey.png"/>
+  </record>
+  <record id="partner_root" model="res.partner">
+    <field name="email">odoobot@example.com</field>
   </record>
   <record id="public_user" model="res.users">
     <field name="groups_id" eval="[Command.link(ref('base.group_public'))]"/>
@@ -576,6 +596,9 @@
     <field name="groups" eval="[                 Command.link(ref('base.group_private_addresses'))             ]"/>
   </record>
 -->
+  <record id="se" model="res.country">
+    <field eval="'%(street)s\n%(street2)s\n%(zip)s %(city)s\n%(country_name)s'" name="address_format"/>
+  </record>
   <record id="sepa_zone" model="res.country.group">
     <field name="country_ids" eval="[Command.set([                 ref('ad'),ref('at'),ref('ax'),ref('be'),ref('bg'),                 ref('bl'),ref('ch'),ref('cy'),ref('cz'),ref('de'),                 ref('dk'),ref('ee'),ref('es'),ref('fi'),ref('fr'),                 ref('uk'),ref('gf'),ref('gg'),ref('gi'),ref('gp'),                 ref('gr'),ref('hr'),ref('hu'),ref('ie'),ref('im'),                 ref('is'),ref('it'),ref('je'),ref('li'),ref('lt'),                 ref('lu'),ref('lv'),ref('mc'),ref('mf'),ref('mq'),                 ref('mt'),ref('nl'),ref('no'),ref('pl'),ref('pm'),                 ref('pt'),ref('re'),ref('ro'),ref('se'),ref('si'),                 ref('sk'),ref('sm'),ref('va'),ref('yt')])]"/>
   </record>
@@ -588,6 +611,9 @@
   <record id="south_america" model="res.country.group">
     <field name="country_ids" eval="[Command.set([                 ref('ar'),ref('bo'),ref('br'),ref('cl'),ref('co'),                 ref('ec'),ref('fk'),ref('gs'),ref('gf'),ref('gy'),                 ref('py'),ref('pe'),ref('sr'),ref('uy'),ref('ve')])]"/>
   </record>
+  <record id="th" model="res.country">
+    <field eval="'%(street)s\n%(street2)s\n%(city)s\n%(state_name)s %(zip)s\n%(country_name)s'" name="address_format"/>
+  </record>
 <!--
   <record id="user_admin" model="res.users">
     <field name="company_ids" eval="[Command.link(ref('main_company'))]"/>
@@ -596,8 +622,12 @@
   </record>
   <record id="user_root" model="res.users">
     <field name="company_ids" eval="[Command.link(ref('main_company'))]"/>
+    <field name="email">odoobot@example.com</field>
   </record>
 -->
+  <record id="zw" model="res.country">
+    <field name="currency_id" ref="ZIG"/>
+  </record>
   <record id="es" model="res.country">
     <field eval="'%(street)s\n%(street2)s\n%(zip)s %(city)s (%(state_name)s)\n%(country_name)s'" name="address_format"/>
   </record>

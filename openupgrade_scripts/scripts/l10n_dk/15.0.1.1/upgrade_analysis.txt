@@ -1,0 +1,25 @@
+---Models in module 'l10n_dk'---
+---Fields in module 'l10n_dk'---
+---XML records in module 'l10n_dk'---
+account.tax.template: l10n_dk.tax110 (noupdate switched)
+account.tax.template: l10n_dk.tax120 (noupdate switched)
+account.tax.template: l10n_dk.tax210 (noupdate switched)
+account.tax.template: l10n_dk.tax220 (noupdate switched)
+account.tax.template: l10n_dk.tax310 (noupdate switched)
+account.tax.template: l10n_dk.tax400 (noupdate switched)
+account.tax.template: l10n_dk.tax410 (noupdate switched)
+account.tax.template: l10n_dk.tax420 (noupdate switched)
+account.tax.template: l10n_dk.tax425 (noupdate switched)
+account.tax.template: l10n_dk.tax430 (noupdate switched)
+account.tax.template: l10n_dk.tax450 (noupdate switched)
+NEW account.tax.template: l10n_dk.tax460
+account.tax.template: l10n_dk.tax510 (noupdate switched)
+account.tax.template: l10n_dk.tax520 (noupdate switched)
+account.tax.template: l10n_dk.tax610 (noupdate switched)
+account.tax.template: l10n_dk.tax620 (noupdate switched)
+account.tax.template: l10n_dk.tax710 (noupdate switched)
+account.tax.template: l10n_dk.tax720 (noupdate switched)
+account.tax.template: l10n_dk.tax730 (noupdate switched)
+account.tax.template: l10n_dk.tax740 (noupdate switched)
+account.tax.template: l10n_dk.tax750 (noupdate switched)
+account.tax.template: l10n_dk.tax760 (noupdate switched)

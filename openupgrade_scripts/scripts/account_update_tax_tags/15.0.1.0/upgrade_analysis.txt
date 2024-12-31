@@ -1,0 +1,8 @@
+---Models in module 'account_update_tax_tags'---
+new model account.update.tax.tags.wizard [transient]
+---Fields in module 'account_update_tax_tags'---
+---XML records in module 'account_update_tax_tags'---
+NEW ir.actions.act_window: account_update_tax_tags.action_open_wizard
+NEW ir.model.access: account_update_tax_tags.access_account_update_tax_tags_wizard
+NEW ir.ui.view: account_update_tax_tags.res_config_settings_view_form
+NEW ir.ui.view: account_update_tax_tags.view_account_update_tax_tags_wizard_form

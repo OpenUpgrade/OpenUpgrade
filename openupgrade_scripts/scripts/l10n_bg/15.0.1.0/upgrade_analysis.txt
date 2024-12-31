@@ -252,6 +252,7 @@ NEW account.account.template: l10n_bg.l10n_bg_684
 NEW account.account.template: l10n_bg.l10n_bg_685
 NEW account.account.template: l10n_bg.l10n_bg_689
 NEW account.account.template: l10n_bg.l10n_bg_691
+NEW account.account.template: l10n_bg.l10n_bg_691001
 NEW account.account.template: l10n_bg.l10n_bg_701
 NEW account.account.template: l10n_bg.l10n_bg_702
 NEW account.account.template: l10n_bg.l10n_bg_703
@@ -296,6 +297,7 @@ NEW account.account.template: l10n_bg.l10n_bg_783
 NEW account.account.template: l10n_bg.l10n_bg_784
 NEW account.account.template: l10n_bg.l10n_bg_789
 NEW account.account.template: l10n_bg.l10n_bg_791
+NEW account.account.template: l10n_bg.l10n_bg_791001
 NEW account.account.template: l10n_bg.l10n_bg_911
 NEW account.account.template: l10n_bg.l10n_bg_912
 NEW account.account.template: l10n_bg.l10n_bg_913

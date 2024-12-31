@@ -2,7 +2,7 @@
 new model payment.refund.wizard [transient]
 ---Fields in module 'payment'---
 payment      / account.payment          / source_payment_id (many2one)  : NEW relation: account.payment, isrelated: related, stored
-payment      / account.payment.method.line / payment_acquirer_id (many2one): NEW relation: payment.acquirer, isfunction: function, stored
+payment      / account.payment.method.line / payment_acquirer_id (many2one): NEW relation: payment.acquirer, hasdefault: compute
 payment      / payment.acquirer         / _order                        : _order is now 'module_state, state desc, sequence, name' ('module_state, state, sequence, name')
 payment      / payment.acquirer         / allow_tokenization (boolean)  : NEW
 payment      / payment.acquirer         / check_validity (boolean)      : DEL
@@ -118,7 +118,7 @@ DEL ir.ui.view: payment_fix_register_token.view_account_payment_register_form_in
 NEW payment.acquirer: payment.payment_acquirer_mollie (noupdate)
 NEW payment.acquirer: payment.payment_acquirer_ogone (noupdate)
 NEW payment.acquirer: payment.payment_acquirer_payumoney (noupdate)
-NEW payment.acquirer: payment.payment_acquirer_test [renamed from payment_test module] (noupdate)
+NEW payment.acquirer: payment.payment_acquirer_test (noupdate)
 DEL payment.acquirer: payment.payment_acquirer_ingenico (noupdate)
 DEL payment.acquirer: payment.payment_acquirer_odoo_by_adyen (noupdate)
 DEL payment.acquirer: payment.payment_acquirer_payu (noupdate)

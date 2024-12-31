@@ -114,7 +114,101 @@ NEW res.country.state: base.state_ec_24 [renamed from l10n_ec module]
 NEW res.country.state: base.state_id_pp
 NEW res.country.state: base.state_id_ps
 NEW res.country.state: base.state_id_pt
+NEW res.country.state: base.state_sa_1
+NEW res.country.state: base.state_sa_10
+NEW res.country.state: base.state_sa_11
+NEW res.country.state: base.state_sa_12
+NEW res.country.state: base.state_sa_13
+NEW res.country.state: base.state_sa_14
+NEW res.country.state: base.state_sa_15
+NEW res.country.state: base.state_sa_16
+NEW res.country.state: base.state_sa_17
+NEW res.country.state: base.state_sa_18
+NEW res.country.state: base.state_sa_19
+NEW res.country.state: base.state_sa_2
+NEW res.country.state: base.state_sa_20
+NEW res.country.state: base.state_sa_21
+NEW res.country.state: base.state_sa_22
+NEW res.country.state: base.state_sa_23
+NEW res.country.state: base.state_sa_24
+NEW res.country.state: base.state_sa_25
+NEW res.country.state: base.state_sa_26
+NEW res.country.state: base.state_sa_27
+NEW res.country.state: base.state_sa_28
+NEW res.country.state: base.state_sa_29
+NEW res.country.state: base.state_sa_3
+NEW res.country.state: base.state_sa_30
+NEW res.country.state: base.state_sa_31
+NEW res.country.state: base.state_sa_32
+NEW res.country.state: base.state_sa_33
+NEW res.country.state: base.state_sa_34
+NEW res.country.state: base.state_sa_35
+NEW res.country.state: base.state_sa_36
+NEW res.country.state: base.state_sa_37
+NEW res.country.state: base.state_sa_38
+NEW res.country.state: base.state_sa_39
+NEW res.country.state: base.state_sa_4
+NEW res.country.state: base.state_sa_40
+NEW res.country.state: base.state_sa_41
+NEW res.country.state: base.state_sa_42
+NEW res.country.state: base.state_sa_43
+NEW res.country.state: base.state_sa_44
+NEW res.country.state: base.state_sa_45
+NEW res.country.state: base.state_sa_46
+NEW res.country.state: base.state_sa_47
+NEW res.country.state: base.state_sa_48
+NEW res.country.state: base.state_sa_49
+NEW res.country.state: base.state_sa_5
+NEW res.country.state: base.state_sa_50
+NEW res.country.state: base.state_sa_51
+NEW res.country.state: base.state_sa_52
+NEW res.country.state: base.state_sa_53
+NEW res.country.state: base.state_sa_54
+NEW res.country.state: base.state_sa_55
+NEW res.country.state: base.state_sa_56
+NEW res.country.state: base.state_sa_57
+NEW res.country.state: base.state_sa_58
+NEW res.country.state: base.state_sa_59
+NEW res.country.state: base.state_sa_6
+NEW res.country.state: base.state_sa_60
+NEW res.country.state: base.state_sa_61
+NEW res.country.state: base.state_sa_62
+NEW res.country.state: base.state_sa_63
+NEW res.country.state: base.state_sa_64
+NEW res.country.state: base.state_sa_65
+NEW res.country.state: base.state_sa_66
+NEW res.country.state: base.state_sa_67
+NEW res.country.state: base.state_sa_68
+NEW res.country.state: base.state_sa_69
+NEW res.country.state: base.state_sa_7
+NEW res.country.state: base.state_sa_70
+NEW res.country.state: base.state_sa_71
+NEW res.country.state: base.state_sa_72
+NEW res.country.state: base.state_sa_73
+NEW res.country.state: base.state_sa_74
+NEW res.country.state: base.state_sa_75
+NEW res.country.state: base.state_sa_76
+NEW res.country.state: base.state_sa_77
+NEW res.country.state: base.state_sa_78
+NEW res.country.state: base.state_sa_79
+NEW res.country.state: base.state_sa_8
+NEW res.country.state: base.state_sa_80
+NEW res.country.state: base.state_sa_81
+NEW res.country.state: base.state_sa_82
+NEW res.country.state: base.state_sa_83
+NEW res.country.state: base.state_sa_84
+NEW res.country.state: base.state_sa_85
+NEW res.country.state: base.state_sa_86
+NEW res.country.state: base.state_sa_87
+NEW res.country.state: base.state_sa_88
+NEW res.country.state: base.state_sa_89
+NEW res.country.state: base.state_sa_9
+NEW res.country.state: base.state_sa_90
+NEW res.country.state: base.state_sa_91
+NEW res.country.state: base.state_sa_92
+NEW res.country.state: base.state_sa_93
 NEW res.currency: base.CLF (noupdate)
+NEW res.currency: base.CNH (noupdate)
 NEW res.currency: base.COU (noupdate)
 NEW res.currency: base.CUC (noupdate)
 NEW res.currency: base.SOS (noupdate)
@@ -122,6 +216,7 @@ NEW res.currency: base.STN (noupdate)
 NEW res.currency: base.UYI (noupdate)
 NEW res.currency: base.UYW (noupdate)
 NEW res.currency: base.VES (noupdate)
+NEW res.currency: base.ZIG (noupdate)
 DEL res.currency: base.CYP (noupdate)
 DEL res.currency: base.ECS (noupdate)
 DEL res.currency: base.ITL (noupdate)

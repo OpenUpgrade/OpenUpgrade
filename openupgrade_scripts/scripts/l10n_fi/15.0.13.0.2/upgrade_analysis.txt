@@ -1,0 +1,35 @@
+---Models in module 'l10n_fi'---
+---Fields in module 'l10n_fi'---
+---XML records in module 'l10n_fi'---
+NEW account.fiscal.position.tax.template: l10n_fi.aland_purchase_goods_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.aland_purchase_service_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.aland_sales_goods_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.aland_sales_service_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.construction_fiscpos_tax_1_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.construction_fiscpos_tax_2_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.eu_purchase_goods_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.eu_purchase_service_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.eu_sales_goods_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.eu_sales_service_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.non_eu_purchase_brutto_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.non_eu_purchase_goods_10_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.non_eu_purchase_goods_14_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.non_eu_purchase_goods_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.non_eu_purchase_service_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.non_eu_sale_25_5
+NEW account.fiscal.position.tax.template: l10n_fi.non_eu_sale_service_25_5
+NEW account.tax.group: l10n_fi.tax_group_25_5 (noupdate)
+NEW account.tax.report.line: l10n_fi.tax_report_sales_25_5
+NEW account.tax.report.line: l10n_fi.tax_report_sales_25_5_and_24
+NEW account.tax.template: l10n_fi.import_deduct25_5
+NEW account.tax.template: l10n_fi.import_pay25_5
+NEW account.tax.template: l10n_fi.tax_construct_purchase_25_5
+NEW account.tax.template: l10n_fi.tax_construct_purchase_25_5_finland
+NEW account.tax.template: l10n_fi.tax_dom_purchase_brutto_25_5
+NEW account.tax.template: l10n_fi.tax_dom_purchase_goods_25_5
+NEW account.tax.template: l10n_fi.tax_dom_purchase_service_25_5
+NEW account.tax.template: l10n_fi.tax_dom_sales_goods_25_5
+NEW account.tax.template: l10n_fi.tax_dom_sales_service_25_5
+NEW account.tax.template: l10n_fi.tax_eu_purchase_goods_25_5
+NEW account.tax.template: l10n_fi.tax_eu_purchase_service_25_5
+NEW account.tax.template: l10n_fi.tax_non_eu_purchase_goods_25_5

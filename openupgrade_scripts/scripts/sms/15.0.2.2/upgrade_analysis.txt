@@ -1,5 +1,6 @@
 ---Models in module 'sms'---
 ---Fields in module 'sms'---
+sms          / mail.message             / message_type (False)          : selection_keys is now '['auto_comment', 'comment', 'email', 'notification', 'sms', 'user_notification']' ('['comment', 'email', 'notification', 'sms', 'user_notification']')
 sms          / mail.notification        / failure_type (False)          : selection_keys is now '['mail_email_invalid', 'mail_email_missing', 'mail_smtp', 'sms_acc', 'sms_credit', 'sms_number_format', 'sms_number_missing', 'sms_server', 'unknown']' ('['BOUNCE', 'RECIPIENT', 'SMTP', 'UNKNOWN', 'sms_acc', 'sms_credit', 'sms_number_format', 'sms_number_missing', 'sms_server']')
 sms          / res.partner              / phone_mobile_search (char)    : NEW
 sms          / sms.sms                  / error_code (selection)        : DEL selection_keys: ['sms_acc', 'sms_blacklist', 'sms_credit', 'sms_duplicate', 'sms_number_format', 'sms_number_missing', 'sms_server']

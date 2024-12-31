@@ -10,7 +10,6 @@ obsolete model adyen.terminal [module pos_adyen]
 obsolete model adyen.transaction [module adyen_platforms]
 obsolete model calendar.contacts (renamed to calendar.filters) [module calendar]
 obsolete model closing.balance.confirm.wizard [module point_of_sale]
-obsolete model export.computed.binary [module test_xlsx_export]
 obsolete model l10n_eu_service.service_tax_rate [module l10n_eu_oss]
 obsolete model l10n_eu_service.wizard [module l10n_eu_oss]
 obsolete model lunch.product.report [module lunch]
@@ -21,9 +20,12 @@ obsolete model stock.inventory (renamed to stock.quant) [module stock]
 obsolete model stock.inventory.line (renamed to stock.move.line) [module stock]
 obsolete model website.mass_mailing.popup [module website_mass_mailing]
 new model account.accrued.orders.wizard [module account]
+new model account.edi.xml.ubl_21.zatca [module l10n_sa_edi]
 new model account.edi.xml.ubl_nl [module account_edi_ubl_cii]
+new model account.edi.xml.ubl_sg [module account_edi_ubl_cii]
 new model account.payment.method.line [module account]
 new model account.tax.carryover.line [module account]
+new model account.update.tax.tags.wizard [module account_update_tax_tags]
 new model auth_totp.device [module auth_totp]
 new model auth.totp.rate.limit.log [module auth_totp_mail_enforce]
 new model avatar.mixin [module base]
@@ -61,6 +63,7 @@ new model l10n_eg_edi.thumb.drive [module l10n_eg_edi_eta]
 new model l10n_eg_edi.uom.code [module l10n_eg_edi_eta]
 new model l10n_eg.eta.account.tax.mixin [module l10n_eg]
 new model l10n.in.ewaybill.type [module l10n_in_edi_ewaybill]
+new model l10n_sa_edi.otp.wizard [module l10n_sa_edi]
 new model mail.channel.rtc.session [module mail]
 new model mail.composer.mixin [module mail]
 new model mail.group [module mail_group]
@@ -71,9 +74,6 @@ new model mail.group.moderation (renamed from mail.moderation) [module mail_grou
 new model mail.guest [module mail]
 new model mail.ice.server [module mail]
 new model mail.message.reaction [module mail]
-new model mail.test.composer.mixin [module test_mail]
-new model mail.test.lang [module test_mail]
-new model mail.test.track.monetary [module test_mail]
 new model mailing.contact.to.list [module mass_mailing]
 new model mrp.workcenter.tag [module mrp]
 new model payment.refund.wizard [module payment]
@@ -90,6 +90,7 @@ new model project.task.stage.personal [module project]
 new model project.update [module project]
 new model report.product.report_producttemplatelabel [module product]
 new model report.product.report_producttemplatelabel_dymo [module product]
+new model report.stock.label_lot_template_view [module stock]
 new model report.stock.label_product_product_view [module stock]
 new model report.stock.report_reception [module stock]
 new model res.partner.iap [module mail_plugin]
@@ -104,22 +105,18 @@ new model stock.replenishment.info [module stock]
 new model stock.request.count [module stock]
 new model stock.storage.category [module stock]
 new model stock.storage.category.capacity [module stock]
-new model test_inherit.mixin [module test_inherit]
-new model test_new_api.model_constrained_unlinks [module test_new_api]
-new model test_read_group.task [module test_read_group]
-new model test_read_group.user [module test_read_group]
 new model theme.ir.asset [module website]
 new model website.base.unit [module website_sale]
 new model website.configurator.feature [module website]
 new model website.searchable.mixin [module website]
 ---Fields in module 'general'---
-# 12761 fields matched,
-# Direct match: 12688
+# 10908 fields matched,
+# Direct match: 10835
 # Found in other module: 73
 # Found with different type: 0
-# In obsolete models: 166
-# New columns: 1946
-# Not matched: 618
+# In obsolete models: 162
+# New columns: 1879
+# Not matched: 587
 ---XML records in module 'general'---
 ERROR: module not in list of installed modules:
 ---Models in module 'adyen_platforms'---
@@ -250,6 +247,48 @@ l10n_ch_qriban / res.partner.bank         / l10n_ch_qr_iban (char)        : modu
 DEL ir.ui.view: l10n_ch_qriban.l10n_ch_swissqr_qriban_template
 DEL ir.ui.view: l10n_ch_qriban.setup_bank_account_wizard_qr_inherit
 DEL ir.ui.view: l10n_ch_qriban.view_partner_bank_form
+ERROR: module not in list of installed modules:
+---Models in module 'l10n_eu_oss'---
+obsolete model l10n_eu_service.service_tax_rate
+obsolete model l10n_eu_service.wizard [transient]
+---Fields in module 'l10n_eu_oss'---
+l10n_eu_service / l10n_eu_service.service_tax_rate / country_id (many2one)         : DEL relation: res.country
+l10n_eu_service / l10n_eu_service.service_tax_rate / rate (float)                  : DEL
+---XML records in module 'l10n_eu_oss'---
+DEL ir.actions.act_window: l10n_eu_service.action_eu_service
+DEL ir.model.access: l10n_eu_service.access_l10n_eu_service_service_tax_rate_manager
+DEL ir.model.access: l10n_eu_service.access_l10n_eu_service_service_tax_rate_user
+DEL ir.model.access: l10n_eu_service.access_l10n_eu_service_wizard
+DEL ir.ui.view: l10n_eu_service.eu_service_view
+DEL ir.ui.view: l10n_eu_service.res_config_settings_view_form
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_at
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_be
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_bg
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_cy
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_cz
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_de
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_dk
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_ee
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_es
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_fi
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_fr
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_gr
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_hr
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_hu
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_ie
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_it
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_lt
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_lu
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_lv
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_mt
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_nl
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_pl
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_pt
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_ro
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_se
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_si
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_sk
+DEL l10n_eu_service.service_tax_rate: l10n_eu_service.eu_rate_uk
 ERROR: module not in list of installed modules:
 ---Models in module 'odoo_referral'---
 ---Fields in module 'odoo_referral'---

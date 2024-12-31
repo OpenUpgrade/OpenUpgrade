@@ -1,0 +1,5 @@
+---Models in module 'l10n_lu'---
+---Fields in module 'l10n_lu'---
+---XML records in module 'l10n_lu'---
+NEW account.tax.report.line: l10n_lu.account_tax_report_line_2f_supply_goods_base_17
+NEW account.tax.report.line: l10n_lu.account_tax_report_line_2f_supply_goods_tax_17
