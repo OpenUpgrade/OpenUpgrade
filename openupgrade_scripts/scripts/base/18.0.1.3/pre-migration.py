@@ -3,8 +3,6 @@
 
 from openupgradelib import openupgrade
 
-from odoo import tools
-
 from odoo.addons.openupgrade_scripts.apriori import merged_modules, renamed_modules
 
 _renamed_xmlids = [

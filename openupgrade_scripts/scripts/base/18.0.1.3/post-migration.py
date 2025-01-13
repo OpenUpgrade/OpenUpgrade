@@ -15,7 +15,8 @@ def _convert_company_dependent(
     Model = env[model_name]
     Field = (
         env["ir.model.fields"]._get(model_name, field_name)
-        if not old_field_id else env["ir.model.fields"].browse(old_field_id)
+        if not old_field_id
+        else env["ir.model.fields"].browse(old_field_id)
     )
     value_expression = value_expression or (
         "value_%s"
