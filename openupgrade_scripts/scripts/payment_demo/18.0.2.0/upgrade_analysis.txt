@@ -1,0 +1,6 @@
+---Models in module 'payment_demo'---
+---Fields in module 'payment_demo'---
+---XML records in module 'payment_demo'---
+NEW ir.ui.view: payment_demo.payment_provider_form
+DEL ir.ui.view: payment_demo.payment_method_form
+DEL ir.ui.view: payment_demo.token_form

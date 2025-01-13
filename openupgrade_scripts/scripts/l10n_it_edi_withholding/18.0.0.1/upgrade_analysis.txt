@@ -1,0 +1,4 @@
+---Models in module 'l10n_it_edi_withholding'---
+---Fields in module 'l10n_it_edi_withholding'---
+---XML records in module 'l10n_it_edi_withholding'---
+DEL ir.ui.view: l10n_it_edi_withholding.account_invoice_line_it_FatturaPA_withholding

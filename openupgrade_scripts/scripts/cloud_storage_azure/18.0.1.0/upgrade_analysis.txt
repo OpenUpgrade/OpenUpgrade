@@ -1,0 +1,4 @@
+---Models in module 'cloud_storage_azure'---
+---Fields in module 'cloud_storage_azure'---
+---XML records in module 'cloud_storage_azure'---
+NEW ir.ui.view: cloud_storage_azure.cloud_storage_config_settings_view_form

@@ -1,0 +1,5 @@
+---Models in module 'l10n_ar'---
+---Fields in module 'l10n_ar'---
+l10n_ar      / account.move             / l10n_ar_currency_rate (float) : DEL
+l10n_ar      / res.partner              / l10n_ar_special_purchase_document_type_ids (many2many): DEL relation: l10n_latam.document.type
+---XML records in module 'l10n_ar'---

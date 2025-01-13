@@ -1,0 +1,5 @@
+---Models in module 'mrp_repair'---
+---Fields in module 'mrp_repair'---
+---XML records in module 'mrp_repair'---
+NEW ir.ui.view: mrp_repair.mrp_production_form_view_inherit
+NEW ir.ui.view: mrp_repair.view_repair_order_form_inherit

@@ -1,0 +1,31 @@
+---Models in module 'l10n_es_edi_tbai'---
+new model l10n_es_edi_tbai.document
+---Fields in module 'l10n_es_edi_tbai'---
+l10n_es_edi_tbai / account.move             / l10n_es_tbai_cancel_document_id (many2one): NEW relation: l10n_es_edi_tbai.document
+l10n_es_edi_tbai / account.move             / l10n_es_tbai_cancel_xml (binary): DEL attachment: True
+l10n_es_edi_tbai / account.move             / l10n_es_tbai_chain_index (integer): not stored anymore
+l10n_es_edi_tbai / account.move             / l10n_es_tbai_chain_index (integer): now related
+l10n_es_edi_tbai / account.move             / l10n_es_tbai_post_document_id (many2one): NEW relation: l10n_es_edi_tbai.document
+l10n_es_edi_tbai / account.move             / l10n_es_tbai_post_xml (binary): DEL attachment: True
+l10n_es_edi_tbai / account.move             / l10n_es_tbai_reversed_ids (many2many): NEW relation: account.move
+l10n_es_edi_tbai / certificate.certificate  / scope (False)                 : NEW selection_keys: ['facturae', 'general', 'sii', 'tbai'], mode: modify
+l10n_es_edi_tbai / l10n_es_edi_tbai.document / chain_index (integer)         : NEW
+l10n_es_edi_tbai / l10n_es_edi_tbai.document / company_id (many2one)         : NEW relation: res.company, required
+l10n_es_edi_tbai / l10n_es_edi_tbai.document / date (date)                   : NEW required
+l10n_es_edi_tbai / l10n_es_edi_tbai.document / is_cancel (boolean)           : NEW
+l10n_es_edi_tbai / l10n_es_edi_tbai.document / name (char)                   : NEW required
+l10n_es_edi_tbai / l10n_es_edi_tbai.document / response_message (text)       : NEW
+l10n_es_edi_tbai / l10n_es_edi_tbai.document / state (selection)             : NEW selection_keys: ['accepted', 'rejected', 'to_send']
+l10n_es_edi_tbai / l10n_es_edi_tbai.document / xml_attachment_id (many2one)  : NEW relation: ir.attachment
+l10n_es_edi_tbai / res.company              / l10n_es_tbai_certificate_id (many2one): NEW relation: certificate.certificate, hasdefault: compute
+l10n_es_edi_tbai / res.company              / l10n_es_tbai_certificate_ids (one2many): NEW relation: certificate.certificate
+l10n_es_edi_tbai / res.company              / l10n_es_tbai_test_env (boolean): NEW hasdefault: default
+---XML records in module 'l10n_es_edi_tbai'---
+DEL account.edi.format: l10n_es_edi_tbai.edi_es_tbai
+NEW ir.actions.act_window: l10n_es_edi_tbai.l10n_es_edi_tbai_certificate_action
+NEW ir.model.access: l10n_es_edi_tbai.access_l10n_es_edi_tbai_document_readonly
+NEW ir.rule: l10n_es_edi_tbai.tbai_document_comp_rule (noupdate)
+NEW ir.ui.menu: l10n_es_edi_tbai.menu_l10n_es_edi_tbai_certificates
+NEW ir.ui.menu: l10n_es_edi_tbai.menu_l10n_es_edi_tbai_root
+NEW ir.ui.view: l10n_es_edi_tbai.certificate_certificate_view_form
+NEW ir.ui.view: l10n_es_edi_tbai.certificate_certificate_view_search

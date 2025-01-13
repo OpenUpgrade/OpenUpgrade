@@ -1,0 +1,4 @@
+---Models in module 'l10n_ec_website_sale'---
+---Fields in module 'l10n_ec_website_sale'---
+l10n_ec_website_sale / payment.method           / fiscal_country_codes (char)   : not a function anymore
+---XML records in module 'l10n_ec_website_sale'---

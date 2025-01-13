@@ -1,0 +1,4 @@
+---Models in module 'mail_bot'---
+---Fields in module 'mail_bot'---
+mail_bot     / res.users                / odoobot_state (selection)     : selection_keys is now '['disabled', 'idle', 'not_initialized', 'onboarding_attachement', 'onboarding_canned', 'onboarding_command', 'onboarding_emoji', 'onboarding_ping']' ('['disabled', 'idle', 'not_initialized', 'onboarding_attachement', 'onboarding_command', 'onboarding_emoji', 'onboarding_ping']')
+---XML records in module 'mail_bot'---

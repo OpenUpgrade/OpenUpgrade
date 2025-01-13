@@ -1,0 +1,22 @@
+---Models in module 'auth_passkey'---
+new model auth.passkey.key
+new model auth.passkey.key.create [transient]
+---Fields in module 'auth_passkey'---
+auth_passkey / auth.passkey.key         / credential_identifier (char)  : NEW required
+auth_passkey / auth.passkey.key         / name (char)                   : NEW required
+auth_passkey / auth.passkey.key         / sign_count (integer)          : NEW hasdefault: default
+auth_passkey / res.users                / auth_passkey_key_ids (one2many): NEW relation: auth.passkey.key
+---XML records in module 'auth_passkey'---
+NEW ir.actions.act_window: auth_passkey.action_auth_passkey_key_create
+NEW ir.model.access: auth_passkey.access_auth_passkey_key
+NEW ir.model.access: auth_passkey.access_auth_passkey_key_admin
+NEW ir.model.access: auth_passkey.access_auth_passkey_key_create
+NEW ir.model.constraint: auth_passkey.constraint_auth_passkey_key_unique_identifier
+NEW ir.rule: auth_passkey.rule_auth_passkey_key_admin
+NEW ir.rule: auth_passkey.rule_auth_passkey_key_user
+NEW ir.ui.view: auth_passkey.auth_passkey_key_create_view_form
+NEW ir.ui.view: auth_passkey.auth_passkey_key_rename
+NEW ir.ui.view: auth_passkey.auth_passkey_login
+NEW ir.ui.view: auth_passkey.auth_passkey_users_form
+NEW ir.ui.view: auth_passkey.auth_passkey_users_preferences
+NEW ir.ui.view: auth_passkey.res_users_identitycheck_view_form_passkey

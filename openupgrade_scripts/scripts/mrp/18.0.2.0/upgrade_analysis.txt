@@ -1,0 +1,56 @@
+---Models in module 'mrp'---
+obsolete model mrp.document
+new model mrp.batch.produce [transient]
+---Fields in module 'mrp'---
+mrp          / mrp.document             / _inherits                     : DEL _inherits: {'ir.attachment': 'ir_attachment_id'}
+mrp          / mrp.document             / active (boolean)              : DEL
+mrp          / mrp.document             / ir_attachment_id (many2one)   : DEL relation: ir.attachment, required
+mrp          / mrp.document             / priority (selection)          : DEL selection_keys: ['0', '1', '2', '3']
+mrp          / mrp.production           / location_final_id (many2one)  : NEW relation: stock.location
+mrp          / mrp.production           / never_product_template_attribute_value_ids (many2many): NEW relation: product.template.attribute.value
+mrp          / mrp.production           / search_date_category (selection): NEW selection_keys: ['after', 'before', 'day_1', 'day_2', 'today', 'yesterday']
+mrp          / mrp.routing.workcenter   / activity_ids (one2many)       : NEW relation: mail.activity
+mrp          / mrp.routing.workcenter   / message_follower_ids (one2many): NEW relation: mail.followers
+mrp          / mrp.routing.workcenter   / message_ids (one2many)        : NEW relation: mail.message
+mrp          / mrp.routing.workcenter   / rating_ids (one2many)         : NEW relation: rating.rating
+mrp          / mrp.routing.workcenter   / website_message_ids (one2many): NEW relation: mail.message
+mrp          / mrp.unbuild              / bom_id (many2one)             : now a function
+mrp          / mrp.unbuild              / lot_id (many2one)             : now a function
+mrp          / mrp.workcenter           / message_follower_ids (one2many): NEW relation: mail.followers
+mrp          / mrp.workcenter           / message_ids (one2many)        : NEW relation: mail.message
+mrp          / mrp.workcenter           / rating_ids (one2many)         : NEW relation: rating.rating
+mrp          / mrp.workcenter           / website_message_ids (one2many): NEW relation: mail.message
+mrp          / mrp.workorder            / _order                        : _order is now 'sequence, leave_id, date_start, id' ('leave_id, date_start, id')
+mrp          / mrp.workorder            / production_date (datetime)    : not related anymore
+mrp          / mrp.workorder            / production_date (datetime)    : now a function
+mrp          / mrp.workorder            / sequence (integer)            : NEW hasdefault: default
+mrp          / product.document         / attached_on_mrp (selection)   : NEW required, selection_keys: ['bom', 'hidden'], hasdefault: default
+mrp          / stock.move               / manual_consumption (boolean)  : not a function anymore
+mrp          / stock.picking.type       / use_auto_consume_components_lots (boolean): DEL
+---XML records in module 'mrp'---
+NEW ir.actions.act_window: mrp.action_mrp_batch_produce
+NEW ir.actions.act_window: mrp.action_picking_tree_mrp_operation_graph
+DEL ir.actions.act_window: mrp.act_assign_serial_numbers_production
+NEW ir.actions.server: mrp.action_pause_workorders
+NEW ir.actions.server: mrp.action_print_labels
+NEW ir.actions.server: mrp.action_production_order_lock_unlock
+NEW ir.actions.server: mrp.action_production_order_scrap
+NEW ir.actions.server: mrp.action_start_workorders
+NEW ir.model.access: mrp.access_mrp_batch_produce
+NEW ir.model.access: mrp.access_stock_move_mrp_user
+NEW ir.ui.view: mrp.mrp_production_workorder_tree_editable_view_mo_form
+NEW ir.ui.view: mrp.product_document_form
+NEW ir.ui.view: mrp.product_view_search_catalog
+NEW ir.ui.view: mrp.view_mrp_batch_produce_form
+NEW ir.ui.view: mrp.view_mrp_stock_move_operations
+NEW ir.ui.view: mrp.view_stock_rule_form
+DEL ir.ui.view: mrp.mrp_workorder_view_gantt
+DEL ir.ui.view: mrp.view_assign_serial_numbers_production
+DEL ir.ui.view: mrp.view_document_file_kanban_mrp
+DEL ir.ui.view: mrp.view_mrp_document_form
+DEL ir.ui.view: mrp.workcenter_line_gantt_production
+NEW mail.message.subtype: mrp.mrp_mo_in_cancelled (noupdate)
+NEW mail.message.subtype: mrp.mrp_mo_in_confirmed (noupdate)
+NEW mail.message.subtype: mrp.mrp_mo_in_done (noupdate)
+NEW mail.message.subtype: mrp.mrp_mo_in_progress (noupdate)
+NEW mail.message.subtype: mrp.mrp_mo_in_to_close (noupdate)

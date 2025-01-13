@@ -1,0 +1,5 @@
+---Models in module 'pos_adyen'---
+---Fields in module 'pos_adyen'---
+pos_adyen    / pos.payment.method       / adyen_event_url (char)        : NEW
+pos_adyen    / pos.payment.method       / adyen_latest_diagnosis (char) : DEL
+---XML records in module 'pos_adyen'---

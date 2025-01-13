@@ -1,0 +1,4 @@
+---Models in module 'pos_viva_wallet'---
+---Fields in module 'pos_viva_wallet'---
+---XML records in module 'pos_viva_wallet'---
+---nothing has changed in this module--

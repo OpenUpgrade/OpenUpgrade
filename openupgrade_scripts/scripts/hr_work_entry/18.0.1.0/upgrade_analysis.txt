@@ -1,0 +1,6 @@
+---Models in module 'hr_work_entry'---
+---Fields in module 'hr_work_entry'---
+hr_work_entry / hr.work.entry.type       / country_id (many2one)         : NEW relation: res.country
+---XML records in module 'hr_work_entry'---
+DEL ir.model.constraint: hr_work_entry.constraint_hr_work_entry_type_unique_work_entry_code
+NEW ir.rule: hr_work_entry.ir_rule_hr_work_entry_type_multi_company (noupdate)

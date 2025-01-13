@@ -1,0 +1,4 @@
+---Models in module 'stock_dropshipping'---
+---Fields in module 'stock_dropshipping'---
+---XML records in module 'stock_dropshipping'---
+NEW ir.ui.view: stock_dropshipping.stock_picking_type_kanban

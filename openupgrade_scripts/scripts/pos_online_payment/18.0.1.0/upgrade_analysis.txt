@@ -1,0 +1,4 @@
+---Models in module 'pos_online_payment'---
+---Fields in module 'pos_online_payment'---
+---XML records in module 'pos_online_payment'---
+---nothing has changed in this module--

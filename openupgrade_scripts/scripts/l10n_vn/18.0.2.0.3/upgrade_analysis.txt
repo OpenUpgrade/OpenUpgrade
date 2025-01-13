@@ -1,0 +1,43 @@
+---Models in module 'l10n_vn'---
+---Fields in module 'l10n_vn'---
+l10n_vn      / account.move             / l10n_vn_e_invoice_number (char): NEW
+---XML records in module 'l10n_vn'---
+NEW account.report.column: l10n_vn.tax_report_amount_untaxed
+NEW account.report.expression: l10n_vn.account_tax_report_line_01_01_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_01_01_02_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_01_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_01_02_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_01_02_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_02_01_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_02_01_02_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_02_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_02_02_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_02_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_03_01_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_03_01_02_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_03_01_vn_tag
+NEW account.report.expression: l10n_vn.account_tax_report_line_03_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_03_02_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_04_01_01_vn_tag
+NEW account.report.expression: l10n_vn.account_tax_report_line_04_01_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_04_01_02_vn_tag
+NEW account.report.expression: l10n_vn.account_tax_report_line_04_01_02_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_04_02_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_05_01_01_vn_tag_base
+NEW account.report.expression: l10n_vn.account_tax_report_line_05_01_02_vn_tag_base
+DEL account.report.expression: l10n_vn.account_tax_report_line_01_02_02_vn_tag
+DEL account.report.expression: l10n_vn.account_tax_report_line_02_02_02_vn_tag
+DEL account.report.expression: l10n_vn.account_tax_report_line_03_02_02_vn_tag
+DEL account.report.expression: l10n_vn.account_tax_report_line_04_02_02_vn_tag
+NEW account.report.line: l10n_vn.account_tax_report_line_03_01_vn
+NEW account.report.line: l10n_vn.account_tax_report_line_04_01_01_vn
+NEW account.report.line: l10n_vn.account_tax_report_line_04_01_02_vn
+NEW account.report.line: l10n_vn.account_tax_report_line_05_01_01_vn
+NEW account.report.line: l10n_vn.account_tax_report_line_05_01_02_vn
+DEL account.report.line: l10n_vn.account_tax_report_line_01_02_02_vn
+DEL account.report.line: l10n_vn.account_tax_report_line_02_02_02_vn
+DEL account.report.line: l10n_vn.account_tax_report_line_02_02_vn
+DEL account.report.line: l10n_vn.account_tax_report_line_03_02_02_vn
+DEL account.report.line: l10n_vn.account_tax_report_line_04_02_02_vn
+NEW ir.ui.view: l10n_vn.view_invoice_form_inherit_l10n_vn

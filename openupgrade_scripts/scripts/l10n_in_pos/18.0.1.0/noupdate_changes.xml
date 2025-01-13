@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="point_of_sale.0_05" model="pos.bill" forcecreate="0">
+    <field name="for_all_config">False</field>
+  </record>
+  <record id="point_of_sale.0_10" model="pos.bill" forcecreate="0">
+    <field name="for_all_config">False</field>
+  </record>
+  <record id="point_of_sale.0_20" model="pos.bill" forcecreate="0">
+    <field name="for_all_config">False</field>
+  </record>
+  <record id="point_of_sale.0_25" model="pos.bill" forcecreate="0">
+    <field name="for_all_config">False</field>
+  </record>
+  <record id="point_of_sale.0_50" model="pos.bill" forcecreate="0">
+    <field name="for_all_config">False</field>
+  </record>
+</odoo>

@@ -1,0 +1,5 @@
+---Models in module 'account_edi_proxy_client'---
+---Fields in module 'account_edi_proxy_client'---
+account_edi_proxy_client / account_edi_proxy_client.user / private_key (binary)          : DEL required, attachment: False
+account_edi_proxy_client / account_edi_proxy_client.user / private_key_id (many2one)     : NEW relation: certificate.key, required
+---XML records in module 'account_edi_proxy_client'---

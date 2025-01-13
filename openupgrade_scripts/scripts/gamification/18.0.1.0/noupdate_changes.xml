@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="mail_template_data_new_rank_reached" model="mail.template">
+    <field name="body_html" type="html">
+      <div style="color:#515166;padding:10px 0px;font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+        <table style="width:600px;margin:0px auto;background:white;border:1px solid #e1e1e1;">
+          <tbody>
+            <tr>
+              <td style="padding:15px 20px 10px 20px;">
+                <p>
+                    Congratulations
+                    <span t-out="object.name or ''">Joel Willis</span>!
+                </p>
+                <p>
+                    You just reached a new rank: <strong t-out="object.rank_id.name or ''">Newbie</strong>
+                </p>
+                <t t-if="object.next_rank_id.name">
+                  <p>Continue your work to become a <strong t-out="object.next_rank_id.name or ''">Student</strong>!</p>
+                </t>
+                <div style="margin: 16px 0px 16px 0px;">
+                  <t t-set="gamification_redirection_data" t-value="object.get_gamification_redirection_data()"/>
+                  <t t-foreach="gamification_redirection_data" t-as="data">
+                    <t t-set="url" t-value="data['url']"/>
+                    <t t-set="label" t-value="data['label']"/>
+                    <a t-att-href="url" style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;" t-out="label or ''">LABEL</a>
+                  </t>
+                </div>
+              </td>
+              <td style="padding:15px 20px 10px 20px;">
+                <p style="text-align: center;">
+                  <img t-attf-src="/web/image/gamification.karma.rank/{{ object.rank_id.id }}/image_128"/>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td t-if="not user.share and user.active" style="padding:15px 20px 10px 20px;">
+                <t t-out="user.signature or ''">--<br/>Mitchell Admin</t>
+              </td>
+              <td t-else="" style="padding:15px 20px 10px 20px;">
+                <t t-out="user.company_id.name or ''"/>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </field>
+  </record>
+</odoo>

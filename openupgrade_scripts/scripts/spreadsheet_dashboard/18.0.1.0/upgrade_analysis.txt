@@ -1,0 +1,11 @@
+---Models in module 'spreadsheet_dashboard'---
+---Fields in module 'spreadsheet_dashboard'---
+spreadsheet_dashboard / spreadsheet.dashboard    / company_id (many2one)         : NEW relation: res.company
+spreadsheet_dashboard / spreadsheet.dashboard    / is_published (boolean)        : NEW hasdefault: default
+spreadsheet_dashboard / spreadsheet.dashboard    / main_data_model_ids (many2many): NEW relation: ir.model
+spreadsheet_dashboard / spreadsheet.dashboard    / sample_dashboard_file_path (char): NEW
+spreadsheet_dashboard / spreadsheet.dashboard.group / published_dashboard_ids (one2many): NEW relation: spreadsheet.dashboard
+---XML records in module 'spreadsheet_dashboard'---
+DEL ir.module.category: spreadsheet_dashboard.dashboard_management
+NEW ir.rule: spreadsheet_dashboard.spreadsheet_dashboard_rule_company
+NEW spreadsheet.dashboard.group: spreadsheet_dashboard.spreadsheet_dashboard_group_marketing [renamed from spreadsheet_dashboard_event_sale module]

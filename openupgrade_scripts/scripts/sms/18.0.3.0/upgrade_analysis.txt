@@ -1,0 +1,19 @@
+---Models in module 'sms'---
+new model sms.account.code [transient]
+new model sms.account.phone [transient]
+new model sms.account.sender [transient]
+---Fields in module 'sms'---
+sms          / hr.department            / message_has_sms_error (boolean): module is now 'hr' ('sms')
+sms          / hr.employee              / message_has_sms_error (boolean): module is now 'hr' ('sms')
+sms          / hr.job                   / message_has_sms_error (boolean): module is now 'hr' ('sms')
+sms          / iap.account              / sender_name (char)            : NEW
+sms          / loyalty.card             / message_has_sms_error (boolean): module is now 'loyalty' ('sms')
+---XML records in module 'sms'---
+NEW iap.service: sms.iap_service_sms
+NEW ir.model.access: sms.access_sms_account_registration_phone_number_wizard_system
+NEW ir.model.access: sms.access_sms_account_sender_name_wizard_system
+NEW ir.model.access: sms.access_sms_account_verification_code_wizard_system
+NEW ir.ui.view: sms.iap_account_view_form
+NEW ir.ui.view: sms.sms_account_code_view_form
+NEW ir.ui.view: sms.sms_account_phone_view_form
+NEW ir.ui.view: sms.sms_account_sender_view_form

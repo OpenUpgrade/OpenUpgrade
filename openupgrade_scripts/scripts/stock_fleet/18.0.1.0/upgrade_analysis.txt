@@ -1,0 +1,25 @@
+---Models in module 'stock_fleet'---
+---Fields in module 'stock_fleet'---
+stock_fleet  / fleet.vehicle.model.category / volume_capacity (float)       : NEW
+stock_fleet  / fleet.vehicle.model.category / weight_capacity (float)       : NEW
+stock_fleet  / stock.location           / is_a_dock (boolean)           : NEW
+stock_fleet  / stock.picking.batch      / dock_id (many2one)            : NEW relation: stock.location, hasdefault: compute
+stock_fleet  / stock.picking.batch      / driver_id (many2one)          : NEW relation: res.partner, hasdefault: compute
+stock_fleet  / stock.picking.batch      / end_date (datetime)           : NEW hasdefault: default
+stock_fleet  / stock.picking.batch      / vehicle_category_id (many2one): NEW relation: fleet.vehicle.model.category, hasdefault: compute
+stock_fleet  / stock.picking.batch      / vehicle_id (many2one)         : NEW relation: fleet.vehicle
+---XML records in module 'stock_fleet'---
+NEW ir.ui.view: stock_fleet.fleet_vehicle_model_category_view_form_stock_fleet
+NEW ir.ui.view: stock_fleet.fleet_vehicle_model_category_view_tree_stock_fleet
+NEW ir.ui.view: stock_fleet.report_picking_batch_inherit
+NEW ir.ui.view: stock_fleet.stock_location_form_stock_fleet
+NEW ir.ui.view: stock_fleet.stock_location_tree_stock_fleet
+NEW ir.ui.view: stock_fleet.stock_picking_batch_filter
+NEW ir.ui.view: stock_fleet.stock_picking_batch_form
+NEW ir.ui.view: stock_fleet.stock_picking_batch_graph
+NEW ir.ui.view: stock_fleet.stock_picking_batch_kanban
+NEW ir.ui.view: stock_fleet.stock_picking_batch_pivot
+NEW ir.ui.view: stock_fleet.stock_picking_batch_tree
+NEW ir.ui.view: stock_fleet.stock_picking_tree_inherit_stock_fleet
+NEW ir.ui.view: stock_fleet.stock_picking_type_kanban_inherit_stock_fleet
+NEW ir.ui.view: stock_fleet.vpicktree

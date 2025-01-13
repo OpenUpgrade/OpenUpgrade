@@ -1,0 +1,11 @@
+---Models in module 'web'---
+---Fields in module 'web'---
+---XML records in module 'web'---
+NEW ir.ui.view: web.external_layout_bubble
+NEW ir.ui.view: web.external_layout_folder
+NEW ir.ui.view: web.external_layout_wave
+NEW ir.ui.view: web.unit_tests_suite
+NEW ir.ui.view: web.webclient_scoped_app
+NEW report.layout: web.report_layout_bubble
+NEW report.layout: web.report_layout_folder
+NEW report.layout: web.report_layout_wave

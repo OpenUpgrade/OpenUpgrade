@@ -1,0 +1,6 @@
+---Models in module 'account_tax_python'---
+---Fields in module 'account_tax_python'---
+account_tax_python / account.tax              / formula (text)                : NEW hasdefault: default
+account_tax_python / account.tax              / python_applicable (text)      : DEL
+account_tax_python / account.tax              / python_compute (text)         : DEL
+---XML records in module 'account_tax_python'---

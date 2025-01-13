@@ -1,0 +1,4 @@
+---Models in module 'cloud_storage_google'---
+---Fields in module 'cloud_storage_google'---
+---XML records in module 'cloud_storage_google'---
+NEW ir.ui.view: cloud_storage_google.cloud_storage_google_config_settings_view_form

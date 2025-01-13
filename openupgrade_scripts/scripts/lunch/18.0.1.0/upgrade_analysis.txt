@@ -1,0 +1,5 @@
+---Models in module 'lunch'---
+---Fields in module 'lunch'---
+lunch        / lunch.order              / order_deadline_passed (boolean): not related anymore
+lunch        / lunch.order              / order_deadline_passed (boolean): now a function
+---XML records in module 'lunch'---

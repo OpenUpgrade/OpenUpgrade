@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="product_product_event_booth" model="product.product">
+    <field name="categ_id" ref="event_product.product_category_events"/>
+    <field name="service_tracking">event_booth</field>
+    <field name="type">service</field>
+  </record>
+</odoo>

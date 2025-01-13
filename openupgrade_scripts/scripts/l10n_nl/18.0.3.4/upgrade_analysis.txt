@@ -1,0 +1,5 @@
+---Models in module 'l10n_nl'---
+---Fields in module 'l10n_nl'---
+l10n_nl      / res.company              / l10n_nl_rounding_difference_loss_account_id (many2one): NEW relation: account.account
+l10n_nl      / res.company              / l10n_nl_rounding_difference_profit_account_id (many2one): NEW relation: account.account
+---XML records in module 'l10n_nl'---

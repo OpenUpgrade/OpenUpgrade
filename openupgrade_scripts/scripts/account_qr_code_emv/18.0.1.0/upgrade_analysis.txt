@@ -1,0 +1,4 @@
+---Models in module 'account_qr_code_emv'---
+---Fields in module 'account_qr_code_emv'---
+account_qr_code_emv / res.partner.bank         / country_code (char)           : module is now 'base' ('account_qr_code_emv')
+---XML records in module 'account_qr_code_emv'---

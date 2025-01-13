@@ -1,0 +1,26 @@
+---Models in module 'l10n_au'---
+---Fields in module 'l10n_au'---
+---XML records in module 'l10n_au'---
+NEW account.account.tag: l10n_au.account_tag_dgst
+NEW account.report.expression: l10n_au.account_tax_report_gstrpt_summary_tag
+NEW account.report.expression: l10n_au.account_tax_report_payg_w1_tag
+NEW account.report.expression: l10n_au.account_tax_report_payg_w2_balance
+NEW account.report.expression: l10n_au.account_tax_report_payg_w2_tag
+NEW account.report.expression: l10n_au.account_tax_report_payg_w3_balance
+NEW account.report.expression: l10n_au.account_tax_report_payg_w3_tag
+NEW account.report.expression: l10n_au.account_tax_report_payg_w4_tag
+DEL account.report.expression: l10n_au.account_tax_report_gstrpt_comparison_gl_tag
+NEW account.report.line: l10n_au.account_tax_report_gstrpt_summary_7a
+NEW account.report.line: l10n_au.account_tax_report_gstrpt_summary_8a
+NEW account.report.line: l10n_au.account_tax_report_gstrpt_summary_8b
+NEW account.report.line: l10n_au.account_tax_report_payg_summary_4
+NEW account.report.line: l10n_au.account_tax_report_payg_w1
+NEW account.report.line: l10n_au.account_tax_report_payg_w2
+NEW account.report.line: l10n_au.account_tax_report_payg_w3
+NEW account.report.line: l10n_au.account_tax_report_payg_w4
+NEW account.report.line: l10n_au.account_tax_report_payg_w5
+NEW account.report.line: l10n_au.account_tax_report_paygw
+DEL account.report.line: l10n_au.account_tax_report_gstrpt_comparison
+DEL account.report.line: l10n_au.account_tax_report_gstrpt_comparison_gl
+DEL account.report.line: l10n_au.account_tax_report_gstrpt_comparison_worksheet
+DEL ir.ui.view: l10n_au.report_payment_receipt_document

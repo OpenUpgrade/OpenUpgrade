@@ -1,0 +1,14 @@
+---Models in module 'hr_expense'---
+---Fields in module 'hr_expense'---
+hr_expense   / hr.expense               / analytic_distribution_search (json): DEL
+hr_expense   / hr.expense               / payment_mode (selection)      : now required
+hr_expense   / hr.expense               / vendor_id (many2one)          : NEW relation: res.partner
+hr_expense   / hr.expense.sheet         / accounting_date (date)        : not a function anymore
+hr_expense   / res.company              / expense_outstanding_account_id (many2one): NEW relation: account.account
+hr_expense   / res.company              / expense_product_id (many2one) : DEL relation: product.product
+---XML records in module 'hr_expense'---
+DEL ir.rule: hr_expense.ir_rule_hr_expense_employee_not_draft (noupdate)
+NEW ir.ui.view: hr_expense.hr_expense_kanban_view_minimal
+DEL ir.ui.view: hr_expense.account_journal_dashboard_kanban_view_inherit_hr_expense
+NEW mail.message.subtype: hr_expense.mt_expense_entry_draft (noupdate)
+NEW web_tour.tour: hr_expense.hr_expense_tour

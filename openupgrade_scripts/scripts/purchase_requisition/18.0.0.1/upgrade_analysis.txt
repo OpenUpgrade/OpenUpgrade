@@ -1,0 +1,33 @@
+---Models in module 'purchase_requisition'---
+obsolete model purchase.requisition.type
+---Fields in module 'purchase_requisition'---
+purchase_requisition / purchase.order.line      / price_total_cc (float)        : NEW isfunction: function, stored
+purchase_requisition / purchase.requisition     / active (boolean)              : NEW hasdefault: default
+purchase_requisition / purchase.requisition     / date_end (datetime)           : type is now 'date' ('datetime')
+purchase_requisition / purchase.requisition     / date_start (date)             : NEW
+purchase_requisition / purchase.requisition     / ordering_date (date)          : DEL
+purchase_requisition / purchase.requisition     / origin (char)                 : DEL
+purchase_requisition / purchase.requisition     / reference (char)              : NEW
+purchase_requisition / purchase.requisition     / requisition_type (selection)  : NEW required, selection_keys: ['blanket_order', 'purchase_template'], hasdefault: default
+purchase_requisition / purchase.requisition     / schedule_date (date)          : DEL
+purchase_requisition / purchase.requisition     / state (selection)             : selection_keys is now '['cancel', 'confirmed', 'done', 'draft']' ('['cancel', 'done', 'draft', 'in_progress', 'ongoing', 'open']')
+purchase_requisition / purchase.requisition     / type_id (many2one)            : DEL relation: purchase.requisition.type, required
+purchase_requisition / purchase.requisition.line / analytic_distribution_search (json): DEL
+purchase_requisition / purchase.requisition.line / schedule_date (date)          : DEL
+purchase_requisition / purchase.requisition.type / active (boolean)              : DEL
+purchase_requisition / purchase.requisition.type / exclusive (selection)         : DEL required, selection_keys: ['exclusive', 'multiple']
+purchase_requisition / purchase.requisition.type / line_copy (selection)         : DEL required, selection_keys: ['copy', 'none']
+purchase_requisition / purchase.requisition.type / name (char)                   : DEL required
+purchase_requisition / purchase.requisition.type / quantity_copy (selection)     : DEL required, selection_keys: ['copy', 'none']
+purchase_requisition / purchase.requisition.type / sequence (integer)            : DEL
+---XML records in module 'purchase_requisition'---
+DEL ir.model.access: purchase_requisition.access_purchase_requisition_type
+DEL ir.model.access: purchase_requisition.access_purchase_requisition_type_manager
+NEW ir.sequence: purchase_requisition.seq_purchase_template (noupdate)
+NEW ir.ui.view: purchase_requisition.res_config_settings_view_form_purchase_requisition
+DEL ir.ui.view: purchase_requisition.view_purchase_requisition_type_form
+DEL ir.ui.view: purchase_requisition.view_purchase_requisition_type_kanban
+DEL ir.ui.view: purchase_requisition.view_purchase_requisition_type_search
+DEL ir.ui.view: purchase_requisition.view_purchase_requisition_type_tree
+DEL purchase.requisition.type: purchase_requisition.type_single (noupdate)
+NEW res.groups: purchase_requisition.group_purchase_alternatives (noupdate)

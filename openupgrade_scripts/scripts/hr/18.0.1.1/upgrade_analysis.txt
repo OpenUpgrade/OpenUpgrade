@@ -1,0 +1,60 @@
+---Models in module 'hr'---
+new model hr.manager.department.report [abstract]
+---Fields in module 'hr'---
+hr           / hr.department            / activity_ids (one2many)       : NEW relation: mail.activity
+hr           / hr.department            / has_read_access (boolean)     : NEW
+hr           / hr.department            / message_has_sms_error (boolean): previously in module sms
+hr           / hr.department            / website_message_ids (one2many): previously in module portal
+hr           / hr.employee              / category_ids (many2many)      : column1 is now 'employee_id' ('emp_id') [employee_category_rel]
+hr           / hr.employee              / distance_home_work (integer)  : NEW
+hr           / hr.employee              / distance_home_work_unit (selection): NEW required, selection_keys: ['kilometers', 'miles'], hasdefault: default
+hr           / hr.employee              / employee_type (selection)     : selection_keys is now '['contractor', 'employee', 'freelance', 'student', 'trainee', 'worker']' ('['contractor', 'employee', 'freelance', 'student', 'trainee']')
+hr           / hr.employee              / hr_icon_display (selection)   : selection_keys is now '['presence_absent', 'presence_archive', 'presence_out_of_working_hour', 'presence_present', 'presence_undetermined']' ('['presence_absent', 'presence_absent_active', 'presence_present', 'presence_to_define', 'presence_undetermined']')
+hr           / hr.employee              / hr_presence_state (selection) : selection_keys is now '['absent', 'archive', 'out_of_working_hour', 'present']' ('['absent', 'present', 'to_define']')
+hr           / hr.employee              / is_flexible (boolean)         : NEW isfunction: function, stored
+hr           / hr.employee              / is_fully_flexible (boolean)   : NEW isfunction: function, stored
+hr           / hr.employee              / km_home_work (integer)        : now a function
+hr           / hr.employee              / marital (selection)           : now required
+hr           / hr.employee              / marital (selection)           : selection_keys is now 'function' ('['cohabitant', 'divorced', 'married', 'single', 'widower']')
+hr           / hr.employee              / message_has_sms_error (boolean): previously in module sms
+hr           / hr.employee              / website_message_ids (one2many): previously in module portal
+hr           / hr.employee.category     / employee_ids (many2many)      : column2 is now 'employee_id' ('emp_id') [employee_category_rel]
+hr           / hr.job                   / message_has_sms_error (boolean): previously in module sms
+hr           / hr.job                   / no_of_hired_employee (integer): module is now 'hr_recruitment' ('hr')
+hr           / hr.job                   / no_of_hired_employee (integer): now a function
+hr           / hr.job                   / website_message_ids (one2many): previously in module portal
+hr           / res.company              / hr_presence_control_attendance (boolean): NEW
+hr           / res.company              / hr_presence_control_email (boolean): NEW
+hr           / res.company              / hr_presence_control_ip (boolean): NEW
+hr           / res.company              / hr_presence_control_login (boolean): NEW hasdefault: default
+---XML records in module 'hr'---
+NEW digest.tip: hr.digest_tip_hr_0
+NEW hr.contract.type: hr.contract_type_apprenticeship (noupdate)
+NEW hr.contract.type: hr.contract_type_employee (noupdate)
+NEW hr.contract.type: hr.contract_type_statutaire (noupdate)
+NEW hr.contract.type: hr.contract_type_student (noupdate)
+NEW hr.contract.type: hr.contract_type_thesis (noupdate)
+DEL ir.actions.act_window: hr.act_employee_from_department
+DEL ir.actions.act_window: hr.open_view_employee_tree
+NEW ir.actions.act_window.view: hr.act_hr_employee_activity_view
+NEW ir.actions.act_window.view: hr.act_hr_employee_form_view
+NEW ir.actions.act_window.view: hr.act_hr_employee_graph_view
+NEW ir.actions.act_window.view: hr.act_hr_employee_kanban_view
+NEW ir.actions.act_window.view: hr.act_hr_employee_pivot_view
+NEW ir.actions.act_window.view: hr.act_hr_employee_public_form_view
+NEW ir.actions.act_window.view: hr.act_hr_employee_public_kanban_view
+NEW ir.actions.act_window.view: hr.act_hr_employee_public_tree_view
+NEW ir.actions.act_window.view: hr.act_hr_employee_tree_view
+NEW ir.actions.act_window.view: hr.hr_department_form_view_kanban_action
+NEW ir.actions.act_window.view: hr.hr_department_form_view_tree_action
+NEW ir.actions.act_window.view: hr.hr_department_kanban_view_kanban_action
+NEW ir.actions.act_window.view: hr.hr_department_kanban_view_tree_action
+NEW ir.actions.act_window.view: hr.hr_department_tree_view_kanban_action
+NEW ir.actions.act_window.view: hr.hr_department_tree_view_tree_action
+DEL ir.actions.server: hr.action_hr_employee_create_user
+DEL ir.config_parameter: hr.hr_presence_control_login (noupdate)
+DEL ir.ui.menu: hr.menu_config_plan
+DEL ir.ui.menu: hr.menu_hr_department_tree
+NEW ir.ui.view: hr.res_partner_view_search
+NEW ir.ui.view: hr.view_employee_form_smartbutton_inherited
+NEW report.paperformat: hr.paperformat_hr_employee_badge

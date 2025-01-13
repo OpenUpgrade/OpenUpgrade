@@ -1,0 +1,54 @@
+---Models in module 'l10n_es_edi_facturae'---
+obsolete model l10n_es_edi_facturae.certificate
+new model l10n_es_edi_facturae.ac_role_type
+---Fields in module 'l10n_es_edi_facturae'---
+l10n_es_edi_facturae / account.bank.statement.line / l10n_es_invoicing_period_end_date (date): previously in module l10n_es_edi_facturae_invoice_period
+l10n_es_edi_facturae / account.bank.statement.line / l10n_es_invoicing_period_start_date (date): previously in module l10n_es_edi_facturae_invoice_period
+l10n_es_edi_facturae / account.move             / l10n_es_invoicing_period_end_date (date): previously in module l10n_es_edi_facturae_invoice_period
+l10n_es_edi_facturae / account.move             / l10n_es_invoicing_period_start_date (date): previously in module l10n_es_edi_facturae_invoice_period
+l10n_es_edi_facturae / account.move             / l10n_es_payment_means (selection): NEW selection_keys: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'], hasdefault: default
+l10n_es_edi_facturae / certificate.certificate  / scope (False)                 : NEW selection_keys: ['facturae', 'general'], mode: modify
+l10n_es_edi_facturae / l10n_es_edi_facturae.ac_role_type / code (char)                   : NEW required
+l10n_es_edi_facturae / l10n_es_edi_facturae.ac_role_type / name (char)                   : NEW required
+l10n_es_edi_facturae / l10n_es_edi_facturae.certificate / company_id (many2one)         : DEL relation: res.company, required
+l10n_es_edi_facturae / l10n_es_edi_facturae.certificate / content (binary)              : DEL required, attachment: True
+l10n_es_edi_facturae / l10n_es_edi_facturae.certificate / date_end (datetime)           : DEL
+l10n_es_edi_facturae / l10n_es_edi_facturae.certificate / date_start (datetime)         : DEL
+l10n_es_edi_facturae / l10n_es_edi_facturae.certificate / password (char)               : DEL
+l10n_es_edi_facturae / l10n_es_edi_facturae.certificate / serial_number (char)          : DEL
+l10n_es_edi_facturae / res.company              / l10n_es_edi_facturae_certificate_id (one2many): DEL relation: l10n_es_edi_facturae.certificate
+l10n_es_edi_facturae / res.company              / l10n_es_edi_facturae_certificate_ids (one2many): NEW relation: certificate.certificate
+l10n_es_edi_facturae / res.partner              / invoice_edi_format (False)    : NEW selection_keys: ['es_facturae', 'facturx', 'nlcius', 'oioubl_201', 'pint_anz', 'pint_jp', 'pint_my', 'ubl_a_nz', 'ubl_bis3', 'ubl_sg', 'ubl_tr', 'xrechnung'], mode: modify
+l10n_es_edi_facturae / res.partner              / l10n_es_edi_facturae_ac_center_code (char): previously in module l10n_es_edi_facturae_adm_centers
+l10n_es_edi_facturae / res.partner              / l10n_es_edi_facturae_ac_logical_operational_point (char): previously in module l10n_es_edi_facturae_adm_centers
+l10n_es_edi_facturae / res.partner              / l10n_es_edi_facturae_ac_physical_gln (char): previously in module l10n_es_edi_facturae_adm_centers
+l10n_es_edi_facturae / res.partner              / l10n_es_edi_facturae_ac_role_type_ids (many2many): previously in module l10n_es_edi_facturae_adm_centers
+l10n_es_edi_facturae / res.partner              / type (False)                  : previously in module l10n_es_edi_facturae_adm_centers
+l10n_es_edi_facturae / res.users                / l10n_es_edi_facturae_ac_center_code (char): previously in module l10n_es_edi_facturae_adm_centers
+l10n_es_edi_facturae / res.users                / l10n_es_edi_facturae_ac_logical_operational_point (char): previously in module l10n_es_edi_facturae_adm_centers
+l10n_es_edi_facturae / res.users                / l10n_es_edi_facturae_ac_physical_gln (char): previously in module l10n_es_edi_facturae_adm_centers
+l10n_es_edi_facturae / res.users                / l10n_es_edi_facturae_ac_role_type_ids (many2many): previously in module l10n_es_edi_facturae_adm_centers
+---XML records in module 'l10n_es_edi_facturae'---
+NEW ir.model.access: l10n_es_edi_facturae.access_l10n_es_edi_facturae_ac_role_type_invoice [renamed from l10n_es_edi_facturae_adm_centers module]
+NEW ir.model.access: l10n_es_edi_facturae.access_l10n_es_edi_facturae_ac_role_type_readonly [renamed from l10n_es_edi_facturae_adm_centers module]
+DEL ir.model.access: l10n_es_edi_facturae.access_l10n_es_edi_facturae_certificate_manager
+DEL ir.model.access: l10n_es_edi_facturae.access_l10n_es_edi_facturae_certificate_system
+DEL ir.rule: l10n_es_edi_facturae.facturae_digital_certificate (noupdate)
+NEW ir.ui.view: l10n_es_edi_facturae.administrative_centers_type
+NEW ir.ui.view: l10n_es_edi_facturae.certificate_certificate_view_form
+NEW ir.ui.view: l10n_es_edi_facturae.certificate_certificate_view_search
+NEW ir.ui.view: l10n_es_edi_facturae.view_move_form
+NEW ir.ui.view: l10n_es_edi_facturae.view_partner_form_inherit_l10n_es_edi_facturae
+DEL ir.ui.view: l10n_es_edi_facturae.account_move_send_form
+DEL ir.ui.view: l10n_es_edi_facturae.l10n_es_edi_facturae_certificate_form
+DEL ir.ui.view: l10n_es_edi_facturae.l10n_es_edi_facturae_certificate_tree
+DEL ir.ui.view: l10n_es_edi_facturae.view_company_form_inherit_l10n_es_edi_facturae
+NEW l10n_es_edi_facturae.ac_role_type: l10n_es_edi_facturae.ac_role_type_01
+NEW l10n_es_edi_facturae.ac_role_type: l10n_es_edi_facturae.ac_role_type_02
+NEW l10n_es_edi_facturae.ac_role_type: l10n_es_edi_facturae.ac_role_type_03
+NEW l10n_es_edi_facturae.ac_role_type: l10n_es_edi_facturae.ac_role_type_04
+NEW l10n_es_edi_facturae.ac_role_type: l10n_es_edi_facturae.ac_role_type_05
+NEW l10n_es_edi_facturae.ac_role_type: l10n_es_edi_facturae.ac_role_type_06
+NEW l10n_es_edi_facturae.ac_role_type: l10n_es_edi_facturae.ac_role_type_07
+NEW l10n_es_edi_facturae.ac_role_type: l10n_es_edi_facturae.ac_role_type_08
+NEW l10n_es_edi_facturae.ac_role_type: l10n_es_edi_facturae.ac_role_type_09

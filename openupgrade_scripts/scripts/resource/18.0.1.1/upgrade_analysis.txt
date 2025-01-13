@@ -1,0 +1,6 @@
+---Models in module 'resource'---
+---Fields in module 'resource'---
+resource     / resource.calendar        / flexible_hours (boolean)      : NEW
+resource     / resource.calendar        / full_time_required_hours (float): NEW
+resource     / resource.calendar        / hours_per_day (float)         : not a function anymore
+---XML records in module 'resource'---

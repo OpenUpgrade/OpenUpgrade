@@ -1,0 +1,5 @@
+---Models in module 'website_sale_mondialrelay'---
+---Fields in module 'website_sale_mondialrelay'---
+---XML records in module 'website_sale_mondialrelay'---
+NEW ir.ui.view: website_sale_mondialrelay.mondialrelay_delivery_method
+NEW ir.ui.view: website_sale_mondialrelay.website_sale_mondialrelay_billing_address_row

@@ -1,0 +1,8 @@
+---Models in module 'l10n_in_pos'---
+---Fields in module 'l10n_in_pos'---
+l10n_in_pos  / account.move             / l10n_in_pos_session_ids (one2many): DEL relation: pos.session
+l10n_in_pos  / pos.order.line           / l10n_in_hsn_code (char)       : NEW hasdefault: compute
+---XML records in module 'l10n_in_pos'---
+NEW ir.ui.view: l10n_in_pos.res_config_settings_view_form_l10n_in_pos_inherit
+NEW ir.ui.view: l10n_in_pos.view_pos_pos_form_inherit
+NEW pos.bill: l10n_in_pos.500_00 (noupdate)
