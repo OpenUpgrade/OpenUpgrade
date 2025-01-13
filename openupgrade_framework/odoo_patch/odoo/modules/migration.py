@@ -1,6 +1,6 @@
 # Copyright Odoo Community Association (OCA)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo.modules.migration import MigrationManager
+from odoo.modules.migration import MigrationManager, VALID_MIGRATE_PARAMS
 
 
 def migrate_module(self, pkg, stage):
@@ -22,3 +22,7 @@ def migrate_module(self, pkg, stage):
 
 migrate_module._original_method = MigrationManager.migrate_module
 MigrationManager.migrate_module = migrate_module
+
+
+# allow (env, version) signatures in migration methods
+VALID_MIGRATE_PARAMS.append(('env', 'version'))
