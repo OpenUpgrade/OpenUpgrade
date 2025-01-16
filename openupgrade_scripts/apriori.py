@@ -20,6 +20,7 @@ merged_modules = {
     "association": "membership",
     "l10n_de_skr03": "l10n_de",
     "l10n_de_skr04": "l10n_de",
+    "l10n_generic_coa": "account",
     "l10n_hr_euro": "l10n_hr",
     "l10n_in_tcs_tds": "l10n_in",
     "l10n_in_upi": "l10n_in",
