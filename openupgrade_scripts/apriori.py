@@ -35,6 +35,8 @@ merged_modules = {
     "website_sale_delivery": "website_sale",
     "website_sale_loyalty_delivery": "website_sale_loyalty",
     "website_sale_stock_product_configurator": "website_sale_product_configurator",
+    # OCA/hr-attendance
+    "hr_attendance_geolocation": "hr_attendance",
     # OCA/l10n-spain
     "l10n_es_irnr": "l10n_es",
     "l10n_es_irnr_sii": "l10n_es_aeat_sii_oca",
