@@ -89,6 +89,46 @@ def _mail_template_convert_report_template_m2o_to_m2m(env):
     )
 
 
+def _mail_activity_plan(env):
+    """If the OCA mail_activity_plan module was installed, we create the
+    mail.activity.plan.template records.
+    """
+    if not openupgrade.table_exists(env.cr, "mail_activity_plan_activity_type"):
+        return
+    openupgrade.logged_query(
+        env.cr,
+        """
+        INSERT INTO mail_activity_plan_template (
+            plan_id,
+            sequence,
+            activity_type_id,
+            summary,
+            responsible_type,
+            responsible_id,
+            create_uid,
+            create_date,
+            write_uid,
+            write_date
+        ) SELECT rel.mail_activity_plan_id,
+            10,
+            detail.activity_type_id,
+            detail.summary,
+            CASE
+              WHEN detail.user_id IS NOT NULL THEN 'other'
+              ELSE 'on_demand'
+            END AS responsible_type,
+            detail.user_id,
+            detail.create_uid,
+            detail.create_date,
+            detail.write_uid,
+            detail.write_date
+        FROM mail_activity_plan_mail_activity_plan_activity_type_rel AS rel
+        LEFT JOIN mail_activity_plan_activity_type AS detail
+            ON rel.mail_activity_plan_activity_type_id = detail.id
+        """,
+    )
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     openupgrade.load_data(env, "mail", "17.0.1.15/noupdate_changes.xml")
@@ -100,3 +140,4 @@ def migrate(env, version):
     _fill_res_company_alias_domain_id(env)
     _mail_alias_fill_alias_full_name(env)
     _mail_template_convert_report_template_m2o_to_m2m(env)
+    _mail_activity_plan(env)

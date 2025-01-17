@@ -40,6 +40,8 @@ merged_modules = {
     "l10n_es_irnr_sii": "l10n_es_aeat_sii_oca",
     # OCA/purchase-workflow
     "purchase_discount": "purchase",
+    # OCA/social
+    "mail_activity_plan": "mail",
     # OCA/web
     "web_advanced_search": "web",
     "web_listview_range_select": "web",
