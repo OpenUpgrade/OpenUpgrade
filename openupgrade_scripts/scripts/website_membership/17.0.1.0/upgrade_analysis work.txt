@@ -1,0 +1,8 @@
+---Models in module 'website_membership'---
+# NOTHING TO DO
+---Fields in module 'website_membership'---
+# NOTHING TO DO
+---XML records in module 'website_membership'---
+NEW ir.model.access: website_membership.access_membership_membership_line_portal
+NEW ir.model.access: website_membership.access_membership_membership_line_public
+# NOTHING TO DO: New records
