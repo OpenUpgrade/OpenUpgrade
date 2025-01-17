@@ -53,6 +53,18 @@ def login_or_registration_required_at_checkout(cr):
 
 
 def update_translatable_fields(cr):
+    # Fix terms with wrong to_translate state. DBs with long version history could have
+    # terms that didn't have the right state and those would be ignored
+    openupgrade.logged_query(
+        cr,
+        """
+            UPDATE ir_translation set state = 'translated'
+            WHERE type = 'model'
+                AND state = 'to_translate'
+                AND value is NOT NULL
+                AND value IS DISTINCT FROM src
+        """,
+    )
     # exclude fields from translation update
     exclusions = {
         # ir.actions.* inherits the name and help columns from ir.actions.actions
