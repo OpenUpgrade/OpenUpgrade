@@ -1,0 +1,4 @@
+---Models in module 'sale_mrp'---
+---Fields in module 'sale_mrp'---
+sale_mrp     / mrp.production           / sale_line_id (many2one)       : NEW relation: sale.order.line
+---XML records in module 'sale_mrp'---

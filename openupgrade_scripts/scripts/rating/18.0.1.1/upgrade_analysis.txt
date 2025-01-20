@@ -1,0 +1,7 @@
+---Models in module 'rating'---
+---Fields in module 'rating'---
+rating       / fleet.vehicle.model      / rating_ids (one2many)         : NEW relation: rating.rating
+rating       / iap.account              / rating_ids (one2many)         : NEW relation: rating.rating
+rating       / product.category         / rating_ids (one2many)         : NEW relation: rating.rating
+---XML records in module 'rating'---
+NEW ir.ui.view: rating.rating_external_page_invalid_partner

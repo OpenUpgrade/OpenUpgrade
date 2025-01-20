@@ -1,0 +1,6 @@
+---Models in module 'sale_management'---
+---Fields in module 'sale_management'---
+sale_management / sale.order.template      / _order                        : _order is now 'sequence, id' ('id')
+sale_management / sale.order.template      / journal_id (many2one)         : needs conversion to v18-style company dependent
+sale_management / sale.order.template      / sequence (integer)            : NEW hasdefault: default
+---XML records in module 'sale_management'---

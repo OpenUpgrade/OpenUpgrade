@@ -1,0 +1,9 @@
+---Models in module 'l10n_din5008_purchase'---
+---Fields in module 'l10n_din5008_purchase'---
+---XML records in module 'l10n_din5008_purchase'---
+NEW ir.ui.view: l10n_din5008_purchase.report_common_purchase_din5008_template
+NEW ir.ui.view: l10n_din5008_purchase.report_common_purchase_din5008_template_address_block
+NEW ir.ui.view: l10n_din5008_purchase.report_common_purchase_din5008_template_document_information
+NEW ir.ui.view: l10n_din5008_purchase.report_common_purchase_din5008_template_document_title
+NEW ir.ui.view: l10n_din5008_purchase.report_purchaseorder_document
+NEW ir.ui.view: l10n_din5008_purchase.report_purchasequotation_document

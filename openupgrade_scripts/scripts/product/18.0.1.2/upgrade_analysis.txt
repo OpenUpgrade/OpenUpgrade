@@ -1,0 +1,59 @@
+---Models in module 'product'---
+new model product.combo
+new model product.combo.item
+new model update.product.attribute.value [transient]
+---Fields in module 'product'---
+product      / product.attribute        / active (boolean)              : NEW hasdefault: default
+product      / product.attribute        / template_value_ids (one2many) : NEW relation: product.template.attribute.value
+product      / product.attribute.value  / active (boolean)              : NEW hasdefault: default
+product      / product.category         / message_follower_ids (one2many): NEW relation: mail.followers
+product      / product.category         / message_ids (one2many)        : NEW relation: mail.message
+product      / product.combo            / combo_item_ids (one2many)     : NEW relation: product.combo.item
+product      / product.combo            / company_id (many2one)         : NEW relation: res.company
+product      / product.combo            / name (char)                   : NEW required
+product      / product.combo            / sequence (integer)            : NEW hasdefault: default
+product      / product.combo.item       / combo_id (many2one)           : NEW relation: product.combo, required
+product      / product.combo.item       / company_id (many2one)         : NEW relation: res.company, isrelated: related, stored
+product      / product.combo.item       / extra_price (float)           : NEW hasdefault: default
+product      / product.combo.item       / product_id (many2one)         : NEW relation: product.product, required
+product      / product.document         / _order                        : _order is now 'sequence, name' ('name')
+product      / product.document         / sequence (integer)            : NEW hasdefault: default
+product      / product.pricelist        / _order                        : _order is now 'sequence, id, name' ('sequence asc, id asc')
+product      / product.pricelist        / discount_policy (selection)   : DEL required, selection_keys: ['with_discount', 'without_discount']
+product      / product.pricelist.item   / display_applied_on (selection): NEW required, selection_keys: ['1_product', '2_product_category'], hasdefault: default
+product      / product.pricelist.item   / price_markup (float)          : NEW isfunction: function, stored
+product      / product.product          / _order                        : _order is now 'is_favorite desc, default_code, name, id' ('priority desc, default_code, name, id')
+product      / product.product          / combo_ids (many2many)         : previously in module point_of_sale
+product      / product.product          / service_tracking (selection)  : previously in module sale_project
+product      / product.product          / standard_price (float)        : needs conversion to v18-style company dependent
+product      / product.product          / type (selection)              : now required
+product      / product.tag              / _order                        : _order is now 'sequence, id' ('id')
+product      / product.tag              / sequence (integer)            : NEW hasdefault: default
+product      / product.template         / _order                        : _order is now 'is_favorite desc, name' ('priority desc, name')
+product      / product.template         / combo_ids (many2many)         : previously in module point_of_sale
+product      / product.template         / detailed_type (selection)     : DEL required, selection_keys: ['consu', 'service']
+product      / product.template         / is_favorite (boolean)         : NEW
+product      / product.template         / priority (selection)          : DEL selection_keys: ['0', '1']
+product      / product.template         / service_tracking (selection)  : previously in module sale_project
+product      / product.template         / type (selection)              : now required
+product      / product.template         / type (selection)              : selection_keys is now '['combo', 'consu', 'service']' ('['consu', 'service']')
+product      / res.partner              / specific_property_product_pricelist (many2one): NEW relation: product.pricelist
+---XML records in module 'product'---
+NEW ir.actions.act_window: product.product_combo_action
+NEW ir.model.access: product.access_product_combo_item_manager
+NEW ir.model.access: product.access_product_combo_item_user
+NEW ir.model.access: product.access_product_combo_manager
+NEW ir.model.access: product.access_product_combo_user
+NEW ir.model.access: product.access_update_product_attribute_value_manager
+DEL ir.model.constraint: product.constraint_product_attribute_value_value_company_uniq
+NEW ir.rule: product.product_combo_comp_rule (noupdate)
+NEW ir.ui.view: product.product_attribute_search
+NEW ir.ui.view: product.product_combo_view_form
+NEW ir.ui.view: product.product_combo_view_tree
+NEW ir.ui.view: product.product_packaging_search_view
+NEW ir.ui.view: product.product_product_view_form_normalized
+NEW ir.ui.view: product.product_template_attribute_line_view_tree
+NEW ir.ui.view: product.update_product_attribute_value_form
+NEW res.groups: product.group_product_manager
+DEL res.groups: product.group_discount_per_so_line [renamed to sale module]
+DEL res.groups: product.group_sale_pricelist

@@ -1,0 +1,5 @@
+---Models in module 'l10n_din5008_repair'---
+---Fields in module 'l10n_din5008_repair'---
+l10n_din5008_repair / repair.order             / l10n_din5008_printing_date (date): NEW hasdefault: default
+---XML records in module 'l10n_din5008_repair'---
+NEW ir.ui.view: l10n_din5008_repair.report_repairorder

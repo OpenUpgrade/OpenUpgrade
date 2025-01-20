@@ -1,0 +1,6 @@
+---Models in module 'stock_landed_costs'---
+---Fields in module 'stock_landed_costs'---
+stock_landed_costs / stock.landed.cost        / company_id (many2one)         : is now stored
+stock_landed_costs / stock.landed.cost        / company_id (many2one)         : not related anymore
+stock_landed_costs / stock.landed.cost        / company_id (many2one)         : now required
+---XML records in module 'stock_landed_costs'---

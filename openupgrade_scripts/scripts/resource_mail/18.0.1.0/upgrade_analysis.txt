@@ -1,0 +1,4 @@
+---Models in module 'resource_mail'---
+---Fields in module 'resource_mail'---
+---XML records in module 'resource_mail'---
+---nothing has changed in this module--

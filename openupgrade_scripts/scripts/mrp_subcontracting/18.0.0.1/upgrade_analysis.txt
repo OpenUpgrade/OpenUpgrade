@@ -1,0 +1,6 @@
+---Models in module 'mrp_subcontracting'---
+---Fields in module 'mrp_subcontracting'---
+mrp_subcontracting / res.partner              / property_stock_subcontractor (many2one): needs conversion to v18-style company dependent
+---XML records in module 'mrp_subcontracting'---
+DEL ir.ui.view: mrp_subcontracting.mrp_subcontracting_product_template_search_view
+DEL ir.ui.view: mrp_subcontracting.view_stock_return_picking_form_subcontracting

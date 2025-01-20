@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="payment.payment_provider_paypal" model="payment.provider">
+    <field name="redirect_form_view_id"/>
+  </record>
+</odoo>

@@ -1,0 +1,14 @@
+---Models in module 'pos_restaurant'---
+---Fields in module 'pos_restaurant'---
+pos_restaurant / pos.config               / iface_orderline_notes (boolean): DEL
+pos_restaurant / pos.config               / module_pos_restaurant (False) : DEL mode: modify
+pos_restaurant / pos.config               / takeaway (boolean)            : NEW
+pos_restaurant / pos.config               / takeaway_fp_id (many2one)     : NEW relation: account.fiscal.position
+pos_restaurant / pos.order                / takeaway (boolean)            : NEW hasdefault: default
+pos_restaurant / pos.order.line           / note (char)                   : module is now 'point_of_sale' ('pos_restaurant')
+pos_restaurant / restaurant.floor         / floor_background_image (binary): NEW attachment: True
+pos_restaurant / restaurant.table         / name (char)                   : DEL required
+pos_restaurant / restaurant.table         / parent_id (many2one)          : NEW relation: restaurant.table
+pos_restaurant / restaurant.table         / table_number (integer)        : NEW required, hasdefault: default
+---XML records in module 'pos_restaurant'---
+DEL pos.config: pos_restaurant.pos_config_main_restaurant (noupdate)

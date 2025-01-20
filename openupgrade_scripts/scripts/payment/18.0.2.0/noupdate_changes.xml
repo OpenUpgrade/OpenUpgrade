@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="payment_method_afterpay_riverty" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_akulaku" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_axis" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bancnet" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bancomat_pay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bangkok_bank" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bank_account" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bank_bca" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bank_of_ayudhya" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bank_permata" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bank_reference" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bank_transfer" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_belfius" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bharatqr" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_billease" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_billink" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bni" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_boleto" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_boost" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bpi" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_brankas" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bri" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_bsi" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_cimb_niaga" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_cofidis" model="payment.method">
+    <field name="support_refund">none</field>
+    <field name="supported_country_ids" eval="[Command.set([                          ref('base.be'),                          ref('base.fr'),                      ])]"/>
+  </record>
+  <record id="payment_method_dolfin" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_enets" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_floa_bank" model="payment.method">
+    <field name="support_refund">none</field>
+    <field name="supported_country_ids" eval="[Command.set([                          ref('base.br'),                          ref('base.es'),                          ref('base.fr'),                          ref('base.it'),                          ref('base.pt'),                      ])]"/>
+  </record>
+  <record id="payment_method_fps" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_frafinance" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_gsb" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_hd" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_hoolah" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_humm" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_in3" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_jkopay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_kasikorn_bank" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_kredivo" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_krungthai_bank" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_linepay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_linkaja" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_lydia" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_lyfpay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_mada" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_mandiri" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_maya" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_maybank" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_mobile_money" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_mpesa" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_multibanco" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_mybank" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_naver_pay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_octopus" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_online_banking_thailand" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_ovo" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_pace" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_pay_easy" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_pay_id" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_paylib" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_payme" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_paypay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_payu" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_poli" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_poste_pay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_pps" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_pse" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_qris" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_rabbit_line_pay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_scb" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_shopback" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_techcom" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_tendopay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_tenpay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_tienphong" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_tinka" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_tmb" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_toss_pay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_truemoney" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_ttb" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_uatp" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_uob" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_ussd" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_vietcom" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_vpay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_welend" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_method_zalopay" model="payment.method">
+    <field name="support_refund">none</field>
+  </record>
+  <record id="payment_provider_razorpay" model="payment.provider">
+    <field name="payment_method_ids" eval="[Command.set([                          ref('payment.payment_method_card'),                          ref('payment.payment_method_netbanking'),                          ref('payment.payment_method_upi'),                          ref('payment.payment_method_wallets_india'),                          ref('payment.payment_method_paylater_india'),                          ref('payment.payment_method_emi_india'),                      ])]"/>
+  </record>
+</odoo>

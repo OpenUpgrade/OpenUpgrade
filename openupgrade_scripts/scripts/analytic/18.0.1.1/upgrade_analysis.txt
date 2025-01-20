@@ -1,0 +1,8 @@
+---Models in module 'analytic'---
+new model analytic.plan.fields.mixin [abstract]
+---Fields in module 'analytic'---
+analytic     / account.analytic.distribution.model / _order                        : _order is now 'sequence, id desc' ('id desc')
+analytic     / account.analytic.distribution.model / analytic_distribution_search (json): DEL
+analytic     / account.analytic.distribution.model / sequence (integer)            : NEW hasdefault: default
+analytic     / account.analytic.plan    / default_applicability (selection): needs conversion to v18-style company dependent
+---XML records in module 'analytic'---

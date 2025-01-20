@@ -1,0 +1,11 @@
+---Models in module 'purchase_stock'---
+---Fields in module 'purchase_stock'---
+purchase_stock / procurement.group        / purchase_line_ids (one2many)  : NEW relation: purchase.order.line
+purchase_stock / product.category         / property_account_creditor_price_difference_categ (many2one): needs conversion to v18-style company dependent
+purchase_stock / product.template         / property_account_creditor_price_difference (many2one): needs conversion to v18-style company dependent
+purchase_stock / purchase.order.line      / group_id (many2one)           : NEW relation: procurement.group
+purchase_stock / purchase.order.line      / location_final_id (many2one)  : NEW relation: stock.location
+purchase_stock / stock.warehouse.orderpoint / product_supplier_id (many2one): NEW relation: res.partner, isfunction: function, stored
+---XML records in module 'purchase_stock'---
+NEW ir.ui.view: purchase_stock.purchase_help_message_template
+NEW ir.ui.view: purchase_stock.warehouse_orderpoint_search_inherit

@@ -1,0 +1,6 @@
+---Models in module 'pos_sms'---
+---Fields in module 'pos_sms'---
+pos_sms      / pos.config               / sms_receipt_template_id (many2one): NEW relation: sms.template
+---XML records in module 'pos_sms'---
+NEW ir.ui.view: pos_sms.pos_sms_res_config_settings_view_form
+NEW sms.template: pos_sms.sms_template_data_point_of_sale (noupdate)

@@ -1,0 +1,30 @@
+---Models in module 'l10n_es_edi_sii'---
+obsolete model l10n_es_edi.certificate
+---Fields in module 'l10n_es_edi_sii'---
+l10n_es_edi_sii / certificate.certificate  / scope (False)                 : NEW selection_keys: ['facturae', 'general', 'sii'], mode: modify
+l10n_es_edi_sii / l10n_es_edi.certificate  / company_id (many2one)         : DEL relation: res.company, required
+l10n_es_edi_sii / l10n_es_edi.certificate  / content (binary)              : DEL required, attachment: True
+l10n_es_edi_sii / l10n_es_edi.certificate  / date_end (datetime)           : DEL
+l10n_es_edi_sii / l10n_es_edi.certificate  / date_start (datetime)         : DEL
+l10n_es_edi_sii / l10n_es_edi.certificate  / password (char)               : DEL
+l10n_es_edi_sii / res.company              / l10n_es_edi_certificate_id (many2one): DEL relation: l10n_es_edi.certificate
+l10n_es_edi_sii / res.company              / l10n_es_edi_certificate_ids (one2many): DEL relation: l10n_es_edi.certificate
+l10n_es_edi_sii / res.company              / l10n_es_edi_tax_agency (selection): DEL selection_keys: ['aeat', 'bizkaia', 'gipuzkoa']
+l10n_es_edi_sii / res.company              / l10n_es_edi_test_env (boolean): DEL
+l10n_es_edi_sii / res.company              / l10n_es_sii_certificate_id (many2one): NEW relation: certificate.certificate, hasdefault: compute
+l10n_es_edi_sii / res.company              / l10n_es_sii_certificate_ids (one2many): NEW relation: certificate.certificate
+l10n_es_edi_sii / res.company              / l10n_es_sii_tax_agency (selection): NEW selection_keys: ['aeat', 'bizkaia', 'gipuzkoa'], hasdefault: default
+l10n_es_edi_sii / res.company              / l10n_es_sii_test_env (boolean): NEW hasdefault: default
+---XML records in module 'l10n_es_edi_sii'---
+NEW ir.actions.act_window: l10n_es_edi_sii.l10n_es_edi_sii_certificate_action
+DEL ir.actions.act_window: l10n_es_edi_sii.l10n_es_edi_certificate_action
+DEL ir.model.access: l10n_es_edi_sii.access_l10n_es_edi_certificate
+DEL ir.rule: l10n_es_edi_sii.l10n_ec_digital_certificate (noupdate)
+NEW ir.ui.menu: l10n_es_edi_sii.menu_l10n_es_edi_sii_certificates
+NEW ir.ui.menu: l10n_es_edi_sii.menu_l10n_es_edi_sii_root
+DEL ir.ui.menu: l10n_es_edi_sii.menu_l10n_es_edi_certificates
+DEL ir.ui.menu: l10n_es_edi_sii.menu_l10n_es_edi_root
+NEW ir.ui.view: l10n_es_edi_sii.certificate_certificate_view_form
+NEW ir.ui.view: l10n_es_edi_sii.certificate_certificate_view_search
+DEL ir.ui.view: l10n_es_edi_sii.l10n_es_edi_certificate_form
+DEL ir.ui.view: l10n_es_edi_sii.l10n_es_edi_certificate_tree

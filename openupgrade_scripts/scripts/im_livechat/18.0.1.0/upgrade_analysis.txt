@@ -1,0 +1,10 @@
+---Models in module 'im_livechat'---
+---Fields in module 'im_livechat'---
+im_livechat  / res.users.settings       / is_discuss_sidebar_category_livechat_open (boolean): DEL
+---XML records in module 'im_livechat'---
+NEW ir.actions.act_window.view: im_livechat.discuss_channel_action_kanban
+NEW ir.actions.act_window.view: im_livechat.discuss_channel_action_livechat_kanban
+NEW ir.ui.view: im_livechat.discuss_channel_view_kanban
+NEW ir.ui.view: im_livechat.unit_embed_suite
+DEL ir.ui.view: im_livechat.qunit_embed_suite
+DEL mail.shortcode: im_livechat.mail_shortcode_data_hello (noupdate)

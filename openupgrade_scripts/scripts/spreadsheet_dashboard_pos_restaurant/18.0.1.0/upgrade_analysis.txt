@@ -1,0 +1,4 @@
+---Models in module 'spreadsheet_dashboard_pos_restaurant'---
+---Fields in module 'spreadsheet_dashboard_pos_restaurant'---
+---XML records in module 'spreadsheet_dashboard_pos_restaurant'---
+NEW spreadsheet.dashboard: spreadsheet_dashboard_pos_restaurant.spreadsheet_dashboard_pos_restaurant

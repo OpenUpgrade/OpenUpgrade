@@ -1,0 +1,19 @@
+---Models in module 'l10n_id'---
+new model l10n_id.qris.transaction
+---Fields in module 'l10n_id'---
+l10n_id      / account.move             / l10n_id_qris_transaction_ids (many2many): NEW relation: l10n_id.qris.transaction
+l10n_id      / l10n_id.qris.transaction / bank_id (many2one)            : NEW relation: res.partner.bank
+l10n_id      / l10n_id.qris.transaction / model (char)                  : NEW
+l10n_id      / l10n_id.qris.transaction / model_id (char)               : NEW
+l10n_id      / l10n_id.qris.transaction / paid (boolean)                : NEW
+l10n_id      / l10n_id.qris.transaction / qris_amount (integer)         : NEW
+l10n_id      / l10n_id.qris.transaction / qris_content (char)           : NEW
+l10n_id      / l10n_id.qris.transaction / qris_creation_datetime (datetime): NEW
+l10n_id      / l10n_id.qris.transaction / qris_invoice_id (char)        : NEW
+l10n_id      / res.partner.bank         / l10n_id_qris_api_key (char)   : NEW
+l10n_id      / res.partner.bank         / l10n_id_qris_mid (char)       : NEW
+---XML records in module 'l10n_id'---
+NEW ir.actions.server: l10n_id.action_fetch_qris_status
+NEW ir.cron: l10n_id.qris_fetch_cron (noupdate)
+NEW ir.model.access: l10n_id.access_l10n_id_qris_transaction
+NEW ir.ui.view: l10n_id.view_partner_bank_form_inherit_account

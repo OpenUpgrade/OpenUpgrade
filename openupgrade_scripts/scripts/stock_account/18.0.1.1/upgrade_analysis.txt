@@ -1,0 +1,23 @@
+---Models in module 'stock_account'---
+---Fields in module 'stock_account'---
+stock_account / product.category         / property_cost_method (selection): needs conversion to v18-style company dependent
+stock_account / product.category         / property_stock_account_input_categ_id (many2one): needs conversion to v18-style company dependent
+stock_account / product.category         / property_stock_account_output_categ_id (many2one): needs conversion to v18-style company dependent
+stock_account / product.category         / property_stock_journal (many2one): needs conversion to v18-style company dependent
+stock_account / product.category         / property_stock_valuation_account_id (many2one): needs conversion to v18-style company dependent
+stock_account / product.category         / property_valuation (selection): needs conversion to v18-style company dependent
+stock_account / product.template         / lot_valuated (boolean)        : NEW hasdefault: compute
+stock_account / res.company              / account_production_wip_account_id (many2one): NEW relation: account.account
+stock_account / res.company              / account_production_wip_overhead_account_id (many2one): NEW relation: account.account
+stock_account / stock.lot                / standard_price (float)        : NEW
+stock_account / stock.lot                / stock_valuation_layer_ids (one2many): NEW relation: stock.valuation.layer
+stock_account / stock.valuation.layer    / lot_id (many2one)             : NEW relation: stock.lot
+---XML records in module 'stock_account'---
+NEW ir.actions.act_window: stock_account.action_revalue_layers
+DEL ir.actions.act_window: stock_account.inventory_aging_action
+DEL ir.property: stock_account.default_category_cost_method (noupdate)
+DEL ir.property: stock_account.default_category_valuation (noupdate)
+DEL ir.ui.menu: stock_account.menu_inventory_aging
+NEW ir.ui.view: stock_account.view_picking_form
+NEW ir.ui.view: stock_account.view_production_lot_form_stock_account
+NEW ir.ui.view: stock_account.view_template_property_form_stock_account

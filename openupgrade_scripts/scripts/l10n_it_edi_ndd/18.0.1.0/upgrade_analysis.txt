@@ -1,0 +1,4 @@
+---Models in module 'l10n_it_edi_ndd'---
+---Fields in module 'l10n_it_edi_ndd'---
+---XML records in module 'l10n_it_edi_ndd'---
+---nothing has changed in this module--

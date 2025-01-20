@@ -1,0 +1,4 @@
+---Models in module 'l10n_tr_nilvera_einvoice'---
+---Fields in module 'l10n_tr_nilvera_einvoice'---
+---XML records in module 'l10n_tr_nilvera_einvoice'---
+DEL ir.ui.view: l10n_tr_nilvera_einvoice.account_move_send_inherit_l10n_tr_nilvera_einvoice

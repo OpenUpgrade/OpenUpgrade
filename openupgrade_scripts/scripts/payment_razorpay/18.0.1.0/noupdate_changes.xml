@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="payment.payment_provider_razorpay" model="payment.provider">
+    <field name="redirect_form_view_id"/>
+    <field name="token_inline_form_view_id" ref="token_inline_form"/>
+  </record>
+</odoo>

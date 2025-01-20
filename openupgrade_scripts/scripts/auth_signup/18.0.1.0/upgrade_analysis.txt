@@ -1,0 +1,4 @@
+---Models in module 'auth_signup'---
+---Fields in module 'auth_signup'---
+auth_signup  / res.partner              / signup_expiration (datetime)  : DEL
+---XML records in module 'auth_signup'---

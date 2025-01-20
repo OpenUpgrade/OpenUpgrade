@@ -1,0 +1,4 @@
+---Models in module 'event_booth'---
+---Fields in module 'event_booth'---
+---XML records in module 'event_booth'---
+---nothing has changed in this module--

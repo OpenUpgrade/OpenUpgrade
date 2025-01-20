@@ -1,0 +1,13 @@
+---Models in module 'portal'---
+---Fields in module 'portal'---
+portal       / fleet.vehicle.model      / website_message_ids (one2many): NEW relation: mail.message
+portal       / hr.department            / website_message_ids (one2many): module is now 'hr' ('portal')
+portal       / hr.employee              / website_message_ids (one2many): module is now 'hr' ('portal')
+portal       / hr.job                   / website_message_ids (one2many): module is now 'hr' ('portal')
+portal       / iap.account              / website_message_ids (one2many): NEW relation: mail.message
+portal       / loyalty.card             / website_message_ids (one2many): module is now 'loyalty' ('portal')
+portal       / product.category         / website_message_ids (one2many): NEW relation: mail.message
+---XML records in module 'portal'---
+NEW ir.ui.view: portal.portal_docs_entry_layout
+NEW ir.ui.view: portal.portal_my_contact
+DEL ir.ui.view: portal.portal_record_layout

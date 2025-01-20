@@ -1,0 +1,41 @@
+---Models in module 'certificate'---
+new model certificate.certificate
+new model certificate.key
+---Fields in module 'certificate'---
+certificate  / certificate.certificate  / active (boolean)              : NEW hasdefault: default
+certificate  / certificate.certificate  / company_id (many2one)         : NEW relation: res.company, required, hasdefault: default
+certificate  / certificate.certificate  / content (binary)              : NEW required, attachment: True
+certificate  / certificate.certificate  / content_format (selection)    : NEW selection_keys: ['der', 'pem', 'pkcs12'], isfunction: function, stored
+certificate  / certificate.certificate  / date_end (datetime)           : NEW isfunction: function, stored
+certificate  / certificate.certificate  / date_start (datetime)         : NEW isfunction: function, stored
+certificate  / certificate.certificate  / loading_error (text)          : NEW isfunction: function, stored
+certificate  / certificate.certificate  / name (char)                   : NEW
+certificate  / certificate.certificate  / pem_certificate (binary)      : NEW attachment: True, isfunction: function, stored
+certificate  / certificate.certificate  / pkcs12_password (char)        : NEW
+certificate  / certificate.certificate  / private_key_id (many2one)     : NEW relation: certificate.key, hasdefault: compute
+certificate  / certificate.certificate  / public_key_id (many2one)      : NEW relation: certificate.key
+certificate  / certificate.certificate  / scope (selection)             : NEW selection_keys: ['general']
+certificate  / certificate.certificate  / serial_number (char)          : NEW isfunction: function, stored
+certificate  / certificate.certificate  / subject_common_name (char)    : NEW isfunction: function, stored
+certificate  / certificate.key          / active (boolean)              : NEW hasdefault: default
+certificate  / certificate.key          / company_id (many2one)         : NEW relation: res.company, required, hasdefault: default
+certificate  / certificate.key          / content (binary)              : NEW required, attachment: True
+certificate  / certificate.key          / loading_error (text)          : NEW isfunction: function, stored
+certificate  / certificate.key          / name (char)                   : NEW hasdefault: default
+certificate  / certificate.key          / password (char)               : NEW
+certificate  / certificate.key          / pem_key (binary)              : NEW attachment: True, isfunction: function, stored
+certificate  / certificate.key          / public (boolean)              : NEW isfunction: function, stored
+---XML records in module 'certificate'---
+NEW ir.actions.act_window: certificate.certificate_certificate_action_view_list
+NEW ir.actions.act_window: certificate.certificate_key_action_view_list
+NEW ir.model.access: certificate.access_certificate_admin
+NEW ir.model.access: certificate.access_key_admin
+NEW ir.rule: certificate.certificate_rule_company (noupdate)
+NEW ir.rule: certificate.key_rule_company (noupdate)
+NEW ir.ui.view: certificate.certificate_certificate_view_form
+NEW ir.ui.view: certificate.certificate_certificate_view_list
+NEW ir.ui.view: certificate.certificate_certificate_view_search
+NEW ir.ui.view: certificate.certificate_key_view_form
+NEW ir.ui.view: certificate.certificate_key_view_list
+NEW ir.ui.view: certificate.certificate_key_view_search
+NEW ir.ui.view: certificate.res_config_settings_view_form

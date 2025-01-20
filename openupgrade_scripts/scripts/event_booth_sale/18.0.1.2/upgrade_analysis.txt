@@ -1,0 +1,5 @@
+---Models in module 'event_booth_sale'---
+---Fields in module 'event_booth_sale'---
+event_booth_sale / product.template         / detailed_type (False)         : DEL selection_keys: ['combo', 'consu', 'event', 'event_booth', 'product', 'service'], mode: modify
+event_booth_sale / product.template         / service_tracking (False)      : NEW selection_keys: ['event', 'event_booth', 'no'], mode: modify
+---XML records in module 'event_booth_sale'---

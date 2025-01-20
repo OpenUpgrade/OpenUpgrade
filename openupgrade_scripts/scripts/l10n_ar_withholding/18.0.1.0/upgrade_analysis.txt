@@ -1,0 +1,59 @@
+---Models in module 'l10n_ar_withholding'---
+new model l10n_ar.earnings.scale
+new model l10n_ar.earnings.scale.line
+new model l10n_ar.partner.tax
+---Fields in module 'l10n_ar_withholding'---
+l10n_ar_withholding / account.tax              / l10n_ar_code (char)           : NEW
+l10n_ar_withholding / account.tax              / l10n_ar_minimum_threshold (float): NEW
+l10n_ar_withholding / account.tax              / l10n_ar_non_taxable_amount (float): NEW
+l10n_ar_withholding / account.tax              / l10n_ar_scale_id (many2one)   : NEW relation: l10n_ar.earnings.scale
+l10n_ar_withholding / account.tax              / l10n_ar_state_id (many2one)   : NEW relation: res.country.state
+l10n_ar_withholding / account.tax              / l10n_ar_tax_type (selection)  : NEW selection_keys: ['earnings', 'earnings_scale', 'iibb_total', 'iibb_untaxed']
+l10n_ar_withholding / l10n_ar.earnings.scale   / line_ids (one2many)           : NEW relation: l10n_ar.earnings.scale.line
+l10n_ar_withholding / l10n_ar.earnings.scale   / name (char)                   : NEW required
+l10n_ar_withholding / l10n_ar.earnings.scale.line / currency_id (many2one)        : NEW relation: res.currency, hasdefault: default
+l10n_ar_withholding / l10n_ar.earnings.scale.line / excess_amount (float)         : NEW
+l10n_ar_withholding / l10n_ar.earnings.scale.line / fixed_amount (float)          : NEW
+l10n_ar_withholding / l10n_ar.earnings.scale.line / percentage (float)            : NEW
+l10n_ar_withholding / l10n_ar.earnings.scale.line / scale_id (many2one)           : NEW relation: l10n_ar.earnings.scale, required
+l10n_ar_withholding / l10n_ar.earnings.scale.line / to_amount (float)             : NEW
+l10n_ar_withholding / l10n_ar.partner.tax      / company_id (many2one)         : NEW relation: res.company, isrelated: related, stored
+l10n_ar_withholding / l10n_ar.partner.tax      / from_date (date)              : NEW
+l10n_ar_withholding / l10n_ar.partner.tax      / partner_id (many2one)         : NEW relation: res.partner, required
+l10n_ar_withholding / l10n_ar.partner.tax      / ref (char)                    : NEW
+l10n_ar_withholding / l10n_ar.partner.tax      / tax_id (many2one)             : NEW relation: account.tax, required
+l10n_ar_withholding / l10n_ar.partner.tax      / to_date (date)                : NEW
+l10n_ar_withholding / res.partner              / l10n_ar_partner_tax_ids (one2many): NEW relation: l10n_ar.partner.tax
+---XML records in module 'l10n_ar_withholding'---
+NEW ir.actions.act_window: l10n_ar_withholding.act_afip_earnings_table_scale
+NEW ir.model.access: l10n_ar_withholding.access_l10n_ar_earnings_scale_all
+NEW ir.model.access: l10n_ar_withholding.access_l10n_ar_earnings_scale_line_all
+NEW ir.model.access: l10n_ar_withholding.access_l10n_ar_earnings_scale_line_manager
+NEW ir.model.access: l10n_ar_withholding.access_l10n_ar_earnings_scale_manager
+NEW ir.model.access: l10n_ar_withholding.access_l10n_ar_partner_tax_all
+NEW ir.model.access: l10n_ar_withholding.access_l10n_ar_partner_tax_manager
+NEW ir.rule: l10n_ar_withholding.l10n_ar_partner_tax_comp_rule (noupdate)
+NEW ir.ui.menu: l10n_ar_withholding.menu_action_afip_earnings_table_scale_line
+NEW ir.ui.view: l10n_ar_withholding.view_afip_earnings_table_scale_form
+NEW ir.ui.view: l10n_ar_withholding.view_afip_earnings_table_scale_tree
+NEW ir.ui.view: l10n_ar_withholding.view_partner_form
+NEW ir.ui.view: l10n_ar_withholding.view_tax_form-l10n_ar
+DEL ir.ui.view: l10n_ar_withholding.view_tax_form
+NEW l10n_ar.earnings.scale: l10n_ar_withholding.normal_scale (noupdate)
+NEW l10n_ar.earnings.scale: l10n_ar_withholding.scale_119 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_1 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_10 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_11 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_12 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_13 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_14 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_15 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_16 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_2 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_3 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_4 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_5 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_6 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_7 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_8 (noupdate)
+NEW l10n_ar.earnings.scale.line: l10n_ar_withholding.scale_9 (noupdate)

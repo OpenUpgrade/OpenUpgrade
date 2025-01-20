@@ -1,0 +1,27 @@
+---Models in module 'iap'---
+obsolete model iap.account.info [transient]
+new model iap.service
+---Fields in module 'iap'---
+iap          / iap.account              / account_info_ids (one2many)   : DEL relation: iap.account.info
+iap          / iap.account              / balance (char)                : is now stored
+iap          / iap.account              / balance (char)                : not a function anymore
+iap          / iap.account              / service_id (many2one)         : NEW relation: iap.service, required
+iap          / iap.account              / service_locked (boolean)      : NEW hasdefault: default
+iap          / iap.account              / service_name (char)           : not stored anymore
+iap          / iap.account              / service_name (char)           : now related
+iap          / iap.account              / show_token (boolean)          : DEL
+iap          / iap.account              / state (selection)             : NEW selection_keys: ['banned', 'registered', 'unregistered']
+iap          / iap.account              / warning_threshold (float)     : is now stored
+iap          / iap.account              / warning_threshold (float)     : not related anymore
+iap          / iap.account              / warning_user_ids (many2many)  : NEW relation: res.users
+iap          / iap.service              / description (char)            : NEW required
+iap          / iap.service              / integer_balance (boolean)     : NEW required
+iap          / iap.service              / name (char)                   : NEW required
+iap          / iap.service              / technical_name (char)         : NEW required
+iap          / iap.service              / unit_name (char)              : NEW required
+---XML records in module 'iap'---
+NEW iap.service: iap.iap_service_reveal
+NEW ir.model.access: iap.access_iap_service_manager
+NEW ir.model.access: iap.access_iap_service_user
+DEL ir.model.access: iap.access_iap_account_info
+NEW ir.model.constraint: iap.constraint_iap_service_unique_technical_name

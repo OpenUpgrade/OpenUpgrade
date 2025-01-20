@@ -1,0 +1,11 @@
+---Models in module 'delivery'---
+---Fields in module 'delivery'---
+delivery     / delivery.carrier         / excluded_tag_ids (many2many)  : NEW relation: product.tag
+delivery     / delivery.carrier         / max_volume (float)            : NEW
+delivery     / delivery.carrier         / max_weight (float)            : NEW
+delivery     / delivery.carrier         / must_have_tag_ids (many2many) : NEW relation: product.tag
+delivery     / delivery.carrier         / tracking_url (char)           : NEW
+delivery     / res.partner              / property_delivery_carrier_id (many2one): needs conversion to v18-style company dependent
+delivery     / sale.order               / delivery_rating_success (boolean): DEL
+delivery     / sale.order               / pickup_location_data (json)   : NEW
+---XML records in module 'delivery'---

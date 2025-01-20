@@ -1,0 +1,9 @@
+---Models in module 'web_editor'---
+---Fields in module 'web_editor'---
+web_editor   / ir.attachment            / image_height (integer)        : module is now 'html_editor' ('web_editor')
+web_editor   / ir.attachment            / image_src (char)              : module is now 'html_editor' ('web_editor')
+web_editor   / ir.attachment            / image_width (integer)         : module is now 'html_editor' ('web_editor')
+web_editor   / ir.attachment            / local_url (char)              : module is now 'html_editor' ('web_editor')
+web_editor   / ir.attachment            / original_id (many2one)        : module is now 'html_editor' ('web_editor')
+---XML records in module 'web_editor'---
+NEW ir.ui.view: web_editor.snippet_options_version_control

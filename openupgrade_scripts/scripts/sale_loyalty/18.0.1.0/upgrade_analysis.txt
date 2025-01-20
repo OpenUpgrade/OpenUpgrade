@@ -1,0 +1,6 @@
+---Models in module 'sale_loyalty'---
+---Fields in module 'sale_loyalty'---
+---XML records in module 'sale_loyalty'---
+NEW ir.model.access: sale_loyalty.access_loyalty_card_update_balance_salesman
+NEW ir.model.access: sale_loyalty.access_loyalty_history_salesman
+NEW ir.ui.view: sale_loyalty.sale_order_portal_loyalty_content

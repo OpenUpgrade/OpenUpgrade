@@ -1,0 +1,9 @@
+---Models in module 'crm'---
+---Fields in module 'crm'---
+crm          / res.partner              / team_id (False)               : DEL mode: modify
+---XML records in module 'crm'---
+NEW digest.tip: crm.digest_tip_crm_6
+NEW digest.tip: crm.digest_tip_crm_7
+NEW ir.ui.menu: crm.crm_team_menu_config_activities
+DEL ir.ui.view: crm.res_partner_view_form_simple_form
+NEW web_tour.tour: crm.crm_tour

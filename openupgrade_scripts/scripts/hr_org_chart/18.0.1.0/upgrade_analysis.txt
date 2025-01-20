@@ -1,0 +1,9 @@
+---Models in module 'hr_org_chart'---
+---Fields in module 'hr_org_chart'---
+---XML records in module 'hr_org_chart'---
+NEW ir.actions.act_window.view: hr_org_chart.act_hr_department_hierarchy_view_kanban_action
+NEW ir.actions.act_window.view: hr_org_chart.act_hr_department_hierarchy_view_tree_action
+NEW ir.actions.act_window.view: hr_org_chart.act_hr_employee_public_hierarchy_view
+NEW ir.actions.act_window.view: hr_org_chart.act_open_view_employee_list_my_hierarchy_view
+NEW ir.ui.view: hr_org_chart.hr_employee_view_graph_inherit_org_chart
+NEW ir.ui.view: hr_org_chart.hr_employee_view_pivot_inherit_org_chart

@@ -1,0 +1,8 @@
+---Models in module 'project_stock'---
+---Fields in module 'project_stock'---
+project_stock / stock.picking            / project_id (many2one)         : NEW relation: project.project
+---XML records in module 'project_stock'---
+NEW ir.embedded.actions: project_stock.project_embedded_action_all_pickings
+NEW ir.embedded.actions: project_stock.project_embedded_action_from_wh
+NEW ir.embedded.actions: project_stock.project_embedded_action_to_wh
+NEW ir.ui.view: project_stock.view_picking_form_inherit_project_stock

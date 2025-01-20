@@ -1,0 +1,56 @@
+---Models in module 'website_sale'---
+---Fields in module 'website_sale'---
+website_sale / product.product          / ribbon_id (many2one)          : DEL relation: product.ribbon
+website_sale / product.product          / variant_ribbon_id (many2one)  : NEW relation: product.ribbon
+website_sale / product.public.category  / website_footer (html)         : NEW
+website_sale / product.ribbon           / bg_color (char)               : now required
+website_sale / product.ribbon           / html (html)                   : DEL required
+website_sale / product.ribbon           / html_class (char)             : DEL required
+website_sale / product.ribbon           / name (char)                   : NEW required
+website_sale / product.ribbon           / position (selection)          : NEW required, selection_keys: ['left', 'right'], hasdefault: default
+website_sale / product.ribbon           / text_color (char)             : now required
+website_sale / sale.order               / access_point_address (json)   : DEL
+website_sale / sale.order.line          / linked_line_id (many2one)     : module is now 'sale' ('website_sale')
+website_sale / sale.order.line          / option_line_ids (one2many)    : DEL relation: sale.order.line
+website_sale / website                  / add_to_cart_action (selection): selection_keys is now '['force_dialog', 'go_to_cart', 'stay']' ('['go_to_cart', 'stay']')
+website_sale / website                  / ecommerce_access (selection)  : NEW required, selection_keys: ['everyone', 'logged_in'], hasdefault: default
+website_sale / website                  / shop_gap (char)               : NEW hasdefault: default
+---XML records in module 'website_sale'---
+NEW ir.actions.act_window: website_sale.product_ribbon_action
+DEL ir.actions.server: website_sale.ir_actions_server_sale_cart_recovery_email
+NEW ir.ui.menu: website_sale.menu_product_combos
+NEW ir.ui.menu: website_sale.product_catalog_product_ribbons
+NEW ir.ui.view: website_sale.accordion_more_information
+NEW ir.ui.view: website_sale.address_row
+NEW ir.ui.view: website_sale.billing_address_row
+NEW ir.ui.view: website_sale.cart_combo_item_line
+NEW ir.ui.view: website_sale.cart_product_price
+NEW ir.ui.view: website_sale.delivery_address_row
+NEW ir.ui.view: website_sale.delivery_form
+NEW ir.ui.view: website_sale.delivery_method
+NEW ir.ui.view: website_sale.product_accordion
+NEW ir.ui.view: website_sale.product_product_view_form_normalized
+NEW ir.ui.view: website_sale.product_product_view_form_normalized_website_sale
+NEW ir.ui.view: website_sale.products_attributes_collapsible
+NEW ir.ui.view: website_sale.products_carousel_16x9
+NEW ir.ui.view: website_sale.products_carousel_21x9
+NEW ir.ui.view: website_sale.products_carousel_4x3
+NEW ir.ui.view: website_sale.products_carousel_4x5
+NEW ir.ui.view: website_sale.products_categories_list_collapsible
+NEW ir.ui.view: website_sale.s_dynamic_snippet_products_preview_data
+NEW ir.ui.view: website_sale.s_mega_menu_big_icons_subtitles
+NEW ir.ui.view: website_sale.s_mega_menu_cards
+NEW ir.ui.view: website_sale.s_mega_menu_images_subtitles
+NEW ir.ui.view: website_sale.s_mega_menu_little_icons
+NEW ir.ui.view: website_sale.s_mega_menu_menu_image_menu
+NEW ir.ui.view: website_sale.s_mega_menu_menus_logos
+NEW ir.ui.view: website_sale.s_mega_menu_multi_menus
+NEW ir.ui.view: website_sale.s_mega_menu_odoo_menu
+NEW ir.ui.view: website_sale.s_mega_menu_thumbnails
+DEL ir.ui.view: website_sale.cart_delivery
+DEL ir.ui.view: website_sale.payment_delivery
+DEL ir.ui.view: website_sale.payment_delivery_methods
+DEL ir.ui.view: website_sale.product_product_view_form_add
+DEL ir.ui.view: website_sale.products_fiscal_position
+DEL ir.ui.view: website_sale.row_addresses
+NEW web_tour.tour: website_sale.test_01_admin_shop_tour

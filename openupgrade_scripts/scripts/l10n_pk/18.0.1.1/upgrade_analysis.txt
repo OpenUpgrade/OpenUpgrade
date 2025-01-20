@@ -1,0 +1,10 @@
+---Models in module 'l10n_pk'---
+---Fields in module 'l10n_pk'---
+---XML records in module 'l10n_pk'---
+NEW res.country.state: l10n_pk.state_pk_ajk
+NEW res.country.state: l10n_pk.state_pk_ba
+NEW res.country.state: l10n_pk.state_pk_gb
+NEW res.country.state: l10n_pk.state_pk_is
+NEW res.country.state: l10n_pk.state_pk_kp
+NEW res.country.state: l10n_pk.state_pk_pb
+NEW res.country.state: l10n_pk.state_pk_sd

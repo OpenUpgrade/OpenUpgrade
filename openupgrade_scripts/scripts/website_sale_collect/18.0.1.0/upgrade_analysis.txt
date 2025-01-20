@@ -1,0 +1,19 @@
+---Models in module 'website_sale_collect'---
+---Fields in module 'website_sale_collect'---
+website_sale_collect / delivery.carrier         / delivery_type (False)         : previously in module website_sale_picking
+website_sale_collect / delivery.carrier         / warehouse_ids (many2many)     : NEW relation: stock.warehouse
+website_sale_collect / payment.provider         / custom_mode (False)           : previously in module website_sale_picking
+website_sale_collect / stock.warehouse          / opening_hours (many2one)      : NEW relation: resource.calendar
+---XML records in module 'website_sale_collect'---
+NEW delivery.carrier: website_sale_collect.carrier_pick_up_in_store (noupdate)
+NEW ir.ui.view: website_sale_collect.delivery_carrier_form
+NEW ir.ui.view: website_sale_collect.in_store_delivery_method
+NEW ir.ui.view: website_sale_collect.payment_confirmation_status
+NEW ir.ui.view: website_sale_collect.product_page_click_and_collect
+NEW ir.ui.view: website_sale_collect.res_config_settings_form
+NEW ir.ui.view: website_sale_collect.stock_picking_form
+NEW ir.ui.view: website_sale_collect.stock_warehouse_form
+NEW ir.ui.view: website_sale_collect.unavailable_products_warning
+NEW payment.method: website_sale_collect.payment_method_pay_on_site [renamed from website_sale_picking module]
+NEW payment.provider: website_sale_collect.payment_provider_on_site
+NEW product.product: website_sale_collect.product_pick_up_in_store (noupdate)

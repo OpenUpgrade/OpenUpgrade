@@ -1,0 +1,5 @@
+---Models in module 'web_hierarchy'---
+---Fields in module 'web_hierarchy'---
+web_hierarchy / ir.actions.act_window.view / view_mode (False)             : selection_keys is now '['calendar', 'form', 'graph', 'hierarchy', 'kanban', 'list', 'pivot']' ('['calendar', 'form', 'gantt', 'graph', 'hierarchy', 'kanban', 'pivot', 'tree']')
+web_hierarchy / ir.ui.view               / type (False)                  : selection_keys is now '['calendar', 'form', 'graph', 'hierarchy', 'kanban', 'list', 'pivot', 'qweb', 'search']' ('['calendar', 'form', 'gantt', 'graph', 'hierarchy', 'kanban', 'pivot', 'qweb', 'search', 'tree']')
+---XML records in module 'web_hierarchy'---

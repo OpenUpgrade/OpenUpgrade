@@ -1,0 +1,4 @@
+---Models in module 'hr_gamification'---
+---Fields in module 'hr_gamification'---
+---XML records in module 'hr_gamification'---
+NEW ir.rule: hr_gamification.goal_gamification_hr_user_visibility (noupdate)

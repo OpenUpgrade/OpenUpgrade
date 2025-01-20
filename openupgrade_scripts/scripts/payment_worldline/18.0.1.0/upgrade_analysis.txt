@@ -1,0 +1,11 @@
+---Models in module 'payment_worldline'---
+---Fields in module 'payment_worldline'---
+payment_worldline / payment.provider         / code (False)                  : previously in module payment_sips
+payment_worldline / payment.provider         / worldline_api_key (char)      : NEW
+payment_worldline / payment.provider         / worldline_api_secret (char)   : NEW
+payment_worldline / payment.provider         / worldline_pspid (char)        : NEW
+payment_worldline / payment.provider         / worldline_webhook_key (char)  : NEW
+payment_worldline / payment.provider         / worldline_webhook_secret (char): NEW
+---XML records in module 'payment_worldline'---
+NEW ir.ui.view: payment_worldline.payment_provider_form
+NEW ir.ui.view: payment_worldline.redirect_form

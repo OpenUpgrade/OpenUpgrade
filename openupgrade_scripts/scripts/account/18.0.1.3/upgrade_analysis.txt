@@ -1,0 +1,245 @@
+---Models in module 'account'---
+obsolete model account.tour.upload.bill [transient]
+obsolete model account.tour.upload.bill.email.confirm [transient]
+obsolete model account.unreconcile [transient]
+new model account.autopost.bills.wizard [transient]
+new model account.code.mapping [sql_view]
+new model account.lock_exception
+new model account.merge.wizard [transient]
+new model account.merge.wizard.line [transient]
+new model account.move.send.batch.wizard [transient]
+new model account.move.send.wizard [transient]
+new model account.secure.entries.wizard [transient]
+---Fields in module 'account'---
+account      / account.account          / _order                        : _order is now 'code, placeholder_code' ('code, company_id')
+account      / account.account          / code (char)                   : not stored anymore
+account      / account.account          / code (char)                   : now a function
+account      / account.account          / code_mapping_ids (one2many)   : NEW relation: account.code.mapping
+account      / account.account          / code_store (char)             : NEW
+account      / account.account          / company_currency_id (many2one): not related anymore
+account      / account.account          / company_currency_id (many2one): now a function
+account      / account.account          / company_id (many2one)         : DEL relation: res.company, required
+account      / account.account          / company_ids (many2many)       : NEW relation: res.company, required, hasdefault: default
+account      / account.account          / display_mapping_tab (boolean) : NEW hasdefault: default
+account      / account.account          / group_id (many2one)           : not stored anymore
+account      / account.account          / include_initial_balance (boolean): not stored anymore
+account      / account.account          / internal_group (selection)    : not stored anymore
+account      / account.account          / internal_group (selection)    : selection_keys is now '['asset', 'equity', 'expense', 'income', 'liability', 'off']' ('['asset', 'equity', 'expense', 'income', 'liability', 'off_balance']')
+account      / account.account          / root_id (many2one)            : not stored anymore
+account      / account.bank.statement.line / company_id (many2one)         : is now stored
+account      / account.bank.statement.line / company_id (many2one)         : now required
+account      / account.bank.statement.line / journal_id (many2one)         : is now stored
+account      / account.cash.rounding    / loss_account_id (many2one)    : needs conversion to v18-style company dependent
+account      / account.cash.rounding    / profit_account_id (many2one)  : needs conversion to v18-style company dependent
+account      / account.group            / parent_path (char)            : DEL
+account      / account.journal          / autocheck_on_post (boolean)   : NEW hasdefault: default
+account      / account.journal          / sale_activity_note (text)     : DEL
+account      / account.journal          / sale_activity_type_id (many2one): DEL relation: mail.activity.type
+account      / account.journal          / sale_activity_user_id (many2one): DEL relation: res.users
+account      / account.journal          / secure_sequence_id (many2one) : DEL relation: ir.sequence
+account      / account.journal          / type (selection)              : selection_keys is now '['bank', 'cash', 'credit', 'general', 'purchase', 'sale']' ('['bank', 'cash', 'general', 'purchase', 'sale']')
+account      / account.lock_exception   / active (boolean)              : NEW hasdefault: default
+account      / account.lock_exception   / company_id (many2one)         : NEW relation: res.company, required
+account      / account.lock_exception   / company_lock_date (date)      : NEW
+account      / account.lock_exception   / end_datetime (datetime)       : NEW
+account      / account.lock_exception   / lock_date (date)              : NEW
+account      / account.lock_exception   / lock_date_field (selection)   : NEW required, selection_keys: ['fiscalyear_lock_date', 'purchase_lock_date', 'sale_lock_date', 'tax_lock_date']
+account      / account.lock_exception   / reason (char)                 : NEW
+account      / account.lock_exception   / user_id (many2one)            : NEW relation: res.users, hasdefault: default
+account      / account.move             / amount_untaxed_in_currency_signed (float): NEW isfunction: function, stored
+account      / account.move             / audit_trail_message_ids (one2many): NEW relation: mail.message
+account      / account.move             / checked (boolean)             : NEW
+account      / account.move             / delivery_date (date)          : not a function anymore
+account      / account.move             / invoice_currency_rate (float) : NEW isfunction: function, stored
+account      / account.move             / is_manually_modified (boolean): NEW
+account      / account.move             / journal_group_id (many2one)   : NEW relation: account.journal.group
+account      / account.move             / made_sequence_gap (boolean)   : NEW isfunction: function, stored
+account      / account.move             / matched_payment_ids (many2many): NEW relation: account.payment
+account      / account.move             / origin_payment_id (many2one)  : NEW relation: account.payment
+account      / account.move             / payment_id (many2one)         : DEL relation: account.payment
+account      / account.move             / payment_state (selection)     : selection_keys is now '['blocked', 'in_payment', 'invoicing_legacy', 'not_paid', 'paid', 'partial', 'reversed']' ('['in_payment', 'invoicing_legacy', 'not_paid', 'paid', 'partial', 'reversed']')
+account      / account.move             / preferred_payment_method_line_id (many2one): NEW relation: account.payment.method.line, hasdefault: compute
+account      / account.move             / reversal_move_id (one2many)   : DEL relation: account.move
+account      / account.move             / reversal_move_ids (one2many)  : NEW relation: account.move
+account      / account.move             / send_and_print_values (json)  : DEL
+account      / account.move             / sending_data (json)           : NEW
+account      / account.move             / to_check (boolean)            : DEL
+account      / account.move.line        / account_root_id (many2one)    : not stored anymore
+account      / account.move.line        / analytic_distribution_search (json): DEL
+account      / account.move.line        / blocked (boolean)             : DEL
+account      / account.move.line        / is_imported (boolean)         : NEW
+account      / account.move.line        / journal_group_id (many2one)   : NEW relation: account.journal.group
+account      / account.payment          / _inherits                     : DEL _inherits: {'account.move': 'move_id'}
+account      / account.payment          / attachment_ids (one2many)     : is now stored
+account      / account.payment          / attachment_ids (one2many)     : not related anymore
+account      / account.payment          / company_id (many2one)         : is now stored
+account      / account.payment          / company_id (many2one)         : not related anymore
+account      / account.payment          / company_id (many2one)         : now required
+account      / account.payment          / date (date)                   : is now stored
+account      / account.payment          / date (date)                   : not related anymore
+account      / account.payment          / destination_journal_id (many2one): DEL relation: account.journal
+account      / account.payment          / invoice_ids (many2many)       : NEW relation: account.move
+account      / account.payment          / is_internal_transfer (boolean): DEL
+account      / account.payment          / is_sent (boolean)             : NEW
+account      / account.payment          / journal_id (many2one)         : is now stored
+account      / account.payment          / journal_id (many2one)         : not related anymore
+account      / account.payment          / memo (char)                   : NEW
+account      / account.payment          / name (char)                   : is now stored
+account      / account.payment          / name (char)                   : not related anymore
+account      / account.payment          / name (char)                   : now a function
+account      / account.payment          / partner_id (many2one)         : now a function
+account      / account.payment          / state (selection)             : is now stored
+account      / account.payment          / state (selection)             : not related anymore
+account      / account.payment          / state (selection)             : selection_keys is now '['canceled', 'draft', 'in_process', 'paid', 'rejected']' ('function')
+account      / account.payment.term.line / days_next_month (char)        : previously in module account_payment_term
+account      / account.payment.term.line / delay_type (selection)        : selection_keys is now '['days_after', 'days_after_end_of_month', 'days_after_end_of_next_month', 'days_end_of_month_on_the']' ('['days_after', 'days_after_end_of_month', 'days_after_end_of_next_month']')
+account      / account.payment.term.line / display_days_next_month (boolean): previously in module account_payment_term
+account      / account.reconcile.model  / counterpart_type (selection)  : NEW selection_keys: ['general', 'purchase', 'sale'], hasdefault: default
+account      / account.reconcile.model.line / analytic_distribution_search (json): DEL
+account      / account.report           / currency_translation (selection): NEW selection_keys: ['cta', 'current'], hasdefault: compute
+account      / account.report           / default_opening_date_filter (selection): selection_keys is now '['previous_month', 'previous_quarter', 'previous_tax_period', 'previous_year', 'this_month', 'this_quarter', 'this_tax_period', 'this_year', 'today']' ('['last_month', 'last_quarter', 'last_tax_period', 'last_year', 'this_month', 'this_quarter', 'this_tax_period', 'this_year', 'today']')
+account      / account.report           / filter_budgets (boolean)      : NEW hasdefault: compute
+account      / account.report           / integer_rounding (selection)  : NEW selection_keys: ['DOWN', 'HALF-UP', 'UP']
+account      / account.report.expression / date_scope (selection)        : selection_keys is now '['from_beginning', 'from_fiscalyear', 'previous_tax_period', 'strict_range', 'to_beginning_of_fiscalyear', 'to_beginning_of_period']' ('['from_beginning', 'from_fiscalyear', 'normal', 'previous_tax_period', 'strict_range', 'to_beginning_of_fiscalyear', 'to_beginning_of_period']')
+account      / account.report.line      / horizontal_split_side (selection): NEW selection_keys: ['left', 'right'], hasdefault: compute
+account      / account.tax              / description (char)            : type is now 'html' ('char')
+account      / account.tax              / invoice_legal_notes (html)    : NEW
+account      / account.tax              / price_include (boolean)       : not stored anymore
+account      / account.tax              / price_include (boolean)       : now a function
+account      / account.tax              / price_include_override (selection): NEW selection_keys: ['tax_excluded', 'tax_included']
+account      / account.tax.group        / pos_receipt_label (char)      : NEW
+account      / ir.actions.report        / is_invoice_report (boolean)   : NEW
+account      / mail.mail                / account_audit_log_account_id (many2one): previously in module account_audit_trail
+account      / mail.mail                / account_audit_log_company_id (many2one): previously in module account_audit_trail
+account      / mail.mail                / account_audit_log_move_id (many2one): previously in module account_audit_trail
+account      / mail.mail                / account_audit_log_partner_id (many2one): previously in module account_audit_trail
+account      / mail.mail                / account_audit_log_tax_id (many2one): previously in module account_audit_trail
+account      / mail.message             / account_audit_log_account_id (many2one): previously in module account_audit_trail
+account      / mail.message             / account_audit_log_company_id (many2one): previously in module account_audit_trail
+account      / mail.message             / account_audit_log_move_id (many2one): previously in module account_audit_trail
+account      / mail.message             / account_audit_log_partner_id (many2one): previously in module account_audit_trail
+account      / mail.message             / account_audit_log_tax_id (many2one): previously in module account_audit_trail
+account      / product.category         / property_account_expense_categ_id (many2one): needs conversion to v18-style company dependent
+account      / product.category         / property_account_income_categ_id (many2one): needs conversion to v18-style company dependent
+account      / product.template         / property_account_expense_id (many2one): needs conversion to v18-style company dependent
+account      / product.template         / property_account_income_id (many2one): needs conversion to v18-style company dependent
+account      / res.company              / account_journal_payment_credit_account_id (many2one): DEL relation: account.account
+account      / res.company              / account_journal_payment_debit_account_id (many2one): DEL relation: account.account
+account      / res.company              / account_price_include (selection): NEW required, selection_keys: ['tax_excluded', 'tax_included'], hasdefault: default
+account      / res.company              / autopost_bills (boolean)      : NEW hasdefault: default
+account      / res.company              / batch_payment_sequence_id (many2one): NEW relation: ir.sequence
+account      / res.company              / check_account_audit_trail (boolean): previously in module account_audit_trail
+account      / res.company              / country_code (char)           : module is now 'base' ('account')
+account      / res.company              / display_invoice_tax_company_currency (boolean): NEW hasdefault: default
+account      / res.company              / hard_lock_date (date)         : NEW
+account      / res.company              / invoice_is_download (boolean) : DEL
+account      / res.company              / invoice_is_email (boolean)    : DEL
+account      / res.company              / period_lock_date (date)       : DEL
+account      / res.company              / purchase_lock_date (date)     : NEW
+account      / res.company              / sale_lock_date (date)         : NEW
+account      / res.currency             / fiscal_country_codes (char)   : not a function anymore
+account      / res.partner              / autopost_bills (selection)    : NEW required, selection_keys: ['always', 'ask', 'never'], hasdefault: default
+account      / res.partner              / credit_limit (float)          : needs conversion to v18-style company dependent
+account      / res.partner              / display_invoice_edi_format (boolean): NEW hasdefault: default
+account      / res.partner              / display_invoice_template_pdf_report_id (boolean): NEW hasdefault: default
+account      / res.partner              / ignore_abnormal_invoice_amount (boolean): NEW
+account      / res.partner              / ignore_abnormal_invoice_date (boolean): NEW
+account      / res.partner              / invoice_edi_format_store (char): NEW
+account      / res.partner              / invoice_sending_method (selection): NEW selection_keys: ['email', 'manual']
+account      / res.partner              / invoice_template_pdf_report_id (many2one): NEW relation: ir.actions.report
+account      / res.partner              / last_time_entries_checked (datetime): DEL
+account      / res.partner              / property_account_payable_id (many2one): needs conversion to v18-style company dependent
+account      / res.partner              / property_account_position_id (many2one): needs conversion to v18-style company dependent
+account      / res.partner              / property_account_receivable_id (many2one): needs conversion to v18-style company dependent
+account      / res.partner              / property_inbound_payment_method_line_id (many2one): NEW relation: account.payment.method.line
+account      / res.partner              / property_outbound_payment_method_line_id (many2one): NEW relation: account.payment.method.line
+account      / res.partner              / property_payment_term_id (many2one): needs conversion to v18-style company dependent
+account      / res.partner              / property_supplier_payment_term_id (many2one): needs conversion to v18-style company dependent
+account      / res.partner              / trust (selection)             : needs conversion to v18-style company dependent
+---XML records in module 'account'---
+NEW account.payment.term: account.account_payment_term_90days_on_the_10th (noupdate)
+NEW digest.tip: account.digest_tip_account_1
+NEW ir.actions.act_window: account.account_merge_wizard_action
+NEW ir.actions.act_window: account.action_account_audit_trail_report [renamed from account_audit_trail module]
+NEW ir.actions.act_window: account.action_amounts_to_settle
+NEW ir.actions.act_window: account.action_base_document_layout_configurator
+NEW ir.actions.act_window: account.action_credit_statement_tree
+NEW ir.actions.act_window: account.action_move_in_invoice
+NEW ir.actions.act_window: account.action_move_out_invoice
+NEW ir.actions.act_window: account.action_view_account_secure_entries_wizard
+DEL ir.actions.act_window: account.action_account_unreconcile
+DEL ir.actions.act_window: account.action_open_payment_items
+DEL ir.actions.act_window: account.action_open_sale_payment_items
+NEW ir.actions.server: account.action_account_unreconcile
+NEW ir.actions.server: account.action_move_block_payment
+NEW ir.actions.server: account.action_move_force_register_payment
+NEW ir.actions.server: account.action_unmerge_accounts
+DEL ir.actions.server: account.action_account_invoice_from_list
+DEL ir.actions.server: account.invoice_send
+NEW ir.model.access: account.access_account_autopost_bills_wizard
+NEW ir.model.access: account.access_account_code_mapping
+NEW ir.model.access: account.access_account_code_mapping_manager
+NEW ir.model.access: account.access_account_lock_exception
+NEW ir.model.access: account.access_account_lock_exception_manager
+NEW ir.model.access: account.access_account_merge_wizard_line_manager
+NEW ir.model.access: account.access_account_merge_wizard_manager
+NEW ir.model.access: account.access_account_move_send_batch_wizard
+NEW ir.model.access: account.access_account_move_send_wizard
+NEW ir.model.access: account.access_account_payment_term_portal
+NEW ir.model.access: account.access_account_secure_entries_wizard
+DEL ir.model.access: account.access_account_move_send
+DEL ir.model.access: account.access_account_tour_upload_bill
+DEL ir.model.access: account.access_account_tour_upload_bill_email_confirm
+DEL ir.model.access: account.access_account_unreconcile
+DEL ir.property: account.default_followup_trust (noupdate)
+NEW ir.rule: account.account_move_send_batch_rule_group_invoice (noupdate)
+NEW ir.rule: account.account_move_send_single_rule_group_invoice (noupdate)
+DEL ir.rule: account.account_move_send_rule_group_invoice (noupdate)
+DEL ir.rule: account.account_root_comp_rule (noupdate)
+NEW ir.sequence: account.seq_account_payment (noupdate)
+NEW ir.ui.menu: account.account_audit_trail_menu [renamed from account_audit_trail module]
+NEW ir.ui.menu: account.account_reports_partners_reports_menu
+NEW ir.ui.menu: account.menu_action_secure_entries
+DEL ir.ui.menu: account.menu_account_supplier_accounts
+DEL ir.ui.menu: account.menu_finance_entries_accounting_miscellaneous
+DEL ir.ui.menu: account.menu_finance_entries_actions
+DEL ir.ui.menu: account.menu_finance_entries_generate_entries
+DEL ir.ui.menu: account.menu_finance_entries_management
+NEW ir.ui.view: account.account_merge_wizard_form
+NEW ir.ui.view: account.account_move_send_batch_wizard_form
+NEW ir.ui.view: account.account_move_send_wizard_form
+NEW ir.ui.view: account.autopost_bills_wizard
+NEW ir.ui.view: account.email_template_mail_gateway_failed (noupdate)
+NEW ir.ui.view: account.ir_actions_report_form_inherit_account
+NEW ir.ui.view: account.partner_missing_account_list_view
+NEW ir.ui.view: account.portal_my_details_fields
+NEW ir.ui.view: account.product_product_view_form_normalized_account
+NEW ir.ui.view: account.product_view_search_catalog
+NEW ir.ui.view: account.report_invoice_document_preview
+NEW ir.ui.view: account.report_invoice_wizard_iframe
+NEW ir.ui.view: account.res_partner_view_tree
+NEW ir.ui.view: account.tests_shared_js_python
+NEW ir.ui.view: account.view_account_bill_filter
+NEW ir.ui.view: account.view_account_lock_exception_form
+NEW ir.ui.view: account.view_account_move_with_gaps_in_sequence_filter
+NEW ir.ui.view: account.view_account_payment_method_line_kanban_mobile
+NEW ir.ui.view: account.view_account_secure_entries_wizard
+NEW ir.ui.view: account.view_base_document_layout
+NEW ir.ui.view: account.view_duplicated_moves_tree_js
+NEW ir.ui.view: account.view_message_tree_audit_log
+NEW ir.ui.view: account.view_message_tree_audit_log_search
+NEW ir.ui.view: account.view_move_tree_multi_edit
+DEL ir.ui.view: account.account_move_send_form
+DEL ir.ui.view: account.account_tour_upload_bill
+DEL ir.ui.view: account.account_tour_upload_bill_email_confirm
+DEL ir.ui.view: account.account_unreconcile_view
+DEL ir.ui.view: account.tax_groups_totals
+DEL ir.ui.view: account.view_account_payment_method_line_kanban
+DEL onboarding.onboarding: account.onboarding_onboarding_account_invoice (noupdate)
+DEL onboarding.onboarding.step: account.onboarding_onboarding_step_bank_account (noupdate)
+DEL onboarding.onboarding.step: account.onboarding_onboarding_step_create_invoice (noupdate)
+DEL onboarding.onboarding.step: account.onboarding_onboarding_step_default_taxes (noupdate)
+DEL onboarding.onboarding.step: account.onboarding_onboarding_step_setup_bill (noupdate)
+NEW res.groups: account.group_account_basic
+NEW res.groups: account.group_account_secured
+NEW web_tour.tour: account.account_tour

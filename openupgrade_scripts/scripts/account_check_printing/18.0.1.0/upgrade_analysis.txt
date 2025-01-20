@@ -1,0 +1,8 @@
+---Models in module 'account_check_printing'---
+---Fields in module 'account_check_printing'---
+account_check_printing / account.journal          / bank_check_printing_layout (selection): NEW selection_keys: function
+account_check_printing / account.move             / preferred_payment_method_id (many2one): DEL relation: account.payment.method
+account_check_printing / res.partner              / property_payment_method_id (many2one): DEL relation: account.payment.method
+---XML records in module 'account_check_printing'---
+DEL ir.ui.view: account_check_printing.view_account_invoice_filter
+DEL ir.ui.view: account_check_printing.view_partner_property_form

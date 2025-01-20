@@ -1,0 +1,12 @@
+---Models in module 'website_slides_survey'---
+---Fields in module 'website_slides_survey'---
+website_slides_survey / slide.channel.partner    / survey_certification_success (boolean): NEW
+---XML records in module 'website_slides_survey'---
+NEW ir.rule: website_slides_survey.survey_question_answer_slide_channel_officer (noupdate)
+NEW ir.rule: website_slides_survey.survey_question_rule_slide_channel_officer (noupdate)
+NEW ir.rule: website_slides_survey.survey_rule_slide_channel_officer (noupdate)
+NEW ir.rule: website_slides_survey.survey_user_input_line_rule_slide_channel_officer (noupdate)
+NEW ir.rule: website_slides_survey.survey_user_input_rule_slide_channel_officer (noupdate)
+NEW ir.ui.view: website_slides_survey.slide_channel_partner_view_search
+NEW ir.ui.view: website_slides_survey.slide_channel_partner_view_tree
+DEL ir.ui.view: website_slides_survey.slide_channel_view_kanban

@@ -1,0 +1,6 @@
+---Models in module 'snailmail_account'---
+---Fields in module 'snailmail_account'---
+snailmail_account / res.company              / invoice_is_snailmail (boolean): DEL
+snailmail_account / res.partner              / invoice_sending_method (False): NEW selection_keys: ['email', 'manual', 'snailmail'], mode: modify
+---XML records in module 'snailmail_account'---
+DEL ir.ui.view: snailmail_account.account_move_send_inherit_snailmail

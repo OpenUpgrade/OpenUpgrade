@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="base.default_user" model="res.users">
+    <field name="groups_id" eval="[(4, ref('group_survey_user'))]"/>
+  </record>
+  <record id="base.module_category_marketing_surveys" model="ir.module.category">
+    <field name="description">Helps you manage your survey for review of different users.</field>
+  </record>
+  <record id="survey_user_input_line_rule_survey_manager" model="ir.rule">
+    <field name="domain_force">[('survey_id.survey_type', 'in', ('assessment', 'custom', 'live_session', 'survey'))]</field>
+    <field name="name">Survey user input line: manager: all non specialized surveys</field>
+  </record>
+  <record id="survey_user_input_rule_survey_manager" model="ir.rule">
+    <field name="domain_force">[('survey_id.survey_type', 'in', ('assessment', 'custom', 'live_session', 'survey'))]</field>
+    <field name="name">Survey user input: manager: all non specialized surveys</field>
+  </record>
+</odoo>

@@ -1,0 +1,11 @@
+---Models in module 'website_project'---
+---Fields in module 'website_project'---
+website_project / project.task             / email_from (char)             : NEW
+website_project / project.task             / partner_company_name (char)   : NEW isrelated: related, stored
+website_project / project.task             / partner_name (char)           : NEW isrelated: related, stored
+website_project / project.task             / partner_phone (char)          : NEW isfunction: function, stored
+---XML records in module 'website_project'---
+NEW ir.ui.view: website_project.task_submitted
+NEW ir.ui.view: website_project.website_portal_my_project
+NEW ir.ui.view: website_project.website_portal_my_task
+NEW website.page: website_project.task_submitted_page

@@ -1,0 +1,10 @@
+---Models in module 'l10n_sa_edi'---
+---Fields in module 'l10n_sa_edi'---
+l10n_sa_edi  / account.journal          / l10n_sa_compliance_csid_certificate_id (many2one): NEW relation: certificate.certificate
+l10n_sa_edi  / account.journal          / l10n_sa_production_csid_certificate_id (many2one): NEW relation: certificate.certificate
+l10n_sa_edi  / account.journal          / l10n_sa_production_csid_validity (datetime): not a function anymore
+l10n_sa_edi  / account.journal          / l10n_sa_production_csid_validity (datetime): not stored anymore
+l10n_sa_edi  / account.journal          / l10n_sa_production_csid_validity (datetime): now related
+l10n_sa_edi  / res.company              / l10n_sa_private_key (binary)  : DEL attachment: False
+l10n_sa_edi  / res.company              / l10n_sa_private_key_id (many2one): NEW relation: certificate.key
+---XML records in module 'l10n_sa_edi'---

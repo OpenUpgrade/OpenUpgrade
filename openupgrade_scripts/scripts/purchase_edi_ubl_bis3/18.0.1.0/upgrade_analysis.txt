@@ -1,0 +1,15 @@
+---Models in module 'purchase_edi_ubl_bis3'---
+new model purchase.edi.xml.ubl_bis3 [abstract]
+---Fields in module 'purchase_edi_ubl_bis3'---
+---XML records in module 'purchase_edi_ubl_bis3'---
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_AddressType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_AllowanceChargeType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_AnticipatedMonetaryTotalType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_ContactType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_DeliveryType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_ItemType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_LineItemType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_OrderType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_PartyType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_PaymentTermsType
+NEW ir.ui.view: purchase_edi_ubl_bis3.bis3_TaxCategoryType

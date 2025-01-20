@@ -1,0 +1,120 @@
+---Models in module 'marketing_card'---
+new model card.campaign
+new model card.campaign.tag
+new model card.card
+new model card.template
+---Fields in module 'marketing_card'---
+marketing_card / card.campaign            / active (boolean)              : NEW hasdefault: default
+marketing_card / card.campaign            / activity_ids (one2many)       : NEW relation: mail.activity
+marketing_card / card.campaign            / card_ids (one2many)           : NEW relation: card.card
+marketing_card / card.campaign            / card_template_id (many2one)   : NEW relation: card.template, required, hasdefault: default
+marketing_card / card.campaign            / content_background (binary)   : NEW attachment: True
+marketing_card / card.campaign            / content_button (char)         : NEW
+marketing_card / card.campaign            / content_header (char)         : NEW
+marketing_card / card.campaign            / content_header_color (char)   : NEW
+marketing_card / card.campaign            / content_header_dyn (boolean)  : NEW
+marketing_card / card.campaign            / content_header_path (char)    : NEW
+marketing_card / card.campaign            / content_image1_path (char)    : NEW
+marketing_card / card.campaign            / content_image2_path (char)    : NEW
+marketing_card / card.campaign            / content_section (char)        : NEW
+marketing_card / card.campaign            / content_section_dyn (boolean) : NEW
+marketing_card / card.campaign            / content_section_path (char)   : NEW
+marketing_card / card.campaign            / content_sub_header (char)     : NEW
+marketing_card / card.campaign            / content_sub_header_color (char): NEW
+marketing_card / card.campaign            / content_sub_header_dyn (boolean): NEW
+marketing_card / card.campaign            / content_sub_header_path (char): NEW
+marketing_card / card.campaign            / content_sub_section1 (char)   : NEW
+marketing_card / card.campaign            / content_sub_section1_dyn (boolean): NEW
+marketing_card / card.campaign            / content_sub_section1_path (char): NEW
+marketing_card / card.campaign            / content_sub_section2 (char)   : NEW
+marketing_card / card.campaign            / content_sub_section2_dyn (boolean): NEW
+marketing_card / card.campaign            / content_sub_section2_path (char): NEW
+marketing_card / card.campaign            / image_preview (binary)        : NEW attachment: False, isfunction: function, stored
+marketing_card / card.campaign            / lang (char)                   : NEW
+marketing_card / card.campaign            / link_tracker_id (many2one)    : NEW relation: link.tracker
+marketing_card / card.campaign            / mailing_ids (one2many)        : NEW relation: mailing.mailing
+marketing_card / card.campaign            / message_follower_ids (one2many): NEW relation: mail.followers
+marketing_card / card.campaign            / message_ids (one2many)        : NEW relation: mail.message
+marketing_card / card.campaign            / name (char)                   : NEW required
+marketing_card / card.campaign            / post_suggestion (text)        : NEW
+marketing_card / card.campaign            / preview_record_ref (reference): NEW required
+marketing_card / card.campaign            / rating_ids (one2many)         : NEW relation: rating.rating
+marketing_card / card.campaign            / request_description (text)    : NEW
+marketing_card / card.campaign            / request_title (char)          : NEW hasdefault: default
+marketing_card / card.campaign            / res_model (selection)         : NEW required, selection_keys: function, isfunction: function, stored
+marketing_card / card.campaign            / reward_message (html)         : NEW
+marketing_card / card.campaign            / reward_target_url (char)      : NEW
+marketing_card / card.campaign            / tag_ids (many2many)           : NEW relation: card.campaign.tag
+marketing_card / card.campaign            / target_url (char)             : NEW
+marketing_card / card.campaign            / user_id (many2one)            : NEW relation: res.users, hasdefault: default
+marketing_card / card.campaign            / website_message_ids (one2many): NEW relation: mail.message
+marketing_card / card.campaign.tag        / color (integer)               : NEW hasdefault: default
+marketing_card / card.campaign.tag        / name (char)                   : NEW required
+marketing_card / card.card                / active (boolean)              : NEW hasdefault: default
+marketing_card / card.card                / campaign_id (many2one)        : NEW relation: card.campaign, required
+marketing_card / card.card                / image (binary)                : NEW attachment: True
+marketing_card / card.card                / requires_sync (boolean)       : NEW hasdefault: default
+marketing_card / card.card                / res_id (many2one_reference)   : NEW relation: res_model, required
+marketing_card / card.card                / share_status (selection)      : NEW selection_keys: ['shared', 'visited']
+marketing_card / card.template            / body (html)                   : NEW
+marketing_card / card.template            / default_background (binary)   : NEW attachment: True
+marketing_card / card.template            / name (char)                   : NEW required
+marketing_card / card.template            / primary_color (char)          : NEW required, hasdefault: default
+marketing_card / card.template            / primary_text_color (char)     : NEW required, hasdefault: default
+marketing_card / card.template            / secondary_color (char)        : NEW required, hasdefault: default
+marketing_card / card.template            / secondary_text_color (char)   : NEW required, hasdefault: default
+marketing_card / mailing.mailing          / card_campaign_id (many2one)   : NEW relation: card.campaign
+---XML records in module 'marketing_card'---
+NEW card.template: marketing_card.card_template_avatar_highlight (noupdate)
+NEW card.template: marketing_card.card_template_blur (noupdate)
+NEW card.template: marketing_card.card_template_circles (noupdate)
+NEW card.template: marketing_card.card_template_dark (noupdate)
+NEW card.template: marketing_card.card_template_drawings (noupdate)
+NEW card.template: marketing_card.card_template_geometric (noupdate)
+NEW card.template: marketing_card.card_template_light (noupdate)
+NEW card.template: marketing_card.card_template_lila (noupdate)
+NEW card.template: marketing_card.card_template_lines (noupdate)
+NEW card.template: marketing_card.card_template_organic (noupdate)
+NEW card.template: marketing_card.card_template_safari (noupdate)
+NEW card.template: marketing_card.card_template_user_image (noupdate)
+NEW card.template: marketing_card.card_template_waves (noupdate)
+NEW card.template: marketing_card.card_template_world_map (noupdate)
+NEW ir.actions.act_window: marketing_card.card_campaign_action
+NEW ir.actions.act_window: marketing_card.card_template_action
+NEW ir.actions.act_window: marketing_card.cards_card_action
+NEW ir.model.access: marketing_card.access_card_campaign_tag_manager
+NEW ir.model.access: marketing_card.access_card_campaign_tag_user
+NEW ir.model.access: marketing_card.access_card_campaign_user
+NEW ir.model.access: marketing_card.access_card_card_manager
+NEW ir.model.access: marketing_card.access_card_card_public
+NEW ir.model.access: marketing_card.access_card_card_user
+NEW ir.model.access: marketing_card.access_card_template_system
+NEW ir.model.access: marketing_card.access_card_template_user
+NEW ir.model.constraint: marketing_card.constraint_card_campaign_tag_name_uniq
+NEW ir.model.constraint: marketing_card.constraint_card_card_campaign_record_unique
+NEW ir.module.category: marketing_card.module_category_marketing_card (noupdate)
+NEW ir.rule: marketing_card.marketing_card_campaign_manager_own_rule (noupdate)
+NEW ir.rule: marketing_card.marketing_card_campaign_user_owl_rule (noupdate)
+NEW ir.ui.menu: marketing_card.card_campaign_menu
+NEW ir.ui.menu: marketing_card.card_menu
+NEW ir.ui.menu: marketing_card.cards_template_menu
+NEW ir.ui.menu: marketing_card.marketing_card_menu_technical
+NEW ir.ui.view: marketing_card.card_campaign_crawler
+NEW ir.ui.view: marketing_card.card_campaign_preview
+NEW ir.ui.view: marketing_card.card_campaign_view_form
+NEW ir.ui.view: marketing_card.card_campaign_view_kanban
+NEW ir.ui.view: marketing_card.card_campaign_view_search
+NEW ir.ui.view: marketing_card.card_campaign_view_tree
+NEW ir.ui.view: marketing_card.card_card_view_list
+NEW ir.ui.view: marketing_card.card_card_view_search
+NEW ir.ui.view: marketing_card.card_template_view_form
+NEW ir.ui.view: marketing_card.common_template
+NEW ir.ui.view: marketing_card.mailing_mailing_view_form_inherit_marketing_card
+NEW ir.ui.view: marketing_card.robots
+NEW ir.ui.view: marketing_card.template_1
+NEW ir.ui.view: marketing_card.template_2
+NEW ir.ui.view: marketing_card.template_3
+NEW ir.ui.view: marketing_card.template_4
+NEW ir.ui.view: marketing_card.template_5
+NEW res.groups: marketing_card.marketing_card_group_manager (noupdate)
+NEW res.groups: marketing_card.marketing_card_group_user (noupdate)

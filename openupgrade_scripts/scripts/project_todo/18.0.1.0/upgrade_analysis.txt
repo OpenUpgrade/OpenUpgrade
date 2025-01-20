@@ -1,0 +1,6 @@
+---Models in module 'project_todo'---
+---Fields in module 'project_todo'---
+project_todo / mail.activity.type       / category (False)              : DEL selection_keys: ['default', 'meeting', 'phonecall', 'reminder', 'upload_file'], mode: modify
+---XML records in module 'project_todo'---
+DEL ir.rule: project_todo.task_visibility_rule_project_user [renamed to project module] (noupdate)
+DEL mail.activity.type: project_todo.mail_activity_data_reminder (noupdate)

@@ -1,0 +1,28 @@
+---Models in module 'payment'---
+---Fields in module 'payment'---
+payment      / payment.method           / support_refund (selection)    : now required
+payment      / payment.method           / support_refund (selection)    : selection_keys is now '['full_only', 'none', 'partial']' ('['full_only', 'partial']')
+payment      / payment.provider         / module_state (selection)      : not stored anymore
+payment      / payment.provider         / support_refund (selection)    : selection_keys is now '['full_only', 'none', 'partial']' ('['full_only', 'partial']')
+payment      / payment.transaction      / callback_hash (char)          : DEL
+payment      / payment.transaction      / callback_is_done (boolean)    : DEL
+payment      / payment.transaction      / callback_method (char)        : DEL
+payment      / payment.transaction      / callback_model_id (many2one)  : DEL relation: ir.model
+payment      / payment.transaction      / callback_res_id (integer)     : DEL
+payment      / res.country              / is_stripe_supported_country (boolean): previously in module website_payment
+---XML records in module 'payment'---
+NEW ir.actions.server: payment.action_activate_stripe [renamed from website_payment module]
+NEW ir.ui.view: payment.availability_report
+NEW ir.ui.view: payment.availability_report_button
+NEW ir.ui.view: payment.availability_report_records
+NEW ir.ui.view: payment.no_pms_available_warning
+NEW ir.ui.view: payment.state_header
+DEL ir.ui.view: payment.pay_meth_link
+DEL ir.ui.view: payment.transaction_status
+NEW payment.method: payment.payment_method_alipay_plus (noupdate)
+NEW payment.method: payment.payment_method_emi_india (noupdate)
+NEW payment.method: payment.payment_method_paylater_india (noupdate)
+NEW payment.method: payment.payment_method_post_finance (noupdate)
+DEL payment.method: payment.payment_method_emi (noupdate)
+NEW payment.provider: payment.payment_provider_worldline (noupdate)
+DEL payment.provider: payment.payment_provider_sips (noupdate)

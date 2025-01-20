@@ -1,0 +1,4 @@
+---Models in module 'project_hr_skills'---
+---Fields in module 'project_hr_skills'---
+---XML records in module 'project_hr_skills'---
+NEW ir.ui.view: project_hr_skills.view_task_search_form_project_fsm_base_inherit

@@ -1,0 +1,4 @@
+---Models in module 'bus'---
+new model bus.listener.mixin [abstract]
+---Fields in module 'bus'---
+---XML records in module 'bus'---

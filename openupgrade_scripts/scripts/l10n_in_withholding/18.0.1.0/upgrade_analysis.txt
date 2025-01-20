@@ -1,0 +1,167 @@
+---Models in module 'l10n_in_withholding'---
+new model l10n_in.section.alert
+---Fields in module 'l10n_in_withholding'---
+l10n_in_withholding / account.account          / l10n_in_tds_tcs_section_id (many2one): NEW relation: l10n_in.section.alert
+l10n_in_withholding / account.tax              / l10n_in_section_id (many2one) : NEW relation: l10n_in.section.alert
+l10n_in_withholding / l10n_in.section.alert    / aggregate_limit (float)       : NEW
+l10n_in_withholding / l10n_in.section.alert    / aggregate_period (selection)  : NEW selection_keys: ['fiscal_yearly', 'monthly'], hasdefault: default
+l10n_in_withholding / l10n_in.section.alert    / consider_amount (selection)   : NEW required, selection_keys: ['total_amount', 'untaxed_amount'], hasdefault: default
+l10n_in_withholding / l10n_in.section.alert    / is_aggregate_limit (boolean)  : NEW
+l10n_in_withholding / l10n_in.section.alert    / is_per_transaction_limit (boolean): NEW
+l10n_in_withholding / l10n_in.section.alert    / l10n_in_section_tax_ids (one2many): NEW relation: account.tax
+l10n_in_withholding / l10n_in.section.alert    / name (char)                   : NEW
+l10n_in_withholding / l10n_in.section.alert    / per_transaction_limit (float) : NEW
+l10n_in_withholding / l10n_in.section.alert    / tax_source_type (selection)   : NEW selection_keys: ['tcs', 'tds']
+---XML records in module 'l10n_in_withholding'---
+NEW account.report: l10n_in_withholding.tcs_report [renamed from l10n_in module]
+NEW account.report: l10n_in_withholding.tds_report [renamed from l10n_in module]
+NEW account.report.column: l10n_in_withholding.tcs_report_balance [renamed from l10n_in module]
+NEW account.report.column: l10n_in_withholding.tds_report_balance [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_alfhc_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_aofpnbtotl_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_mbcoloio_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_s_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_tl_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_tobaotuafl_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1_touafl_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1c_maq_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1c_pl_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1c_tp_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1f_mv_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1g_soaotpp_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1g_som_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tcs_report_line_section_206c_1h_sog_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_192_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_192a_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_193_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194a_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194b_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194bb_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194c_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194d_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194da_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194e_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194ee_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194f_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194g_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194h_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194i_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194ia_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194ib_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194ic_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194j_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194k_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194la_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194lb_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194lba_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194lbb_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194lbc_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194m_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194n_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194o_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_194q_tag [renamed from l10n_in module]
+NEW account.report.expression: l10n_in_withholding.tds_report_line_section_195_tag [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_alfhc [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_aofpnbtotl [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_mbcoloio [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_s [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_tl [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_tobaotuafl [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1_touafl [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1c_maq [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1c_pl [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1c_tp [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1f_mv [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1g_soaotpp [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1g_som [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tcs_report_line_section_206c_1h_sog [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_192 [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_192a [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_193 [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194 [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194a [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194b [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194bb [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194c [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194d [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194da [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194e [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194ee [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194f [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194g [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194h [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194i [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194ia [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194ib [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194ic [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194j [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194k [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194la [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194lb [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194lba [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194lbb [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194lbc [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194m [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194n [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194o [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_194q [renamed from l10n_in module]
+NEW account.report.line: l10n_in_withholding.tds_report_line_section_195 [renamed from l10n_in module]
+NEW ir.actions.act_window: l10n_in_withholding.l10n_in_section_alert_action
+NEW ir.model.access: l10n_in_withholding.access_l10n_in_section_alert_account_manager
+NEW ir.model.access: l10n_in_withholding.access_l10n_in_section_alert_account_readonly
+NEW ir.model.constraint: l10n_in_withholding.constraint_l10n_in_section_alert_aggregate_limit
+NEW ir.model.constraint: l10n_in_withholding.constraint_l10n_in_section_alert_per_transaction_limit
+NEW ir.ui.view: l10n_in_withholding.account_account_tds_tcs_view_form_inherit
+NEW ir.ui.view: l10n_in_withholding.account_account_tds_tcs_view_tree_inherit
+NEW ir.ui.view: l10n_in_withholding.l10n_in_section_alert_view_form
+NEW ir.ui.view: l10n_in_withholding.l10n_in_section_alert_view_tree
+NEW ir.ui.view: l10n_in_withholding.view_move_line_tree_l10n_in
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section206c1h_g
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_alc
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_fo
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_min
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_sc
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_tim
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_tim_o
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1_tl
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1c_mq
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1c_p
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1c_t
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1f_mv
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1g_ot
+NEW l10n_in.section.alert: l10n_in_withholding.tcs_section_206c1g_r
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_192
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_192a
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_193
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194a
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194b
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194ba
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194bb
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194c
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194d
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194da
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194e
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194ee
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194f
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194g
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194h
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194i
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194ia
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194ib
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194ic
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194j
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194j_dir
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194k
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194la
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194lb
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194lba1
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194lbb
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194lbc
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194m
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194n
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194o
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194o_huf
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_194q
+NEW l10n_in.section.alert: l10n_in_withholding.tds_section_195

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="email_template_edi_purchase" model="mail.template">
+    <field name="body_html" type="html">
+      <div style="margin: 0px; padding: 0px;">
+        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Dear <t t-out="object.partner_id.name or ''">Brandon Freeman</t>
+        <t t-if="object.partner_id.parent_id">
+            (<t t-out="object.partner_id.parent_id.name or ''">Azure Interior</t>)
+        </t>
+        <br/><br/>
+        Here is in attachment a request for quotation <span style="font-weight:bold;" t-out="object.name or ''">P00015</span>
+        <t t-if="object.partner_ref">
+            with reference: <t t-out="object.partner_ref or ''">REF_XXX</t>
+        </t>
+        from <t t-out="object.company_id.name or ''">YourCompany</t>.
+        <br/><br/>
+        If you have any questions, please do not hesitate to contact us.
+        <br/><br/>
+            <a t-att-href="object.get_confirm_url(confirm_type='reception')" target="_blank" style="padding: 5px 10px; color: #FFFFFF; text-decoration: none; background-color: #875A7B; border: 1px solid #875A7B; border-radius: 3px">
+                Accept</a>
+
+            <a t-att-href="object.get_confirm_url(confirm_type='decline')" target="_blank" style="padding: 5px 10px; color: #FFFFFF; text-decoration: none; background-color: #875A7B; border: 1px solid #875A7B; border-radius: 3px">
+                Decline</a>
+        <br/><br/>
+        Best regards,
+        <t t-if="not is_html_empty(object.user_id.signature)"><br/><br/><t t-out="object.user_id.signature or ''">--<br/>Mitchell Admin</t></t>
+    </p>
+      </div>
+    </field>
+  </record>
+  <template id="track_po_line_template">
+    <div>
+      <strong>The ordered quantity has been updated.</strong>
+      <ul><li><t t-esc="line.product_id.display_name"/>:</li>
+                Ordered Quantity: <t t-esc="line.product_qty"/> -&gt; <t t-esc="float(product_qty)"/><br/>
+                <t t-if="line.order_id.product_id.type != &quot;consu&quot;">
+                    Received Quantity: <t t-esc="line.qty_received"/><br/>
+                </t>
+                Billed Quantity: <t t-esc="line.qty_invoiced"/>
+            </ul>
+    </div>
+  </template>
+</odoo>

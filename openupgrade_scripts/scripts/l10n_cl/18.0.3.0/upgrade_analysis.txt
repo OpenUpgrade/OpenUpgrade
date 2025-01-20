@@ -1,0 +1,4 @@
+---Models in module 'l10n_cl'---
+---Fields in module 'l10n_cl'---
+---XML records in module 'l10n_cl'---
+---nothing has changed in this module--

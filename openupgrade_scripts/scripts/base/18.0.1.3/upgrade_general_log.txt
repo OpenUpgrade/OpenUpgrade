@@ -1,0 +1,401 @@
+---Models in module 'general'---
+obsolete model account.fr.fec [module l10n_fr_fec]
+obsolete model account.tour.upload.bill [module account]
+obsolete model account.tour.upload.bill.email.confirm [module account]
+obsolete model account.unreconcile [module account]
+obsolete model google.calendar.credentials [module google_calendar]
+obsolete model hr.applicant.skill [module hr_recruitment_skills]
+obsolete model iap.account.info [module iap]
+obsolete model ir.property [module base]
+obsolete model l10n_es_edi.certificate [module l10n_es_edi_sii]
+obsolete model l10n_es_edi_facturae_adm_centers.ac_role_type [module l10n_es_edi_facturae_adm_centers]
+obsolete model l10n_es_edi_facturae.certificate [module l10n_es_edi_facturae]
+obsolete model mail.notification.web.push [module mail]
+obsolete model mail.partner.device [module mail]
+obsolete model mail.shortcode [module mail]
+obsolete model microsoft.calendar.credentials [module microsoft_calendar]
+obsolete model mrp.document [module mrp]
+obsolete model pos.combo [module point_of_sale]
+obsolete model pos.combo.line [module point_of_sale]
+obsolete model pos_mercury.configuration [module pos_mercury]
+obsolete model pos_mercury.mercury_transaction [module pos_mercury]
+obsolete model project.create.sale.order [module sale_timesheet]
+obsolete model project.create.sale.order.line [module sale_timesheet]
+obsolete model purchase.requisition.type [module purchase_requisition]
+obsolete model repair.warn.uncomplete.move [module repair]
+obsolete model res.config.installer [module base]
+obsolete model stock.assign.serial [module stock]
+obsolete model stock.scheduler.compute [module stock]
+obsolete model website.twitter.tweet [module website_twitter]
+new model account.autopost.bills.wizard [module account]
+new model account.code.mapping [module account]
+new model account.lock_exception [module account]
+new model account.merge.wizard [module account]
+new model account.merge.wizard.line [module account]
+new model account.move.send.batch.wizard [module account]
+new model account.move.send.wizard [module account]
+new model account_peppol.service [module account_peppol]
+new model account_peppol.service.wizard [module account_peppol]
+new model account.secure.entries.wizard [module account]
+new model analytic.plan.fields.mixin [module analytic]
+new model auth.passkey.key [module auth_passkey]
+new model auth.passkey.key.create [module auth_passkey]
+new model bill.to.po.wizard [module purchase]
+new model bus.listener.mixin [module bus]
+new model candidate.send.mail [module hr_recruitment]
+new model card.campaign [module marketing_card]
+new model card.campaign.tag [module marketing_card]
+new model card.card [module marketing_card]
+new model card.template [module marketing_card]
+new model certificate.certificate [module certificate]
+new model certificate.key [module certificate]
+new model event.lead.request [module event_crm]
+new model fleet.vehicle.send.mail [module fleet]
+new model format.vat.label.mixin [module base]
+new model hr.candidate [module hr_recruitment]
+new model hr.candidate.skill [module hr_recruitment_skills]
+new model hr.job.platform [module hr_recruitment]
+new model hr.leave.allocation.generate.multi.wizard [module hr_holidays]
+new model hr.leave.generate.multi.wizard [module hr_holidays]
+new model hr.manager.department.report [module hr]
+new model iap.service [module iap]
+new model ir.cron.progress [module base]
+new model ir.embedded.actions [module base]
+new model l10n_ar.earnings.scale [module l10n_ar_withholding]
+new model l10n_ar.earnings.scale.line [module l10n_ar_withholding]
+new model l10n_ar.partner.tax [module l10n_ar_withholding]
+new model l10n_br.zip.range [module l10n_br]
+new model l10n_es_edi_facturae.ac_role_type [module l10n_es_edi_facturae]
+new model l10n_es_edi_tbai.document [module l10n_es_edi_tbai]
+new model l10n_fr.fec.export.wizard [module l10n_fr_account]
+new model l10n_id_efaktur.document [module l10n_id_efaktur]
+new model l10n_id.qris.transaction [module l10n_id]
+new model l10n_in.section.alert [module l10n_in_withholding]
+new model l10n_latam.check [module l10n_latam_check]
+new model l10n_latam.payment.register.check [module l10n_latam_check]
+new model loyalty.card.update.balance [module loyalty]
+new model loyalty.history [module loyalty]
+new model mail.canned.response [module mail]
+new model mail.push [module mail]
+new model mail.push.device [module mail]
+new model mail.scheduled.message [module mail]
+new model mrp.account.wip.accounting [module mrp_account]
+new model mrp.account.wip.accounting.line [module mrp_account]
+new model mrp.batch.produce [module mrp]
+new model peppol.registration [module account_peppol]
+new model pos.bus.mixin [module point_of_sale]
+new model pos.load.mixin [module point_of_sale]
+new model pos.note [module point_of_sale]
+new model product.combo [module product]
+new model product.combo.item [module product]
+new model project.share.collaborator.wizard [module project]
+new model purchase.bill.line.match [module purchase]
+new model purchase.edi.xml.ubl_bis3 [module purchase_edi_ubl_bis3]
+new model quotation.document [module sale_pdf_quote_builder]
+new model report.pos_hr.multi_employee_sales_report [module pos_hr]
+new model report.pos_hr.single_employee_sales_report [module pos_hr]
+new model res.device [module base]
+new model res.device.log [module base]
+new model sale.edi.common [module sale_edi_ubl]
+new model sale.edi.xml.ubl_bis3 [module sale_edi_ubl]
+new model sale.pdf.form.field [module sale_pdf_quote_builder]
+new model sms.account.code [module sms]
+new model sms.account.phone [module sms]
+new model sms.account.sender [module sms]
+new model stock.lot.report [module stock]
+new model stock.replenish.mixin [module stock]
+new model stock.scrap.reason.tag [module stock]
+new model update.product.attribute.value [module product]
+new model web_tour.tour.step [module web_tour]
+new model website.custom_blocked_third_party_domains [module website]
+new model website.page.properties [module website]
+new model website.page.properties.base [module website]
+---Fields in module 'general'---
+# 13164 fields matched,
+# Direct match: 13021
+# Found in other module: 143
+# Found with different type: 0
+# In obsolete models: 138
+# New columns: 1477
+# Not matched: 835
+---XML records in module 'general'---
+ERROR: module not in list of installed modules:
+---Models in module 'account_audit_trail'---
+---Fields in module 'account_audit_trail'---
+account_audit_trail / mail.mail                / account_audit_log_account_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / mail.mail                / account_audit_log_company_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / mail.mail                / account_audit_log_move_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / mail.mail                / account_audit_log_partner_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / mail.mail                / account_audit_log_tax_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / mail.message             / account_audit_log_account_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / mail.message             / account_audit_log_company_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / mail.message             / account_audit_log_move_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / mail.message             / account_audit_log_partner_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / mail.message             / account_audit_log_tax_id (many2one): module is now 'account' ('account_audit_trail')
+account_audit_trail / res.company              / check_account_audit_trail (boolean): module is now 'account' ('account_audit_trail')
+---XML records in module 'account_audit_trail'---
+DEL ir.actions.act_window: account_audit_trail.action_account_audit_trail_report [renamed to account module]
+DEL ir.ui.menu: account_audit_trail.account_audit_trail_menu [renamed to account module]
+DEL ir.ui.view: account_audit_trail.res_config_settings_view_form_inherit_account_audit_trail
+DEL ir.ui.view: account_audit_trail.view_message_tree_audit_log
+DEL ir.ui.view: account_audit_trail.view_message_tree_audit_log_search
+ERROR: module not in list of installed modules:
+---Models in module 'account_payment_term'---
+---Fields in module 'account_payment_term'---
+account_payment_term / account.payment.term.line / days_next_month (char)        : module is now 'account' ('account_payment_term')
+account_payment_term / account.payment.term.line / delay_type (False)            : DEL selection_keys: ['days_after', 'days_after_end_of_month', 'days_after_end_of_next_month', 'days_end_of_month_on_the'], mode: modify
+account_payment_term / account.payment.term.line / display_days_next_month (boolean): module is now 'account' ('account_payment_term')
+---XML records in module 'account_payment_term'---
+DEL ir.ui.view: account_payment_term.account_payment_term_form
+ERROR: module not in list of installed modules:
+---Models in module 'im_livechat_mail_bot'---
+---Fields in module 'im_livechat_mail_bot'---
+im_livechat_mail_bot / res.users                / odoobot_state (False)         : DEL selection_keys: ['disabled', 'idle', 'not_initialized', 'onboarding_attachement', 'onboarding_canned', 'onboarding_command', 'onboarding_emoji', 'onboarding_ping'], mode: modify
+---XML records in module 'im_livechat_mail_bot'---
+ERROR: module not in list of installed modules:
+---Models in module 'l10n_br_pix'---
+---Fields in module 'l10n_br_pix'---
+l10n_br_pix  / res.partner.bank         / proxy_type (False)            : module is now 'l10n_br' ('l10n_br_pix')
+---XML records in module 'l10n_br_pix'---
+DEL ir.ui.view: l10n_br_pix.view_partner_bank_form_inherit_account
+ERROR: module not in list of installed modules:
+---Models in module 'l10n_dk_bookkeeping'---
+---Fields in module 'l10n_dk_bookkeeping'---
+l10n_dk_bookkeeping / account.move             / l10n_dk_currency_rate_at_transaction (float): DEL
+---XML records in module 'l10n_dk_bookkeeping'---
+DEL ir.ui.view: l10n_dk_bookkeeping.view_move_form_l10n_dk
+DEL ir.ui.view: l10n_dk_bookkeeping.view_move_line_tree_l10n_dk
+ERROR: module not in list of installed modules:
+---Models in module 'l10n_es_edi_facturae_adm_centers'---
+obsolete model l10n_es_edi_facturae_adm_centers.ac_role_type
+---Fields in module 'l10n_es_edi_facturae_adm_centers'---
+l10n_es_edi_facturae_adm_centers / l10n_es_edi_facturae_adm_centers.ac_role_type / code (char)                   : DEL required
+l10n_es_edi_facturae_adm_centers / l10n_es_edi_facturae_adm_centers.ac_role_type / name (char)                   : DEL required
+l10n_es_edi_facturae_adm_centers / res.partner              / l10n_es_edi_facturae_ac_center_code (char): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_adm_centers')
+l10n_es_edi_facturae_adm_centers / res.partner              / l10n_es_edi_facturae_ac_logical_operational_point (char): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_adm_centers')
+l10n_es_edi_facturae_adm_centers / res.partner              / l10n_es_edi_facturae_ac_physical_gln (char): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_adm_centers')
+l10n_es_edi_facturae_adm_centers / res.partner              / l10n_es_edi_facturae_ac_role_type_ids (many2many): column2 is now 'l10n_es_edi_facturae_ac_role_type_id' ('l10n_es_edi_facturae_adm_centers_ac_role_type_id') [l10n_es_edi_facturae_adm_centers_ac_role_type_res_partner_rel]
+l10n_es_edi_facturae_adm_centers / res.partner              / l10n_es_edi_facturae_ac_role_type_ids (many2many): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_adm_centers')
+l10n_es_edi_facturae_adm_centers / res.partner              / l10n_es_edi_facturae_ac_role_type_ids (many2many): relation is now 'l10n_es_edi_facturae.ac_role_type' ('l10n_es_edi_facturae_adm_centers.ac_role_type') [nothing to do]
+l10n_es_edi_facturae_adm_centers / res.partner              / l10n_es_edi_facturae_ac_role_type_ids (many2many): table is now 'l10n_es_edi_facturae_ac_role_type_res_partner_rel' ('l10n_es_edi_facturae_adm_centers_ac_role_type_res_partner_rel')
+l10n_es_edi_facturae_adm_centers / res.partner              / type (False)                  : module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_adm_centers')
+l10n_es_edi_facturae_adm_centers / res.users                / l10n_es_edi_facturae_ac_center_code (char): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_adm_centers')
+l10n_es_edi_facturae_adm_centers / res.users                / l10n_es_edi_facturae_ac_logical_operational_point (char): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_adm_centers')
+l10n_es_edi_facturae_adm_centers / res.users                / l10n_es_edi_facturae_ac_physical_gln (char): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_adm_centers')
+l10n_es_edi_facturae_adm_centers / res.users                / l10n_es_edi_facturae_ac_role_type_ids (many2many): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_adm_centers')
+l10n_es_edi_facturae_adm_centers / res.users                / l10n_es_edi_facturae_ac_role_type_ids (many2many): relation is now 'l10n_es_edi_facturae.ac_role_type' ('l10n_es_edi_facturae_adm_centers.ac_role_type') [nothing to do]
+---XML records in module 'l10n_es_edi_facturae_adm_centers'---
+DEL ir.model.access: l10n_es_edi_facturae_adm_centers.access_l10n_es_edi_facturae_ac_role_type_invoice [renamed to l10n_es_edi_facturae module]
+DEL ir.model.access: l10n_es_edi_facturae_adm_centers.access_l10n_es_edi_facturae_ac_role_type_readonly [renamed to l10n_es_edi_facturae module]
+DEL ir.ui.view: l10n_es_edi_facturae_adm_centers.account_invoice_facturae_export
+DEL ir.ui.view: l10n_es_edi_facturae_adm_centers.administrative_centers_type
+DEL ir.ui.view: l10n_es_edi_facturae_adm_centers.business_type
+DEL ir.ui.view: l10n_es_edi_facturae_adm_centers.view_partner_form_inherit_l10n_es_edi_facturae
+DEL l10n_es_edi_facturae_adm_centers.ac_role_type: l10n_es_edi_facturae_adm_centers.ac_role_type_01
+DEL l10n_es_edi_facturae_adm_centers.ac_role_type: l10n_es_edi_facturae_adm_centers.ac_role_type_02
+DEL l10n_es_edi_facturae_adm_centers.ac_role_type: l10n_es_edi_facturae_adm_centers.ac_role_type_03
+DEL l10n_es_edi_facturae_adm_centers.ac_role_type: l10n_es_edi_facturae_adm_centers.ac_role_type_04
+DEL l10n_es_edi_facturae_adm_centers.ac_role_type: l10n_es_edi_facturae_adm_centers.ac_role_type_05
+DEL l10n_es_edi_facturae_adm_centers.ac_role_type: l10n_es_edi_facturae_adm_centers.ac_role_type_06
+DEL l10n_es_edi_facturae_adm_centers.ac_role_type: l10n_es_edi_facturae_adm_centers.ac_role_type_07
+DEL l10n_es_edi_facturae_adm_centers.ac_role_type: l10n_es_edi_facturae_adm_centers.ac_role_type_08
+DEL l10n_es_edi_facturae_adm_centers.ac_role_type: l10n_es_edi_facturae_adm_centers.ac_role_type_09
+ERROR: module not in list of installed modules:
+---Models in module 'l10n_es_edi_facturae_invoice_period'---
+---Fields in module 'l10n_es_edi_facturae_invoice_period'---
+l10n_es_edi_facturae_invoice_period / account.bank.statement.line / l10n_es_invoicing_period_end_date (date): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_invoice_period')
+l10n_es_edi_facturae_invoice_period / account.bank.statement.line / l10n_es_invoicing_period_start_date (date): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_invoice_period')
+l10n_es_edi_facturae_invoice_period / account.move             / l10n_es_invoicing_period_end_date (date): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_invoice_period')
+l10n_es_edi_facturae_invoice_period / account.move             / l10n_es_invoicing_period_start_date (date): module is now 'l10n_es_edi_facturae' ('l10n_es_edi_facturae_invoice_period')
+---XML records in module 'l10n_es_edi_facturae_invoice_period'---
+DEL ir.ui.view: l10n_es_edi_facturae_invoice_period.view_move_form
+ERROR: module not in list of installed modules:
+---Models in module 'l10n_fr_fec'---
+obsolete model account.fr.fec [transient]
+---Fields in module 'l10n_fr_fec'---
+---XML records in module 'l10n_fr_fec'---
+DEL ir.actions.act_window: l10n_fr_fec.account_fr_fec_action
+DEL ir.model.access: l10n_fr_fec.access_account_fr_fec
+DEL ir.rule: l10n_fr_fec.account_fr_fec_rule (noupdate)
+DEL ir.ui.menu: l10n_fr_fec.account_fr_fec_menu
+DEL ir.ui.view: l10n_fr_fec.account_fr_fec_view
+ERROR: module not in list of installed modules:
+---Models in module 'l10n_fr_invoice_addr'---
+---Fields in module 'l10n_fr_invoice_addr'---
+l10n_fr_invoice_addr / account.bank.statement.line / l10n_fr_is_company_french (boolean): module is now 'l10n_fr_account' ('l10n_fr_invoice_addr')
+l10n_fr_invoice_addr / account.move             / l10n_fr_is_company_french (boolean): module is now 'l10n_fr_account' ('l10n_fr_invoice_addr')
+---XML records in module 'l10n_fr_invoice_addr'---
+DEL ir.ui.view: l10n_fr_invoice_addr.report_invoice_document
+ERROR: module not in list of installed modules:
+---Models in module 'l10n_ro_efactura'---
+model l10n_ro_edi.document (moved to l10n_ro_edi)
+---Fields in module 'l10n_ro_efactura'---
+l10n_ro_efactura / account.bank.statement.line / l10n_ro_edi_attachment_id (many2one): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / account.bank.statement.line / l10n_ro_edi_document_ids (one2many): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / account.bank.statement.line / l10n_ro_edi_state (selection) : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / account.move             / l10n_ro_edi_attachment_id (many2one): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / account.move             / l10n_ro_edi_document_ids (one2many): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / account.move             / l10n_ro_edi_state (selection) : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / account.move             / l10n_ro_edi_state (selection) : selection_keys is now '['invoice_sent', 'invoice_validated']' ('['invoice_sending', 'invoice_sent']')
+l10n_ro_efactura / l10n_ro_edi.document     / _order                        : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / attachment_id (many2one)      : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / datetime (datetime)           : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / display_name (char)           : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / invoice_id (many2one)         : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / key_certificate (char)        : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / key_loading (char)            : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / key_signature (char)          : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / message (char)                : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / state (selection)             : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / l10n_ro_edi.document     / state (selection)             : selection_keys is now '['invoice_sending_failed', 'invoice_sent', 'invoice_validated']' ('['invoice_sending', 'invoice_sending_failed', 'invoice_sent']')
+l10n_ro_efactura / res.company              / l10n_ro_edi_access_expiry_date (date): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / res.company              / l10n_ro_edi_access_token (char): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / res.company              / l10n_ro_edi_callback_url (char): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / res.company              / l10n_ro_edi_client_id (char)  : module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / res.company              / l10n_ro_edi_client_secret (char): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / res.company              / l10n_ro_edi_oauth_error (char): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / res.company              / l10n_ro_edi_refresh_expiry_date (date): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / res.company              / l10n_ro_edi_refresh_token (char): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+l10n_ro_efactura / res.company              / l10n_ro_edi_test_env (boolean): module is now 'l10n_ro_edi' ('l10n_ro_efactura')
+---XML records in module 'l10n_ro_efactura'---
+DEL ir.actions.server: l10n_ro_efactura.l10n_ro_edi_action_fetch_ciusro_status [renamed to l10n_ro_edi module]
+DEL ir.cron: l10n_ro_efactura.ir_cron_l10n_ro_edi_refresh_access_token [renamed to l10n_ro_edi module]
+DEL ir.model.access: l10n_ro_efactura.access_l10n_ro_edi_document_group_invoice [renamed to l10n_ro_edi module]
+DEL ir.model.access: l10n_ro_efactura.access_l10n_ro_edi_document_readonly [renamed to l10n_ro_edi module]
+DEL ir.ui.view: l10n_ro_efactura.account_move_form_inherit_l10n_ro_edi
+DEL ir.ui.view: l10n_ro_efactura.account_move_send_inherit_l10n_ro_edi
+DEL ir.ui.view: l10n_ro_efactura.in_invoice_tree_inherit_l10n_ro_edi
+DEL ir.ui.view: l10n_ro_efactura.l10n_ro_edi_view_account_invoice_filter
+DEL ir.ui.view: l10n_ro_efactura.out_credit_note_tree_inherit_l10n_ro_edi
+DEL ir.ui.view: l10n_ro_efactura.out_invoice_tree_inherit_l10n_ro_edi
+DEL ir.ui.view: l10n_ro_efactura.res_config_settings_form_inherit_l10n_ro_edi
+ERROR: module not in list of installed modules:
+---Models in module 'mrp_subonctracting_landed_costs'---
+---Fields in module 'mrp_subonctracting_landed_costs'---
+---XML records in module 'mrp_subonctracting_landed_costs'---
+DEL ir.ui.view: mrp_subonctracting_landed_costs.view_mrp_landed_costs_form
+ERROR: module not in list of installed modules:
+---Models in module 'payment_sips'---
+---Fields in module 'payment_sips'---
+payment_sips / payment.provider         / code (False)                  : module is now 'payment_worldline' ('payment_sips')
+payment_sips / payment.provider         / code (False)                  : selection_keys is now '['adyen', 'aps', 'asiapay', 'authorize', 'buckaroo', 'custom', 'demo', 'flutterwave', 'mercado_pago', 'mollie', 'none', 'paypal', 'razorpay', 'stripe', 'worldline']' ('['adyen', 'aps', 'asiapay', 'authorize', 'buckaroo', 'custom', 'demo', 'flutterwave', 'mercado_pago', 'mollie', 'none', 'paypal', 'razorpay', 'sips']')
+payment_sips / payment.provider         / sips_key_version (integer)    : DEL
+payment_sips / payment.provider         / sips_merchant_id (char)       : DEL
+payment_sips / payment.provider         / sips_prod_url (char)          : DEL
+payment_sips / payment.provider         / sips_secret (char)            : DEL
+payment_sips / payment.provider         / sips_test_url (char)          : DEL
+payment_sips / payment.provider         / sips_version (char)           : DEL
+---XML records in module 'payment_sips'---
+DEL ir.ui.view: payment_sips.payment_provider_form
+DEL ir.ui.view: payment_sips.redirect_form
+ERROR: module not in list of installed modules:
+---Models in module 'pos_mercury'---
+obsolete model pos_mercury.configuration
+obsolete model pos_mercury.mercury_transaction
+---Fields in module 'pos_mercury'---
+pos_mercury  / barcode.rule             / type (False)                  : DEL selection_keys: ['alias', 'cashier', 'client', 'coupon', 'credit', 'discount', 'expiration_date', 'location', 'location_dest', 'lot', 'pack_date', 'package', 'package_type', 'price', 'product', 'quantity', 'use_date', 'weight'], mode: modify
+pos_mercury  / pos.payment              / mercury_card_brand (char)     : DEL
+pos_mercury  / pos.payment              / mercury_card_number (char)    : DEL
+pos_mercury  / pos.payment              / mercury_card_owner_name (char): DEL
+pos_mercury  / pos.payment              / mercury_invoice_no (char)     : DEL
+pos_mercury  / pos.payment              / mercury_record_no (char)      : DEL
+pos_mercury  / pos.payment              / mercury_ref_no (char)         : DEL
+pos_mercury  / pos.payment.method       / pos_mercury_config_id (many2one): DEL relation: pos_mercury.configuration
+pos_mercury  / pos_mercury.configuration / merchant_id (char)            : DEL required
+pos_mercury  / pos_mercury.configuration / merchant_pwd (char)           : DEL required
+pos_mercury  / pos_mercury.configuration / name (char)                   : DEL required
+---XML records in module 'pos_mercury'---
+DEL barcode.rule: pos_mercury.barcode_rule_credit (noupdate)
+DEL ir.actions.act_window: pos_mercury.action_configuration_form
+DEL ir.model.access: pos_mercury.access_pos_mercury_configuration
+DEL ir.model.access: pos_mercury.access_pos_mercury_mercury_transaction_employee
+DEL ir.ui.menu: pos_mercury.menu_pos_pos_mercury_config
+DEL ir.ui.view: pos_mercury.mercury_common
+DEL ir.ui.view: pos_mercury.mercury_return
+DEL ir.ui.view: pos_mercury.mercury_transaction
+DEL ir.ui.view: pos_mercury.mercury_voidsale
+DEL ir.ui.view: pos_mercury.pos_payment_method_view_form
+DEL ir.ui.view: pos_mercury.res_config_settings_view_form_inherit_pos_mercury
+DEL ir.ui.view: pos_mercury.view_pos_mercury_configuration_form
+DEL ir.ui.view: pos_mercury.view_pos_mercury_configuration_tree
+DEL ir.ui.view: pos_mercury.view_pos_order
+ERROR: module not in list of installed modules:
+---Models in module 'sale_product_configurator'---
+---Fields in module 'sale_product_configurator'---
+sale_product_configurator / product.product          / optional_product_ids (many2many): module is now 'sale' ('sale_product_configurator')
+sale_product_configurator / product.template         / optional_product_ids (many2many): module is now 'sale' ('sale_product_configurator')
+sale_product_configurator / sale.order.line          / is_configurable_product (boolean): module is now 'sale' ('sale_product_configurator')
+sale_product_configurator / sale.order.line          / product_template_attribute_value_ids (many2many): module is now 'sale' ('sale_product_configurator')
+---XML records in module 'sale_product_configurator'---
+DEL ir.ui.view: sale_product_configurator.product_template_view_form
+DEL ir.ui.view: sale_product_configurator.sale_order_view_form
+ERROR: module not in list of installed modules:
+---Models in module 'spreadsheet_dashboard_purchase'---
+---Fields in module 'spreadsheet_dashboard_purchase'---
+---XML records in module 'spreadsheet_dashboard_purchase'---
+DEL spreadsheet.dashboard: spreadsheet_dashboard_purchase.spreadsheet_dashboard_vendors
+ERROR: module not in list of installed modules:
+---Models in module 'spreadsheet_dashboard_purchase_stock'---
+---Fields in module 'spreadsheet_dashboard_purchase_stock'---
+---XML records in module 'spreadsheet_dashboard_purchase_stock'---
+DEL spreadsheet.dashboard: spreadsheet_dashboard_purchase_stock.spreadsheet_dashboard_purchase
+ERROR: module not in list of installed modules:
+---Models in module 'stock_landed_costs_company'---
+---Fields in module 'stock_landed_costs_company'---
+stock_landed_costs_company / stock.landed.cost        / company_id (False)            : DEL required, mode: modify
+---XML records in module 'stock_landed_costs_company'---
+ERROR: module not in list of installed modules:
+---Models in module 'website_form_project'---
+---Fields in module 'website_form_project'---
+---XML records in module 'website_form_project'---
+DEL ir.ui.view: website_form_project.website_portal_my_project
+DEL ir.ui.view: website_form_project.website_portal_my_task
+ERROR: module not in list of installed modules:
+---Models in module 'website_sale_picking'---
+---Fields in module 'website_sale_picking'---
+website_sale_picking / delivery.carrier         / delivery_type (False)         : module is now 'website_sale_collect' ('website_sale_picking')
+website_sale_picking / delivery.carrier         / delivery_type (False)         : selection_keys is now '['base_on_rule', 'fixed', 'in_store']' ('['base_on_rule', 'fixed', 'onsite']')
+website_sale_picking / delivery.carrier         / warehouse_id (many2one)       : DEL relation: stock.warehouse
+website_sale_picking / payment.provider         / custom_mode (False)           : module is now 'website_sale_collect' ('website_sale_picking')
+website_sale_picking / payment.provider         / custom_mode (False)           : selection_keys is now '['on_site', 'wire_transfer']' ('['onsite', 'wire_transfer']')
+---XML records in module 'website_sale_picking'---
+DEL delivery.carrier: website_sale_picking.default_onsite_carrier (noupdate)
+DEL ir.ui.view: website_sale_picking.checkout_delivery
+DEL ir.ui.view: website_sale_picking.payment_confirmation_status
+DEL ir.ui.view: website_sale_picking.payment_method_form
+DEL ir.ui.view: website_sale_picking.res_config_settings_view_form
+DEL ir.ui.view: website_sale_picking.view_delivery_carrier_form_with_onsite_picking
+DEL payment.method: website_sale_picking.payment_method_pay_on_site [renamed to website_sale_collect module]
+DEL payment.provider: website_sale_picking.payment_provider_onsite
+DEL product.product: website_sale_picking.onsite_delivery_product (noupdate)
+ERROR: module not in list of installed modules:
+---Models in module 'website_sale_product_configurator'---
+---Fields in module 'website_sale_product_configurator'---
+website_sale_product_configurator / website                  / add_to_cart_action (False)    : DEL selection_keys: ['force_dialog', 'go_to_cart', 'stay'], mode: modify
+---XML records in module 'website_sale_product_configurator'---
+DEL ir.ui.view: website_sale_product_configurator.configure_optional_products
+DEL ir.ui.view: website_sale_product_configurator.optional_product_items
+DEL ir.ui.view: website_sale_product_configurator.optional_products_modal
+DEL ir.ui.view: website_sale_product_configurator.product_quantity_config
+ERROR: module not in list of installed modules:
+---Models in module 'website_twitter'---
+obsolete model website.twitter.tweet
+---Fields in module 'website_twitter'---
+website_twitter / website                  / twitter_api_key (char)        : DEL
+website_twitter / website                  / twitter_api_secret (char)     : DEL
+website_twitter / website                  / twitter_screen_name (char)    : DEL
+website_twitter / website.twitter.tweet    / screen_name (char)            : DEL
+website_twitter / website.twitter.tweet    / tweet (text)                  : DEL
+website_twitter / website.twitter.tweet    / tweet_id (float)              : DEL
+website_twitter / website.twitter.tweet    / website_id (many2one)         : DEL relation: website
+---XML records in module 'website_twitter'---
+DEL ir.cron: website_twitter.ir_cron_twitter_actions
+DEL ir.model.access: website_twitter.access_website_twitter_tweet_manage
+DEL ir.model.access: website_twitter.access_website_twitter_tweet_public_employee
+DEL ir.model.access: website_twitter.access_website_twitter_tweet_public_portal
+DEL ir.model.access: website_twitter.access_website_twitter_tweet_public_public
+DEL ir.ui.view: website_twitter.remove_external_snippets
+DEL ir.ui.view: website_twitter.res_config_settings_view_form
+DEL ir.ui.view: website_twitter.s_twitter
+DEL ir.ui.view: website_twitter.website_twitter_options
+DEL ir.ui.view: website_twitter.website_twitter_snippet

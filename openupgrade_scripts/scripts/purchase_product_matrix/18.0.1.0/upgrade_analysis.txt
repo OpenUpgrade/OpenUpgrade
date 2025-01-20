@@ -1,0 +1,5 @@
+---Models in module 'purchase_product_matrix'---
+---Fields in module 'purchase_product_matrix'---
+purchase_product_matrix / purchase.order.line      / product_no_variant_attribute_value_ids (many2many): module is now 'purchase' ('purchase_product_matrix')
+purchase_product_matrix / purchase.order.line      / product_template_attribute_value_ids (many2many): module is now 'purchase' ('purchase_product_matrix')
+---XML records in module 'purchase_product_matrix'---
