@@ -9,9 +9,9 @@ purchase     / purchase.order.line      / analytic_distribution_search (json): D
 purchase     / purchase.order.line      / is_downpayment (boolean)      : NEW
 purchase     / purchase.order.line      / product_no_variant_attribute_value_ids (many2many): previously in module purchase_product_matrix
 purchase     / purchase.order.line      / product_template_attribute_value_ids (many2many): previously in module purchase_product_matrix
-purchase     / res.partner              / property_purchase_currency_id (many2one): is now stored
-purchase     / res.partner              / receipt_reminder_email (boolean): is now stored
-purchase     / res.partner              / reminder_date_before_receipt (integer): is now stored
+purchase     / res.partner              / property_purchase_currency_id (many2one): needs conversion to v18-style company dependent
+purchase     / res.partner              / receipt_reminder_email (boolean): needs conversion to v18-style company dependent
+purchase     / res.partner              / reminder_date_before_receipt (integer): needs conversion to v18-style company dependent
 ---XML records in module 'purchase'---
 NEW ir.actions.server: purchase.action_confirm_rfqs
 NEW ir.actions.server: purchase.action_merger

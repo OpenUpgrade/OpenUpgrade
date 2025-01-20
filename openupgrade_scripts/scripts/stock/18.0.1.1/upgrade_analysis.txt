@@ -7,13 +7,13 @@ new model stock.scrap.reason.tag
 ---Fields in module 'stock'---
 stock        / product.template         / detailed_type (False)         : DEL selection_keys: ['consu', 'product', 'service'], mode: modify
 stock        / product.template         / is_storable (boolean)         : NEW hasdefault: default
-stock        / product.template         / property_stock_inventory (many2one): is now stored
-stock        / product.template         / property_stock_production (many2one): is now stored
-stock        / product.template         / responsible_id (many2one)     : is now stored
+stock        / product.template         / property_stock_inventory (many2one): needs conversion to v18-style company dependent
+stock        / product.template         / property_stock_production (many2one): needs conversion to v18-style company dependent
+stock        / product.template         / responsible_id (many2one)     : needs conversion to v18-style company dependent
 stock        / product.template         / route_from_categ_ids (many2many): table is now 'False' ('stock.route')
 stock        / product.template         / type (False)                  : DEL selection_keys: ['consu', 'product', 'service'], mode: modify
-stock        / res.partner              / property_stock_customer (many2one): is now stored
-stock        / res.partner              / property_stock_supplier (many2one): is now stored
+stock        / res.partner              / property_stock_customer (many2one): needs conversion to v18-style company dependent
+stock        / res.partner              / property_stock_supplier (many2one): needs conversion to v18-style company dependent
 stock        / stock.location           / return_location (boolean)     : DEL
 stock        / stock.move               / location_dest_id (many2one)   : now a function
 stock        / stock.move               / location_final_id (many2one)  : NEW relation: stock.location

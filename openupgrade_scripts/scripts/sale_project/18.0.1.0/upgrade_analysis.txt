@@ -2,8 +2,8 @@
 ---Fields in module 'sale_project'---
 sale_project / product.product          / service_tracking (selection)  : module is now 'product' ('sale_project')
 sale_project / product.product          / service_tracking (selection)  : now required
-sale_project / product.template         / project_id (many2one)         : is now stored
-sale_project / product.template         / project_template_id (many2one): is now stored
+sale_project / product.template         / project_id (many2one)         : needs conversion to v18-style company dependent
+sale_project / product.template         / project_template_id (many2one): needs conversion to v18-style company dependent
 sale_project / product.template         / service_tracking (False)      : NEW selection_keys: ['event', 'event_booth', 'no', 'project_only', 'task_global_project', 'task_in_project'], mode: modify
 sale_project / product.template         / service_tracking (selection)  : module is now 'product' ('sale_project')
 sale_project / product.template         / service_tracking (selection)  : now required

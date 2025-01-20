@@ -14,7 +14,7 @@ mrp_account  / mrp.production           / analytic_precision (integer)  : DEL
 mrp_account  / mrp.workcenter           / analytic_distribution_search (json): DEL
 mrp_account  / mrp.workcenter           / expense_account_id (many2one) : NEW relation: account.account
 mrp_account  / mrp.workcenter.productivity / account_move_line_id (many2one): NEW relation: account.move.line
-mrp_account  / product.category         / property_stock_account_production_cost_id (many2one): is now stored
+mrp_account  / product.category         / property_stock_account_production_cost_id (many2one): needs conversion to v18-style company dependent
 ---XML records in module 'mrp_account'---
 NEW ir.actions.act_window: mrp_account.action_wip_accounting
 NEW ir.model.access: mrp_account.access_mrp_wip_accounting
